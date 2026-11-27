@@ -20,7 +20,8 @@ are listed here.
     (Professor Rowan).
   - With an existing save file, the Continue / New Game menu is shown.
   - Save-corruption warnings are still displayed as before.
-- The clear-save-data shortcut (hold **B + Up + Select**) now works when held at
+  - The clear-save-data shortcut (hold **B + Up + Select**) now works when held at
   boot, because the title screen that used to read it is no longer shown.
-- Soft reset (**L + R + Start + Select**) follows the same boot path and also
+  - Soft reset (**L + R + Start + Select**) follows the same boot path and also
   skips the intro.
+- All text now prints 3x faster at every text speed setting (Slow, Mid and Fast), including battle text and while A/B is held to speed text up.

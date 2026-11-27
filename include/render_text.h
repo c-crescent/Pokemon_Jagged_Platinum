@@ -83,6 +83,7 @@ enum RenderResult {
 #define AUTO_SCROLL_NO_WAIT  ((1 << 1) | AUTO_SCROLL_ENABLED)
 
 enum RenderResult RenderText(TextPrinter *printer);
+BOOL TextPrinter_IsPrintingChars(TextPrinter *printer);
 void TextPrinter_SetScrollArrowBaseTile(u16 tile);
 void TextPrinter_InitScrollArrowAnim(TextPrinter *printer);
 void TextPrinter_DrawScrollArrow(TextPrinter *printer);

@@ -17,6 +17,9 @@
 
 #include "res/fonts/pl_font.naix"
 
+// Jagged Platinum: text printer steps per frame (3 = text renders 3x faster).
+#define TEXT_PRINTER_TICKS_PER_FRAME 3
+
 static enum RenderResult TextPrinter_Render(TextPrinter *printer);
 static u8 Text_CreatePrinterTask(SysTaskFunc taskFunc, TextPrinter *printer, u32 priority);
 static void Text_DestroyPrinterTask(u8 printerID);
@@ -233,26 +236,51 @@ static void SysTask_RunTextPrinter(SysTask *task, void *data)
 
     TextPrinter *printer = (TextPrinter *)data;
 
-    if (printer->callbackResult == 0) {
+    if (printer->callbackResult != 0) {
+        printer->callbackResult = (printer->callback)(&printer->template, printer->callbackParam);
+        return;
+    }
+
+    // Jagged Platinum: run the printer up to TEXT_PRINTER_TICKS_PER_FRAME times
+    // per frame so character output (and the per-character delay countdown) is
+    // that many times faster at every text speed. The loop stops as soon as the
+    // printer leaves the character-printing state, so waiting for input,
+    // scrolling, page clears and scripted pauses still run once per frame and a
+    // single button press can never advance more than one page.
+    BOOL needsCopy = FALSE;
+
+    for (int tick = 0; tick < TEXT_PRINTER_TICKS_PER_FRAME; tick++) {
         printer->callbackParam = 0;
         Text_GenerateFontHalfRowLookupTable(printer->template.fgColor, printer->template.bgColor, printer->template.shadowColor);
 
-        switch (TextPrinter_Render(printer)) {
-        case RENDER_PRINT:
-            Window_CopyToVRAM(printer->template.window);
-            // fall-through
+        enum RenderResult result = TextPrinter_Render(printer);
 
-        case RENDER_UPDATE:
-            if (printer->callback != NULL) {
-                printer->callbackResult = (printer->callback)(&printer->template, printer->callbackParam);
+        if (result == RENDER_FINISH) {
+            if (needsCopy) {
+                Window_CopyToVRAM(printer->template.window);
             }
-            return;
 
-        case RENDER_FINISH:
             Text_DestroyPrinterTask(printer->id);
             return;
         }
-    } else {
+
+        if (result == RENDER_PRINT) {
+            needsCopy = TRUE;
+        }
+
+        // Hand control back if a text callback was requested or the printer
+        // is no longer printing characters.
+        if (printer->callbackParam != 0 || !TextPrinter_IsPrintingChars(printer)) {
+            break;
+        }
+    }
+
+    if (needsCopy) {
+        Window_CopyToVRAM(printer->template.window);
+    }
+
+    // The callback still runs once per frame, as in the original game.
+    if (printer->callback != NULL) {
         printer->callbackResult = (printer->callback)(&printer->template, printer->callbackParam);
     }
 }
