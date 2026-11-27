@@ -30,3 +30,4 @@ are listed here.
 - Pokémon Center healing is faster and takes the same time regardless of party size.
 - HM Moves can be deleted normally.
 - TMs are now reuseable.
+- Running is now the default once you have the Running Shoes. Hold **B** to walk instead.

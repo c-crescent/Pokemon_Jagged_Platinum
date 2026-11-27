@@ -464,10 +464,11 @@ void CommPlayer_Destroy(u8 netId, BOOL param1, BOOL param2)
 
 static void CommPlayer_SendMoveSpeed()
 {
-    u8 moveSpeed = 2;
+    // Run by default (speed 1); holding B walks (speed 2).
+    u8 moveSpeed = 1;
 
     if (PAD_BUTTON_B & gSystem.heldKeys) {
-        moveSpeed = 1;
+        moveSpeed = 2;
     }
 
     CommSys_SetSendSpeed(moveSpeed);

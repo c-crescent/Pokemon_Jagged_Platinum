@@ -65,6 +65,7 @@ static int PlayerAvatar_UpdateMoveState(PlayerAvatar *playerAvatar, int dir);
 static void PlayerAvatar_SetMovement_NotMoving(PlayerAvatar *playerAvatar, MapObject *mapObj, int dir, u16 keyPad, u16 keyPress);
 static void PlayerAvatar_SetMovement_Moving(PlayerAvatar *playerAvatar, MapObject *mapObj, int dir, u16 keyPad, u16 keyPress);
 static void PlayerAvatar_SetMovement_NormalOverworld(PlayerAvatar *playerAvatar, MapObject *mapObj, int dir, u16 keyPad, u16 keyPress);
+static BOOL PlayerAvatar_ShouldRun(PlayerAvatar *playerAvatar, u16 pad);
 static void PlayerAvatar_SetMovement_DistortionFloor(PlayerAvatar *playerAvatar, MapObject *mapObj, int dir, u16 keyPad, u16 keyPress);
 static void PlayerAvatar_SetMovement_DistortionWestWall(PlayerAvatar *playerAvatar, MapObject *mapObj, int dir, u16 keyPad, u16 keyPress);
 static void PlayerAvatar_SetMovement_DistortionEastWall(PlayerAvatar *playerAvatar, MapObject *mapObj, int dir, u16 keyPad, u16 keyPress);
@@ -1040,13 +1041,9 @@ static void PlayerAvatar_SetMovement_NormalOverworld(PlayerAvatar *playerAvatar,
             movementAction = MOVEMENT_ACTION_WALK_NORMAL_NORTH;
             speed = PLAYER_ACTION_SPEED_NORMAL;
 
-            PlayerData *playerData = PlayerAvatar_PlayerData(playerAvatar);
-
-            if (PlayerData_HasRunningShoes(playerData) == TRUE) {
-                if (PlayerAvatar_IsRunButtonHeld(playerAvatar, keyPress) == TRUE) {
-                    movementAction = MOVEMENT_ACTION_RUN_NORTH;
-                    speed = PLAYER_ACTION_SPEED_FAST;
-                }
+            if (PlayerAvatar_ShouldRun(playerAvatar, keyPress) == TRUE) {
+                movementAction = MOVEMENT_ACTION_RUN_NORTH;
+                speed = PLAYER_ACTION_SPEED_FAST;
             }
 
             movementAction = MapObject_GetDeepSnowMovementAction(mapObj, MapObject_GetCurrTileBehavior(mapObj), movementAction);
@@ -1119,9 +1116,8 @@ static void PlayerAvatar_SetMovement_DistortionFloor(PlayerAvatar *playerAvatar,
         } else {
             movementAction = MOVEMENT_ACTION_WALK_NORMAL_NORTH;
             speed = PLAYER_ACTION_SPEED_NORMAL;
-            PlayerData *player = PlayerAvatar_PlayerData(playerAvatar);
 
-            if (PlayerData_HasRunningShoes(player) == TRUE && PlayerAvatar_IsRunButtonHeld(playerAvatar, keyPress) == TRUE) {
+            if (PlayerAvatar_ShouldRun(playerAvatar, keyPress) == TRUE) {
                 movementAction = MOVEMENT_ACTION_RUN_NORTH;
                 speed = PLAYER_ACTION_SPEED_FAST;
             }
@@ -1166,9 +1162,8 @@ static void PlayerAvatar_UpdateMovement_NormalDistortion(PlayerAvatar *playerAva
         } else {
             actionSpeed = PLAYER_ACTION_SPEED_NORMAL;
             movementAction = walkActionTable[dir];
-            PlayerData *playerData = PlayerAvatar_PlayerData(playerAvatar);
 
-            if ((PlayerData_HasRunningShoes(playerData) == TRUE) && (PlayerAvatar_IsRunButtonHeld(playerAvatar, keyPress) == TRUE)) {
+            if (PlayerAvatar_ShouldRun(playerAvatar, keyPress) == TRUE) {
                 actionSpeed = PLAYER_ACTION_SPEED_FAST;
                 movementAction = runActionTable[dir];
             }
@@ -2468,6 +2463,21 @@ BOOL PlayerAvatar_IsRunButtonHeld(PlayerAvatar *playerAvatar, u16 pad)
     }
 
     return FALSE;
+}
+
+/**
+ * Checks if the player should run on this step. Once the Running Shoes are
+ * obtained, running is the default and holding B makes the player walk.
+ */
+static BOOL PlayerAvatar_ShouldRun(PlayerAvatar *playerAvatar, u16 pad)
+{
+    PlayerData *playerData = PlayerAvatar_PlayerData(playerAvatar);
+
+    if (PlayerData_HasRunningShoes(playerData) != TRUE) {
+        return FALSE;
+    }
+
+    return PlayerAvatar_IsRunButtonHeld(playerAvatar, pad) == FALSE;
 }
 
 /**
