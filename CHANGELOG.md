@@ -29,3 +29,4 @@ are listed here.
 - Writing the save to the cartridge is faster: only the parts of the save that changed since the last save are rewritten, instead of the whole file. 
 - Pokémon Center healing is faster and takes the same time regardless of party size.
 - HM Moves can be deleted normally.
+- TMs are now reuseable.
