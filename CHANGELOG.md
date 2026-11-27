@@ -25,3 +25,4 @@ are listed here.
   - Soft reset (**L + R + Start + Select**) follows the same boot path and also
   skips the intro.
 - All text now prints 3x faster at every text speed setting (Slow, Mid and Fast), including battle text and while A/B is held to speed text up.
+- Saving from the Start menu no longer asks for confirmation. The "saved the game" message no longer waits for the save jingle to finish.

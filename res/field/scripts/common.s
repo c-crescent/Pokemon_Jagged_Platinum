@@ -354,9 +354,20 @@ CommonScript_PoisonWhiteout:
 
 CommonScript_SaveAndStoreResult:
     ClearFlag FLAG_MAP_LOCAL_SAVE_EXTRA_BLOCK
-    Call CommonScript_TrySaveGame
+    Call CommonScript_TrySaveGameNoConfirm
     StoreSaveResult VAR_RESULT
     CloseMessage
+    End
+
+// Save from the start menu (and when entering the Underground)
+// without the "Would you like to save?" and "OK to overwrite?" prompts.
+CommonScript_TrySaveGameNoConfirm:
+    CheckSaveType VAR_RESULT
+    GoToIfEq VAR_RESULT, SAVE_TYPE_OVERWRITE, CommonScript_SaveTypeOverwrite
+    OpenSaveInfo
+    GoToIfEq VAR_RESULT, SAVE_TYPE_NO_DATA_EXISTS, CommonScript_SavingALotOfData
+    GoToIfEq VAR_RESULT, SAVE_TYPE_FULL_SAVE, CommonScript_SavingALotOfData
+    GoTo CommonScript_StartQuickSave
     End
 
 CommonScript_ImpossibleToSave:
@@ -426,7 +437,8 @@ CommonScript_SaveComplete:
     BufferPlayerName 0
     Message CommonStrings_Text_PlayerSavedTheGame
     PlaySE SEQ_SE_DP_SAVE_sseq
-    WaitSE SEQ_SE_DP_SAVE_sseq
+    // Platinum: don't wait for the save jingle to finish; it keeps
+    // playing while the message closes.
     WaitABPressTime 30
     CloseSaveInfo
     Return
