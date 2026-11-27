@@ -32,7 +32,7 @@ are listed here.
 - Fishing can no longer fail, but can still be cancelled.
 - In L=A Button Mode, L turboes A and R turboes B.
 
-
 ### Living Dex Compatability
 
+- After entering the Hall of Fame, the player can encounter an infinite number of clones of the Pokémon in the lead slot in Sandgem Town Lab.
 - All Land / Surfing / Rod encounter slots normalised to scale down linearly to a minimum of 5%.
