@@ -11,6 +11,7 @@
 #include "field_script_context.h"
 #include "inlines.h"
 #include "item.h"
+#include "special_encounter.h"
 #include "unk_0205DFC4.h"
 
 BOOL ScrCmd_AddItem(ScriptContext *ctx)
@@ -94,5 +95,15 @@ BOOL ScrCmd_Dummy081(ScriptContext *ctx)
 
 BOOL ScrCmd_Dummy082(ScriptContext *ctx)
 {
+    return FALSE;
+}
+
+// Starts a Repel's effect, like using it from the Bag.
+BOOL ScrCmd_UseRepel(ScriptContext *ctx)
+{
+    u16 item = ScriptContext_GetVar(ctx);
+    u8 *repelSteps = SpecialEncounter_GetRepelSteps(SaveData_GetSpecialEncounters(ctx->fieldSystem->saveData));
+
+    *repelSteps = Item_LoadParam(item, ITEM_PARAM_EFFECT_PARAM, HEAP_ID_FIELD2);
     return FALSE;
 }

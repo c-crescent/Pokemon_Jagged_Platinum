@@ -5244,3 +5244,8 @@
     .text
     .globl _start
 _start:
+
+    .macro UseRepel item
+    .short SCRCMD_USEREPEL
+    .short \item
+    .endm

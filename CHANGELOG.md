@@ -32,6 +32,7 @@ are listed here.
 - Fishing can no longer fail, but can still be cancelled.
 - In L=A Button Mode, L turboes A and R turboes B.
 - Rare Candies can now be used in multiples at once (respecting level caps).
+- Repels now have a reuse prompt.
 
 ### Living Dex Compatability
 

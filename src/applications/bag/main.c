@@ -6,6 +6,7 @@
 #include "constants/field/map_load.h"
 #include "constants/heap.h"
 #include "constants/items.h"
+#include "constants/savedata/vars_flags.h"
 
 #include "struct_defs/special_encounter.h"
 
@@ -38,6 +39,7 @@
 #include "sound.h"
 #include "sound_playback.h"
 #include "special_encounter.h"
+#include "vars_flags.h"
 #include "sprite_system.h"
 #include "string_gf.h"
 #include "string_list.h"
@@ -2263,6 +2265,8 @@ static String *TryUseRepel(BagController *controller, u16 item)
 
     u32 stepCount = Item_LoadParam(item, ITEM_PARAM_EFFECT_PARAM, HEAP_ID_BAG);
     SetRepelSteps(controller, stepCount);
+    // Remembered so the same Repel can be offered again when it wears off.
+    *VarsFlags_GetVarAddress(SaveData_GetVarsFlags(controller->bagCtx->saveData), VAR_LAST_REPEL_USED) = item;
     controller->selectedItemCount = 1;
     Sound_PlayEffect(SEQ_SE_DP_CARD2_sseq);
 
