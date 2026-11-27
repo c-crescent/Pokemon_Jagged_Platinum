@@ -35,3 +35,8 @@ are listed here.
 - The Pokédex has National Dex features from the start. Postgame content still unlocks when Prof. Oak upgrades your Pokédex.
 - The catching tutorial on Route 202 is now optional, and Dawn/Lucas gives you 10 Poké Balls instead of 5.
 - Reading the PC in Dawn/Lucas's room in Sandgem Town gives you 999 Rare Candies, and checking the trash can gives you 999 Master Balls.
+
+
+### Living Dex Compatability
+
+- All Land / Surfing / Rod encounter slots normalised to scale down linearly to a minimum of 5%.
