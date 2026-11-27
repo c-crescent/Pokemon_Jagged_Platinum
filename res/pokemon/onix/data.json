@@ -113,7 +113,12 @@
     },
     "evolutions": [
         [
-            "EVO_TRADE_WITH_HELD_ITEM",
+            "EVO_LEVEL_WITH_HELD_ITEM_DAY",
+            "ITEM_METAL_COAT",
+            "SPECIES_STEELIX"
+        ],
+        [
+            "EVO_LEVEL_WITH_HELD_ITEM_NIGHT",
             "ITEM_METAL_COAT",
             "SPECIES_STEELIX"
         ]

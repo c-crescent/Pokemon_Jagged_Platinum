@@ -90,7 +90,7 @@ typedef struct {
 
 static void GoFish(SysTask *task, void *fishingTaskParam);
 static void *FishingTask_New(u32 fishingTaskSize);
-static BOOL TryPressA(void);
+static BOOL TryPressB(void);
 static int TryPressAOrB(void);
 static void FishingTask_Init(FishingTask *fishingTask);
 static void FishingTask_Free(FishingTask *fishingTask);
@@ -251,7 +251,7 @@ static BOOL FishingTask_CastRod(FishingTask *fishingTask, PlayerAvatar *playerAv
 
 static BOOL FishingTask_SetFishWait(FishingTask *fishingTask, PlayerAvatar *playerAvatar, MapObject *playerMapObject)
 {
-    fishingTask->fishDelayCounter = ((LCRNG_Next() % 4) + 1) * 30;
+    fishingTask->fishDelayCounter = 30 * 2;
     fishingTask->fishHookedCounter = sRodTypeHookTimingWindow[fishingTask->rodType];
     fishingTask->fishingTask = FUNC_FishingTask_WaitForFish;
 
@@ -262,7 +262,7 @@ static BOOL FishingTask_WaitForFish(FishingTask *fishingTask, PlayerAvatar *play
 {
     fishingTask->fishDelayCounter--;
 
-    if (TryPressA() == TRUE) {
+    if (TryPressB() == TRUE) {
         fishingTask->fishingTask = FUNC_FishingTask_ReeledInEarly;
         return TRUE;
     }
@@ -283,8 +283,8 @@ static BOOL FishingTask_CheckForReelInFish(FishingTask *fishingTask, PlayerAvata
 {
     fishingTask->fishHookedCounter--;
 
-    if (TryPressA() == TRUE) {
-        fishingTask->fishingTask = FUNC_FishingTask_CaughtFish;
+    if (TryPressB() == TRUE) {
+        fishingTask->fishingTask = FUNC_FishingTask_ReeledInEarly;
         return TRUE;
     }
 
@@ -292,7 +292,7 @@ static BOOL FishingTask_CheckForReelInFish(FishingTask *fishingTask, PlayerAvata
         return FALSE;
     }
 
-    fishingTask->fishingTask = FUNC_FishingTask_FishGotAway;
+    fishingTask->fishingTask = FUNC_FishingTask_CaughtFish;
 
     return FALSE;
 }
@@ -382,7 +382,7 @@ static BOOL FishingTask_WaitForNoFish(FishingTask *fishingTask, PlayerAvatar *pl
 {
     fishingTask->counter--;
 
-    if (TryPressA() == TRUE) {
+    if (TryPressB() == TRUE) {
         fishingTask->fishingTask = FUNC_FishingTask_ReeledInEarly;
         return TRUE;
     }
@@ -492,9 +492,9 @@ static void *FishingTask_New(u32 fishingTaskSize)
     return fishingTask;
 }
 
-static BOOL TryPressA(void)
+static BOOL TryPressB(void)
 {
-    if (JOY_NEW(PAD_BUTTON_A)) {
+    if (JOY_NEW(PAD_BUTTON_B)) {
         return TRUE;
     }
 

@@ -408,9 +408,13 @@ static void ApplyButtonModeToInput(void)
         break;
 
     case BUTTON_MODE_L_IS_A:
-        CONVERT_KEY(gSystem.pressedKeys, PAD_BUTTON_L, PAD_BUTTON_A);
-        CONVERT_KEY(gSystem.heldKeys, PAD_BUTTON_L, PAD_BUTTON_A);
+        // Holding L / R turbo presses A / B, at the key repeat rate.
+        gSystem.pressedKeys |= (gSystem.pressedKeysRepeatable & PAD_BUTTON_L) ? PAD_BUTTON_A : 0;
+        gSystem.pressedKeys |= (gSystem.pressedKeysRepeatable & PAD_BUTTON_R) ? PAD_BUTTON_B : 0;
         CONVERT_KEY(gSystem.pressedKeysRepeatable, PAD_BUTTON_L, PAD_BUTTON_A);
+        CONVERT_KEY(gSystem.pressedKeysRepeatable, PAD_BUTTON_R, PAD_BUTTON_B);
+        CONVERT_KEY(gSystem.heldKeys, PAD_BUTTON_L, PAD_BUTTON_A);
+        CONVERT_KEY(gSystem.heldKeys, PAD_BUTTON_R, PAD_BUTTON_B);
         CLEAR_KEY(gSystem.pressedKeys, (PAD_BUTTON_L | PAD_BUTTON_R));
         CLEAR_KEY(gSystem.heldKeys, (PAD_BUTTON_L | PAD_BUTTON_R));
         CLEAR_KEY(gSystem.pressedKeysRepeatable, (PAD_BUTTON_L | PAD_BUTTON_R));

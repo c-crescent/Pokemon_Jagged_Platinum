@@ -462,8 +462,30 @@ SandgemTownLab_BookshelfReferenceMaterial:
     End
 
 SandgemTownLab_PC:
+    GoToIfSet FLAG_GAME_COMPLETED, SandgemTownLab_PCLeadClone
     BufferPlayerName 0
     EventMessage SandgemTownLab_Text_PlayerCheckedThePC
+    End
+
+SandgemTownLab_PCLeadClone:
+    PlaySE SE_CONFIRM_sseq_3
+    LockAll
+    Message SandgemTownLab_Text_EncounterLeadClone
+    ShowYesNoMenu VAR_RESULT
+    CloseMessage
+    GoToIfEq VAR_RESULT, MENU_NO, SandgemTownLab_PCEnd
+    GetFirstNonEggInParty VAR_0x8000
+    GetPartyMonSpecies VAR_0x8000, VAR_0x8001
+    StartWildBattle VAR_0x8001, 5
+    CheckWonBattle VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, SandgemTownLab_PCBlackOut
+SandgemTownLab_PCEnd:
+    ReleaseAll
+    End
+
+SandgemTownLab_PCBlackOut:
+    BlackOutFromBattle
+    ReleaseAll
     End
 
 SandgemTownLab_ResearchMaterials_Unused:

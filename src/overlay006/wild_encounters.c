@@ -391,11 +391,7 @@ BOOL WildEncounters_TryFishingEncounter(FieldSystem *fieldSystem, enum Encounter
     Pokemon *firstPartyMon = Party_GetPokemonBySlotIndex(party, 0);
     WildEncounters_FieldParams encounterFieldParams;
     InitEncounterFieldParams(fieldSystem, firstPartyMon, NULL, &encounterFieldParams);
-    encounterRate = ModifyEncounterRateWithFieldParams(TRUE, encounterRate, &encounterFieldParams, FieldOverworldState_GetWeather(SaveData_GetFieldOverworldState(fieldSystem->saveData)), firstPartyMon);
-
-    if (LCRNG_RandMod(100) >= encounterRate) {
-        return FALSE;
-    }
+    encounterFieldParams.ignoreAbilityBlock = TRUE;
 
     BOOL safariGameActive = SystemFlag_CheckSafariGameActive(SaveData_GetVarsFlags(fieldSystem->saveData));
 
@@ -821,27 +817,27 @@ static u8 GetGroundEncounterSlot(void)
 {
     u8 roll = LCRNG_RandMod(100);
 
-    if (roll < 20) {
+    if (roll < 12) {
         return 0;
-    } else if (roll >= 20 && roll < 40) {
+    } else if (roll < 23) {
         return 1;
-    } else if (roll >= 40 && roll < 50) {
+    } else if (roll < 33) {
         return 2;
-    } else if (roll >= 50 && roll < 60) {
+    } else if (roll < 43) {
         return 3;
-    } else if (roll >= 60 && roll < 70) {
+    } else if (roll < 52) {
         return 4;
-    } else if (roll >= 70 && roll < 80) {
+    } else if (roll < 61) {
         return 5;
-    } else if (roll >= 80 && roll < 85) {
+    } else if (roll < 69) {
         return 6;
-    } else if (roll >= 85 && roll < 90) {
+    } else if (roll < 76) {
         return 7;
-    } else if (roll >= 90 && roll < 94) {
+    } else if (roll < 83) {
         return 8;
-    } else if (roll >= 94 && roll < 98) {
+    } else if (roll < 89) {
         return 9;
-    } else if (roll == 98) {
+    } else if (roll < 95) {
         return 10;
     }
 
@@ -852,13 +848,13 @@ static u8 GetWaterEncounterSlot(void)
 {
     u8 roll = LCRNG_RandMod(100);
 
-    if (roll < 60) {
+    if (roll < 40) {
         return 0;
-    } else if (roll >= 60 && roll < 90) {
+    } else if (roll >= 40 && roll < 60) {
         return 1;
-    } else if (roll >= 90 && roll < 95) {
+    } else if (roll >= 60 && roll < 80) {
         return 2;
-    } else if (roll >= 95 && roll < 99) {
+    } else if (roll >= 80 && roll < 90) {
         return 3;
     }
 
@@ -873,13 +869,13 @@ static u8 GetRodEncounterSlot(const int fishingRodType)
 
     switch (fishingRodType) {
     case FISHING_TYPE_OLD_ROD:
-        if (roll < 60) {
+        if (roll < 40) {
             encSlot = 0;
-        } else if (roll < 90) {
+        } else if (roll < 60) {
             encSlot = 1;
-        } else if (roll < 95) {
+        } else if (roll < 85) {
             encSlot = 2;
-        } else if (roll < 99) {
+        } else if (roll < 90) {
             encSlot = 3;
         } else {
             encSlot = 4;
@@ -888,11 +884,11 @@ static u8 GetRodEncounterSlot(const int fishingRodType)
     case FISHING_TYPE_GOOD_ROD:
         if (roll < 40) {
             encSlot = 0;
-        } else if (roll < 80) {
+        } else if (roll < 60) {
             encSlot = 1;
-        } else if (roll < 95) {
+        } else if (roll < 80) {
             encSlot = 2;
-        } else if (roll < 99) {
+        } else if (roll < 90) {
             encSlot = 3;
         } else {
             encSlot = 4;
@@ -901,11 +897,11 @@ static u8 GetRodEncounterSlot(const int fishingRodType)
     case FISHING_TYPE_SUPER_ROD:
         if (roll < 40) {
             encSlot = 0;
-        } else if (roll < 80) {
+        } else if (roll < 60) {
             encSlot = 1;
-        } else if (roll < 95) {
+        } else if (roll < 85) {
             encSlot = 2;
-        } else if (roll < 99) {
+        } else if (roll < 90) {
             encSlot = 3;
         } else {
             encSlot = 4;
