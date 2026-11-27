@@ -181,6 +181,8 @@ static void TryLoadingSave(int unused, SaveData *saveData)
 static void StartNewSave(int unused, SaveData *saveData)
 {
     SaveData_Clear(saveData);
+    // Apply the default Button Mode now; otherwise it only applies after loading a save.
+    Options_SetSystemButtonMode(saveData, OPTIONS_BUTTON_MODE_NORMAL);
     InitPlayerStartLocation(saveData);
     TrainerInfo_SetMoney(SaveData_GetTrainerInfo(saveData), 3000);
     SystemFlag_SetBagAcquired(SaveData_GetVarsFlags(saveData));

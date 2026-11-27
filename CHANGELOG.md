@@ -9,6 +9,18 @@ This project is based on the [pret/pokeplatinum](https://github.com/pret/pokepla
 decompilation (upstream commit `485c400f9`). Only changes made on top of upstream
 are listed here.
 
+## [0.2.0]
+
+### Added
+
+### Updated
+
+- Battle Style Option is now SET by default.
+- Button Mode is now L=A by default.
+- Text Speed is now Fast by default.
+
+### Removed
+
 ## [0.1.0]
 
 ### Added
