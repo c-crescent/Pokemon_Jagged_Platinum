@@ -36,7 +36,7 @@
 #define LEVEL_CAP_ENABLED TRUE
 
 // Cap before any rule below is met (Roark's strongest Pokemon).
-#define LEVEL_CAP_START 14
+#define LEVEL_CAP_START 17
 
 // The cap is removed once this flag is set. Use 0 to never remove it.
 #define LEVEL_CAP_REMOVED_FLAG FLAG_DEFEATED_TRAINER_CHAMPION_CYNTHIA_REMATCH
@@ -59,28 +59,28 @@ typedef struct LevelCapRule {
 
 static const LevelCapRule sLevelCapRules[] = {
     // Gyms
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_COAL, 22 }, // Next: Gardenia
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_FOREST, 26 }, // Next: Fantina
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_RELIC, 32 }, // Next: Maylene
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_COBBLE, 37 }, // Next: Crasher Wake
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_FEN, 41 }, // Next: Byron
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_MINE, 44 }, // Next: Candice
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_ICICLE, 50 }, // Next: Volkner
-    { LEVEL_CAP_REQ_BADGE, BADGE_ID_BEACON, 53 }, // Next: Aaron
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_COAL, 24 }, // Next: Gardenia
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_FOREST, 31 }, // Next: Fantina
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_RELIC, 36 }, // Next: Maylene
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_COBBLE, 42 }, // Next: Crasher Wake
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_FEN, 48 }, // Next: Byron
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_MINE, 53 }, // Next: Candice
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_ICICLE, 58 }, // Next: Volkner
+    { LEVEL_CAP_REQ_BADGE, BADGE_ID_BEACON, 65 }, // Next: Aaron
 
     // Elite Four, first time. The League scripts set these trainer flags on a
     // win, and they are never cleared.
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_AARON, 55 }, // Next: Bertha
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_BERTHA, 57 }, // Next: Flint
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_FLINT, 59 }, // Next: Lucian
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_LUCIAN, 62 }, // Next: Cynthia
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_AARON, 65 }, // Next: Bertha
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_BERTHA, 65 }, // Next: Flint
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_FLINT, 65 }, // Next: Lucian
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_LUCIAN, 65 }, // Next: Cynthia
 
     // Elite Four rematches (after Charon is arrested at Stark Mountain).
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_CHAMPION_CYNTHIA, 69 }, // Next: Aaron (rematch)
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_AARON_REMATCH, 71 }, // Next: Bertha (rematch)
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_BERTHA_REMATCH, 73 }, // Next: Flint (rematch)
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_FLINT_REMATCH, 75 }, // Next: Lucian (rematch)
-    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_LUCIAN_REMATCH, 78 }, // Next: Cynthia (rematch)
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_CHAMPION_CYNTHIA, 80 }, // Next: Aaron (rematch)
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_AARON_REMATCH, 80 }, // Next: Bertha (rematch)
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_BERTHA_REMATCH, 80 }, // Next: Flint (rematch)
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_FLINT_REMATCH, 80 }, // Next: Lucian (rematch)
+    { LEVEL_CAP_REQ_FLAG, FLAG_DEFEATED_TRAINER_ELITE_FOUR_LUCIAN_REMATCH, 80 }, // Next: Cynthia (rematch)
 };
 
 // ============================================================================
