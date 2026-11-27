@@ -1061,7 +1061,25 @@ void Pokedex_ObtainNationalDex(Pokedex *pokedexData)
     pokedexData->nationalDexObtained = TRUE;
 }
 
+/**
+ * National Dex features (national mode in the Pokedex, national numbering,
+ * National Dex wild encounters, ...) are available as soon as the Pokedex
+ * itself is obtained.
+ *
+ * Story events that unlock with the National Dex use
+ * Pokedex_IsNationalDexUnlockedByStory instead.
+ */
 BOOL Pokedex_IsNationalDexObtained(const Pokedex *pokedex)
+{
+    CheckPokedexIntegrity(pokedex);
+    return pokedex->nationalDexObtained || pokedex->pokedexObtained;
+}
+
+/**
+ * TRUE once Prof. Oak has upgraded the Pokedex in the story. Postgame areas
+ * and events are gated on this.
+ */
+BOOL Pokedex_IsNationalDexUnlockedByStory(const Pokedex *pokedex)
 {
     CheckPokedexIntegrity(pokedex);
     return pokedex->nationalDexObtained;

@@ -232,8 +232,8 @@ SandgemTownLab_RecordDataOnAllPokemon:
     PlayMusic SEQ_OPENING_sseq_1
     Message SandgemTownLab_Text_SomethingIWantYouToDo
     Message SandgemTownLab_Text_RecordDataOnAllPokemon
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_NO, SandgemTownLab_LetMeAskYouAgain
+    // No Yes/No menu: the player always accepts the Pokedex.
+    WaitABPress
     GoTo SandgemTownLab_ObtainPokedex
     End
 

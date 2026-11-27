@@ -984,7 +984,7 @@ static enum ItemUseCheckResult CanUseAzureFlute(const ItemUseContext *usageConte
         return ITEM_USE_CANNOT_USE_GENERIC;
     }
 
-    if (Pokedex_IsNationalDexObtained(SaveData_GetPokedex(usageContext->fieldSystem->saveData)) == FALSE) {
+    if (Pokedex_IsNationalDexUnlockedByStory(SaveData_GetPokedex(usageContext->fieldSystem->saveData)) == FALSE) {
         return ITEM_USE_CANNOT_USE_GENERIC;
     }
 

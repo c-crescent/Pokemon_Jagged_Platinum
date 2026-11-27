@@ -386,7 +386,7 @@ static void DetectGBAGame(MainMenuAppData *appData)
 
     SetGBACartridgeVersion(gbaVersion);
 
-    if (Pokedex_IsNationalDexObtained(appData->pokedex) == FALSE) {
+    if (Pokedex_IsNationalDexUnlockedByStory(appData->pokedex) == FALSE) {
         return;
     }
 

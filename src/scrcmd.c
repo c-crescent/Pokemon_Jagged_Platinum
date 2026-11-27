@@ -5474,7 +5474,7 @@ static BOOL ScrCmd_GetSetNationalDexEnabled(ScriptContext *ctx)
         Pokedex_ObtainNationalDex(SaveData_GetPokedex(ctx->fieldSystem->saveData));
         TrainerInfo_GiveNationalDex(SaveData_GetTrainerInfo(ctx->fieldSystem->saveData));
     } else if (getOrSet == 2) { // Get
-        *destVar = Pokedex_IsNationalDexObtained(SaveData_GetPokedex(ctx->fieldSystem->saveData));
+        *destVar = Pokedex_IsNationalDexUnlockedByStory(SaveData_GetPokedex(ctx->fieldSystem->saveData));
     } else {
         GF_ASSERT(FALSE);
     }

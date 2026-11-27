@@ -482,9 +482,35 @@ SandgemTown_CounterpartWillShowYouAround:
     ApplyMovement LOCALID_PLAYER, SandgemTown_Movement_PlayerFaceCounterpartSouth
     ApplyMovement LOCALID_COUNTERPART, SandgemTown_Movement_CounterpartWalkNorthToPlayer
     WaitMovement
+    // Skip the tour of the Pokemon Center and Poke Mart: go straight to
+    // the counterpart's parting advice.
     GetPlayerGender VAR_RESULT
-    GoToIfEq VAR_RESULT, GENDER_MALE, SandgemTown_DawnIllActAsYourMentor
-    GoToIfEq VAR_RESULT, GENDER_FEMALE, SandgemTown_LucasShowYouAFewThings
+    GoToIfEq VAR_RESULT, GENDER_MALE, SandgemTown_SkipTourDawnLetYourFamilyKnow
+    GoTo SandgemTown_SkipTourLucasLetYourFamilyKnow
+    End
+
+SandgemTown_SkipTourDawnLetYourFamilyKnow:
+    BufferPlayerName 1
+    Message SandgemTown_Text_DawnLetYourFamilyKnow
+    GoTo SandgemTown_SkipTourCounterpartLeave
+    End
+
+SandgemTown_SkipTourLucasLetYourFamilyKnow:
+    BufferPlayerName 1
+    Message SandgemTown_Text_LucasLetYourFamilyKnow
+    GoTo SandgemTown_SkipTourCounterpartLeave
+    End
+
+SandgemTown_SkipTourCounterpartLeave:
+    CloseMessage
+    FadeScreenOut
+    WaitFadeScreen
+    RemoveObject LOCALID_COUNTERPART
+    FadeScreenIn
+    WaitFadeScreen
+    CallCommonScript CommonScript_FadeToDefaultMusic_3
+    SetVar VAR_SANDGEM_TOWN_STATE, 2
+    ReleaseAll
     End
 
 SandgemTown_DawnIllActAsYourMentor:

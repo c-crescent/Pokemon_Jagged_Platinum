@@ -498,6 +498,22 @@
         "Let’s go home, then.\r",
         "See ya, {STRVAR_1 3, 1, 0}!\r"
       ]
+    },
+    {
+      "id": "Route201_Text_AreYouComingWithMe",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0}: So, are you coming\n",
+        "to the lake with me?"
+      ]
+    },
+    {
+      "id": "Route201_Text_FineIllGoAlone",
+      "en_US": [
+        "{STRVAR_1 3, 0, 0}: What? You’re not coming?\r",
+        "Fine! I’ll catch that legendary\n",
+        "Pokémon all by myself!\r",
+        "See ya, {STRVAR_1 3, 1, 0}!\r"
+      ]
     }
   ]
 }

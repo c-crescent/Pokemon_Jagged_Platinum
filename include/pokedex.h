@@ -72,6 +72,7 @@ void Pokedex_Encounter(Pokedex *pokedex, Pokemon *mon);
 void Pokedex_Capture(Pokedex *pokedex, Pokemon *mon);
 void Pokedex_ObtainNationalDex(Pokedex *pokedex);
 BOOL Pokedex_IsNationalDexObtained(const Pokedex *pokedex);
+BOOL Pokedex_IsNationalDexUnlockedByStory(const Pokedex *pokedex);
 BOOL Pokedex_CanDetectForms(const Pokedex *pokedex);
 void Pokedex_TurnOnFormDetection(Pokedex *pokedex);
 BOOL Pokedex_IsLanguageObtained(const Pokedex *pokedex, u16 species, u32 languageIndex);

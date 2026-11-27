@@ -41,31 +41,19 @@
       "id": "SandgemTown_Text_OhItsYouPlayer",
       "en_US": [
         "{STRVAR_1 3, 0, 0}: What the...\r",
-        "Oh, it’s you, {STRVAR_1 3, 1, 0}!\r",
-        "That old guy... He’s not scary so\n",
-        "much as he is totally out there!\r",
-        "Aww, it doesn’t matter, {STRVAR_1 3, 1, 0}.\n",
-        "I’m out of here. See you later!\r"
+        "Oh, it’s you, {STRVAR_1 3, 1, 0}!\r"
       ]
     },
     {
       "id": "SandgemTown_Text_DawnLetsGoInside",
       "en_US": [
-        "Dawn: Wow, what was that?\r",
-        "Your friend sure seems to be really\n",
-        "impatient.\r",
-        "Well, anyway...\n",
-        "Let’s go inside.\r"
+        "Dawn: Wow, what was that?\r"
       ]
     },
     {
       "id": "SandgemTown_Text_LucasLetsGoIn",
       "en_US": [
-        "Lucas: What was that?!\r",
-        "Your friend always seems to be\n",
-        "in such a rush.\r",
-        "Anyway...\n",
-        "Let’s go in.\r"
+        "Lucas: What was that?!\r"
       ]
     },
     {
@@ -83,16 +71,7 @@
       "id": "SandgemTown_Text_ContainsTheMoveReturn",
       "en_US": [
         "Rowan: That is a Technical Machine.\n",
-        "That one contains the move Return.\r",
-        "Using a Technical Machine, or TM for\n",
-        "short, teaches a move instantly to\f",
-        "a Pokémon.\r",
-        "The move Return gains power the more\n",
-        "friendly your Pokémon is with you.\r",
-        "It’s up to you, of course, if you want\n",
-        "to use that TM or not.\r",
-        "I’ll send you off with the wish that\n",
-        "your journey will be fun.\r"
+        "That one contains the move Return.\r"
       ]
     },
     {

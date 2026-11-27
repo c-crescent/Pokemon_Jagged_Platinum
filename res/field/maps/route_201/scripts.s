@@ -1233,6 +1233,11 @@ Route201_RivalRunToPlayerX113:
     End
 
 Route201_SetRivalPartner:
+    // Let the player choose whether to go to Lake Verity with the rival.
+    BufferRivalName 0
+    Message Route201_Text_AreYouComingWithMe
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_NO, Route201_RivalGoesAlone
     BufferRivalName 0
     Message Route201_Text_NothingToFear
     WaitButton
@@ -1243,6 +1248,28 @@ Route201_SetRivalPartner:
     SetMovementType LOCALID_RIVAL, MOVEMENT_TYPE_FOLLOW_PLAYER
     SetObjectFlagIsPersistent LOCALID_RIVAL, TRUE
     SetFlag FLAG_HIDE_ROUTE_201_RIVAL
+    ReleaseAll
+    End
+
+Route201_RivalGoesAlone:
+    // The rival leaves on his own. The Lake Verity scene with Cyrus is
+    // skipped and the player can go straight on to Sandgem Town.
+    BufferRivalName 0
+    BufferPlayerName 1
+    Message Route201_Text_FineIllGoAlone
+    CloseMessage
+    FadeScreenOut
+    WaitFadeScreen
+    SetFlag FLAG_HIDE_ROUTE_201_RIVAL
+    RemoveObject LOCALID_RIVAL
+    FadeScreenIn
+    WaitFadeScreen
+    // Same end state as after the Lake Verity scene.
+    SetVar VAR_VERITY_LAKEFRONT_STATE, 1
+    SetFlag FLAG_HIDE_LAKE_VERITY_LOW_WATER_CYRUS
+    SetFlag FLAG_HIDE_LAKE_VERITY_LOW_WATER_RIVAL
+    SetVar VAR_FOLLOWER_RIVAL_STATE, 4
+    SetVar VAR_VISITED_LAKE_VERITY_WITH_RIVAL, 1
     ReleaseAll
     End
 
