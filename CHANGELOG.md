@@ -31,6 +31,7 @@ are listed here.
 - Reading the PC in Dawn/Lucas's room in Sandgem Town gives you 999 Rare Candies, and checking the trash can gives you 999 Master Balls.
 - Fishing can no longer fail, but can still be cancelled.
 - In L=A Button Mode, L turboes A and R turboes B.
+- Rare Candies can now be used in multiples at once (respecting level caps).
 
 ### Living Dex Compatability
 
@@ -60,6 +61,8 @@ Simplified all evolution lines and relaced all trade evolutions.
   - evolves to Glaceon if leveled up holding a Never Melt Ice
   - evolves to Umbreon with Dusk Stone
   - evolves to Espeon with Dawn Stone
+
+
 ### Difficulty
 
 - Added a level caps according to various boss battles.

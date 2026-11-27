@@ -121,6 +121,7 @@ typedef struct MenuEvolutionData {
 typedef struct MenuOverwriteMoveData {
     u16 usedItemID;
     u16 levelUpMoveIndex;
+    u8 rareCandyCount;
 } MenuOverwriteMoveData;
 
 typedef struct SaveMenu {
@@ -1028,6 +1029,7 @@ BOOL StartMenu_ExitPartyMenu(FieldTask *fieldTask)
 
         levelUpOverwriteData->usedItemID = ITEM_NONE;
         levelUpOverwriteData->levelUpMoveIndex = (u16)partyMenu->levelUpMoveIndex;
+        levelUpOverwriteData->rareCandyCount = partyMenu->rareCandyCount;
         menu->additionalTaskContext = levelUpOverwriteData;
 
         menu->taskData = summary;
@@ -1492,6 +1494,7 @@ static BOOL StartMenu_ExitSummary(FieldTask *fieldTask)
         } else {
             partyMenu->mode = PARTY_MENU_MODE_LEVEL_MOVE_DONE;
             partyMenu->levelUpMoveIndex = overwriteData->levelUpMoveIndex;
+            partyMenu->rareCandyCount = overwriteData->rareCandyCount;
         }
 
         partyMenu->usedItemID = overwriteData->usedItemID;

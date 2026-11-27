@@ -1006,6 +1006,13 @@
         "The {STRVAR_1 8, 0, 0} cannot be\n",
         "given here.\n"
       ]
+    },
+    {
+      "id": "PartyMenu_Text_UseHowManyRareCandies",
+      "en_US": [
+        "Use how many?\n",
+        "×{STRVAR_1 52, 0, 0}"
+      ]
     }
   ]
 }

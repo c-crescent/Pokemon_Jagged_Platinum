@@ -235,7 +235,8 @@ typedef struct PartyMenu {
     u8 reqLevel;
     int levelUpMoveIndex;
     u16 evoTargetSpecies;
-    u8 padding_3A[2];
+    u8 rareCandyCount; // Rare Candies still to apply, including the current one
+    u8 padding_3B;
     int evoType;
 } PartyMenu;
 
@@ -393,6 +394,8 @@ struct PartyMenuApplication {
     HeightWeightData *heightWeight;
     PartyMenuFormChange *formChanger;
     G3DPipelineBuffers *formChange3DPipeline;
+    s16 rareCandySelection; // Amount on the Rare Candy count dial
+    u16 rareCandySelectionMax;
 };
 
 #endif // POKEPLATINUM_PARTY_MENU_DEFS_H

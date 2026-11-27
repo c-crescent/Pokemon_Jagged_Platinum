@@ -26,6 +26,7 @@
 #include "heap.h"
 #include "item.h"
 #include "item_use_pokemon.h"
+#include "level_cap.h"
 #include "map_header.h"
 #include "menu.h"
 #include "message.h"
@@ -40,6 +41,7 @@
 #include "string_template.h"
 #include "system.h"
 #include "text.h"
+#include "unk_0208C098.h"
 
 #include "res/text/bank/party_menu.h"
 
@@ -49,6 +51,10 @@ static enum PartyMenuState PartyMenuCB_UseItem_Basic(PartyMenuApplication *appli
 static enum PartyMenuState PartyMenuCB_UseItem_SubtractEVs(PartyMenuApplication *application);
 static enum PartyMenuState PartyMenuCB_UseItem_RestoreHP(PartyMenuApplication *application);
 static enum PartyMenuState PartyMenuCB_UseItem_RareCandy(PartyMenuApplication *application);
+static enum PartyMenuState PartyMenuCB_RareCandy_SelectCount(PartyMenuApplication *application);
+static enum PartyMenuState PartyMenuCB_RareCandy_Start(PartyMenuApplication *application);
+static void RareCandy_PrintCount(PartyMenuApplication *application, BOOL drawBox);
+static void RareCandy_SaveStats(PartyMenuApplication *application);
 static enum PartyMenuState PartyMenuCB_TeachMove_ForgetMove(PartyMenuApplication *application);
 static enum PartyMenuState PartyMenuCB_TeachMove_PromptStopTrying(PartyMenuApplication *application);
 static enum PartyMenuState PartyMenuCB_TeachMove_StopTrying(PartyMenuApplication *application);
@@ -353,9 +359,22 @@ void PartyMenu_SetItemUseCallback(PartyMenuApplication *application)
     case ITEMEFFECT_EVOLVE:
         break;
 
-    case ITEMEFFECT_RARE_CANDY:
-        application->callback = PartyMenuCB_UseItem_RareCandy;
-        break;
+    case ITEMEFFECT_RARE_CANDY: {
+        // Up to the level cap, and the first candy has already been taken from the bag.
+        Pokemon *mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
+        u16 levelsToCap = LevelCap_GetCurrent() - Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
+        u16 candies = Bag_GetItemQuantity(application->partyMenu->bag, application->partyMenu->usedItemID, HEAP_ID_PARTY_MENU) + 1;
+
+        application->rareCandySelection = 1;
+        application->rareCandySelectionMax = levelsToCap < candies ? levelsToCap : candies;
+
+        if (application->rareCandySelectionMax > 1) {
+            RareCandy_PrintCount(application, TRUE);
+            application->callback = PartyMenuCB_RareCandy_SelectCount;
+        } else {
+            application->callback = PartyMenuCB_RareCandy_Start;
+        }
+    } break;
 
     case ITEMEFFECT_CURE_SLEEP:
     case ITEMEFFECT_CURE_POISON:
@@ -671,7 +690,59 @@ enum {
     LEVELUP_STATE_CHECK_EVOLUTION,
 };
 
-static enum PartyMenuState PartyMenuCB_UseItem_RareCandy(PartyMenuApplication *application)
+static void RareCandy_PrintCount(PartyMenuApplication *application, BOOL drawBox)
+{
+    String *string = MessageLoader_GetNewString(application->messageLoader, PartyMenu_Text_UseHowManyRareCandies);
+    StringTemplate_SetNumber(application->template, 0, application->rareCandySelection, 2, PADDING_MODE_ZEROES, CHARSET_MODE_EN);
+    StringTemplate_Format(application->template, application->tmpString, string);
+    String_Free(string);
+
+    if (drawBox == TRUE) {
+        PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
+    } else {
+        Window *window = &application->windows[PARTY_MENU_WIN_LONG_MESSAGE];
+        Window_FillTilemap(window, 15);
+        Text_AddPrinterWithParams(window, FONT_MESSAGE, application->tmpString, 0, 0, TEXT_SPEED_INSTANT, NULL);
+    }
+}
+
+static enum PartyMenuState PartyMenuCB_RareCandy_SelectCount(PartyMenuApplication *application)
+{
+    if (Text_IsPrinterActive(application->textPrinterID)) {
+        return PARTY_MENU_STATE_EXEC_CALLBACK;
+    }
+
+    if (sub_0208C15C(&application->rareCandySelection, application->rareCandySelectionMax) != FALSE) {
+        Sound_PlayEffect(SEQ_SE_DP_BAG_004_sseq);
+        RareCandy_PrintCount(application, FALSE);
+    } else if (JOY_NEW(PAD_BUTTON_A)) {
+        Sound_PlayEffect(SE_CONFIRM_sseq_3);
+        return PartyMenuCB_RareCandy_Start(application);
+    } else if (JOY_NEW(PAD_BUTTON_B)) {
+        // Cancelled: give back the candy taken when it was checked.
+        Sound_PlayEffect(SE_CONFIRM_sseq_3);
+        Bag_TryAddItem(application->partyMenu->bag, application->partyMenu->usedItemID, 1, HEAP_ID_PARTY_MENU);
+        application->partyMenu->menuSelectionResult = PARTY_MENU_EXIT_CODE_DONE;
+        return PARTY_MENU_STATE_FADE_OUT;
+    }
+
+    return PARTY_MENU_STATE_EXEC_CALLBACK;
+}
+
+static enum PartyMenuState PartyMenuCB_RareCandy_Start(PartyMenuApplication *application)
+{
+    if (application->rareCandySelection > 1) {
+        Bag_TryRemoveItem(application->partyMenu->bag, application->partyMenu->usedItemID, application->rareCandySelection - 1, HEAP_ID_PARTY_MENU);
+    }
+
+    application->partyMenu->rareCandyCount = application->rareCandySelection;
+    RareCandy_SaveStats(application);
+
+    return PartyMenuCB_UseItem_RareCandy(application);
+}
+
+// Stat increases are shown once, after the last candy, so they add up over every level gained.
+static void RareCandy_SaveStats(PartyMenuApplication *application)
 {
     Pokemon *mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
 
@@ -681,6 +752,11 @@ static enum PartyMenuState PartyMenuCB_UseItem_RareCandy(PartyMenuApplication *a
     application->monStats[STAT_SPEED] = (u16)Pokemon_GetValue(mon, MON_DATA_SP_ATK, NULL);
     application->monStats[STAT_SPECIAL_ATTACK] = (u16)Pokemon_GetValue(mon, MON_DATA_SP_DEF, NULL);
     application->monStats[STAT_SPECIAL_DEFENSE] = (u16)Pokemon_GetValue(mon, MON_DATA_SPEED, NULL);
+}
+
+static enum PartyMenuState PartyMenuCB_UseItem_RareCandy(PartyMenuApplication *application)
+{
+    Pokemon *mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
 
     Party_ApplyItemEffectsToMember(application->partyMenu->party, application->partyMenu->usedItemID, application->currPartySlot, 0, GetCurrentMapLabel(application), HEAP_ID_PARTY_MENU);
 
@@ -726,8 +802,14 @@ static enum PartyMenuState PartyMenuCB_LevelUp(PartyMenuApplication *application
         if (Text_IsPrinterActive(application->textPrinterID) == FALSE) {
             if (JOY_NEW(PAD_BUTTON_A | PAD_BUTTON_B)) {
                 Sound_PlayEffect(SE_CONFIRM_sseq_3);
-                PartyMenu_DrawLevelUpStatIncreases(application);
-                application->callbackState = LEVELUP_STATE_DRAW_STAT_CHANGES;
+
+                if (application->partyMenu->rareCandyCount > 1) {
+                    application->callbackState = LEVELUP_STATE_CHECK_LEARNSET;
+                    application->partyMenu->levelUpMoveIndex = 0;
+                } else {
+                    PartyMenu_DrawLevelUpStatIncreases(application);
+                    application->callbackState = LEVELUP_STATE_DRAW_STAT_CHANGES;
+                }
             }
         }
         break;
@@ -814,6 +896,11 @@ static enum PartyMenuState PartyMenuCB_LevelUp(PartyMenuApplication *application
         break;
 
     case LEVELUP_STATE_CHECK_EVOLUTION:
+        if (application->partyMenu->rareCandyCount > 1) {
+            application->partyMenu->rareCandyCount--;
+            return PartyMenuCB_UseItem_RareCandy(application);
+        }
+
         mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
         u32 mapEvoMethod = MapHeader_GetMapEvolutionMethod(application->partyMenu->fieldSystem->location->mapHeaderID);
         application->partyMenu->evoTargetSpecies = Pokemon_GetEvolutionTargetSpecies(
@@ -834,6 +921,8 @@ static enum PartyMenuState PartyMenuCB_LevelUp(PartyMenuApplication *application
 
 enum PartyMenuState PartyMenuCB_LevelMove_Exit(PartyMenuApplication *application)
 {
+    // The party menu was reopened after the summary screen, so the saved stats are gone.
+    RareCandy_SaveStats(application);
     application->callback = PartyMenuCB_LevelUp;
     application->callbackState = LEVELUP_STATE_CHECK_LEARNSET;
 
