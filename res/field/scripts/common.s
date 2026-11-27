@@ -104,27 +104,9 @@ CommonScript_PokecenterNurse:
     FacePlayer
     GetTrainerCardLevel VAR_RESULT
     GoToIfGe VAR_RESULT, TRAINER_CARD_LEVEL_GOLD, CommonScript_NurseGoldCard
-    SetVar VAR_0x8004, CommonStrings_Text_PokecenterGreeting_Day
-    GetTimeOfDay VAR_RESULT
-    Dummy1F9 VAR_RESULT
-    SetVar VAR_0x8004, CommonStrings_Text_PokecenterGreeting_Morning
-    GoToIfEq VAR_RESULT, TIMEOFDAY_MORNING, CommonScript_NurseGreeting
-    SetVar VAR_0x8004, CommonStrings_Text_PokecenterGreeting_Night
-    GoToIfEq VAR_RESULT, TIMEOFDAY_DAY, CommonScript_NurseGreeting
-    SetVar VAR_0x8004, CommonStrings_Text_PokecenterGreeting_Day
-CommonScript_NurseGreeting:
-    MessageVar VAR_0x8004
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_YES, CommonScript_NurseAcceptHealPokemon
-    GoToIfEq VAR_RESULT, MENU_NO, CommonScript_NurseDeclineHealPokemon
-    End
-
-CommonScript_NurseDeclineHealPokemon:
-    Message CommonStrings_Text_PokecenterHopeToSeeYouAgain1
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    ReturnCommonScript
+    // Heal right away, without the greeting and "Shall we heal?" prompt.
+    SetVar VAR_0x8004, FALSE
+    GoTo CommonScript_NurseAcceptHealPokemon
     End
 
 CommonScript_NurseAcceptHealPokemon:
@@ -166,6 +148,9 @@ CommonScript_NurseFarewellAfterHeal:
     ChangePlayerState
     ApplyMovement VAR_0x8007, CommonScript_Movement_NurseBow
     WaitMovement
+    // Let the healing jingle finish (it overlaps the dialogue above) so the
+    // map music resumes before the nurse's last line.
+    WaitFanfare
     Message CommonStrings_Text_PokecenterHopeToSeeYouAgain1
     WaitButton
     CloseMessage
@@ -181,6 +166,9 @@ CommonScript_NurseFarewellAfterHealGoldCard:
     ChangePlayerState
     ApplyMovement VAR_0x8007, CommonScript_Movement_NurseBow
     WaitMovement
+    // Let the healing jingle finish (it overlaps the dialogue above) so the
+    // map music resumes before the nurse's last line.
+    WaitFanfare
     Message CommonStrings_Text_PokecenterHopeToSeeYouAgain2
     WaitButton
     CloseMessage
@@ -199,6 +187,9 @@ CommonScript_NurseIdentifiedPokerus:
     WaitMovement
     SetPlayerState PLAYER_TRANSITION_WALKING
     ChangePlayerState
+    // Let the healing jingle finish (it overlaps the dialogue above) so the
+    // map music resumes before the nurse's last line.
+    WaitFanfare
     Message CommonStrings_Text_PokecenterPokemonMayBeInfected
     WaitButton
     CloseMessage
@@ -207,30 +198,9 @@ CommonScript_NurseIdentifiedPokerus:
     End
 
 CommonScript_NurseGoldCard:
-    GoToIfSet FLAG_POKECENTER_GOLD_TRAINER_CARD_SEEN, CommonScript_NurseGoldCardPreviouslySeen
+    // Heal right away, without the Gold Card greeting and prompt.
     SetFlag FLAG_POKECENTER_GOLD_TRAINER_CARD_SEEN
-    Message CommonStrings_Text_PokecenterGreeting_Interrupted
-    BufferPlayerName 0
-    Message CommonStrings_Text_PokecenterThatTrainerCard
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_YES, CommonScript_NurseAcceptHealPokemonGoldCard
-    Message CommonStrings_Text_PokecenterHopeToSeeYouAgain2
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    ReturnCommonScript
-    End
-
-CommonScript_NurseGoldCardPreviouslySeen:
-    BufferPlayerName 0
-    Message CommonStrings_Text_PokecenterGreatToSeeYou
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_YES, CommonScript_NurseAcceptHealPokemonGoldCard
-    Message CommonStrings_Text_PokecenterHopeToSeeYouAgain2
-    WaitButton
-    CloseMessage
-    ReleaseAll
-    ReturnCommonScript
+    GoTo CommonScript_NurseAcceptHealPokemonGoldCard
     End
 
 CommonScript_NurseAcceptHealPokemonGoldCard:

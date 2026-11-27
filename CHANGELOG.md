@@ -27,3 +27,4 @@ are listed here.
 - All text now prints 3x faster at every text speed setting (Slow, Mid and Fast), including battle text and while A/B is held to speed text up.
 - Saving from the Start menu no longer asks for confirmation. The "saved the game" message no longer waits for the save jingle to finish.
 - Writing the save to the cartridge is faster: only the parts of the save that changed since the last save are rewritten, instead of the whole file. 
+- Pokémon Center healing is faster and takes the same time regardless of party size.

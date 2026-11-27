@@ -29,6 +29,10 @@ typedef struct PokecenterHealingAnimation {
 
 static BOOL FieldTask_PlayHealingAnimation_Pokecenter(FieldTask *param0);
 
+// Short pause between all Poké Balls appearing and the healing flash, so the
+// balls are visible before the jingle starts. Independent of party size.
+#define POKECENTER_HEALING_POKEBALLS_SHOWN_TICKS 8
+
 static VecFx32 PokecenterHealingAnimation_PokeballOffsets[MAX_PARTY_SIZE] = {
     HEALING_MACHINE_ANIMATION_CREATE_POKEBALL_OFFSETS(TOP, LEFT),
     HEALING_MACHINE_ANIMATION_CREATE_POKEBALL_OFFSETS(TOP, RIGHT),
@@ -98,41 +102,37 @@ static BOOL FieldTask_PlayHealingAnimation_Pokecenter(FieldTask *param0)
         break;
     }
     case HEALING_MACHINE_ANIMATION_STATE_ADD_POKEBALL: {
+        // Place every Poké Ball on the machine at once instead of one at a time.
         MapProp *pokeballMapProp;
         NNSG3dRenderObj *pokeballRenderObj;
         VecFx32 pokeballPosition;
         VecFx32 pokeballRotation = { 0, 0, 0 };
+        u8 i;
 
-        pokeballPosition.x = animation->position.x + PokecenterHealingAnimation_PokeballOffsets[animation->currentPokeballIndex].x;
-        pokeballPosition.y = animation->position.y + PokecenterHealingAnimation_PokeballOffsets[animation->currentPokeballIndex].y;
-        pokeballPosition.z = animation->position.z + PokecenterHealingAnimation_PokeballOffsets[animation->currentPokeballIndex].z;
+        for (i = 0; i < animation->pokeballCount; i++) {
+            pokeballPosition.x = animation->position.x + PokecenterHealingAnimation_PokeballOffsets[i].x;
+            pokeballPosition.y = animation->position.y + PokecenterHealingAnimation_PokeballOffsets[i].y;
+            pokeballPosition.z = animation->position.z + PokecenterHealingAnimation_PokeballOffsets[i].z;
+
+            animation->pokeballLoadedPropIDs[i] = MapPropManager_LoadOne(fieldSystem->mapPropManager, fieldSystem->areaDataManager, pokecenter_healing_machine_mini_pokeball_nsbmd, &pokeballPosition, &pokeballRotation, fieldSystem->mapPropAnimMan);
+
+            pokeballMapProp = MapPropManager_GetLoadedPropSafely(fieldSystem->mapPropManager, animation->pokeballLoadedPropIDs[i]);
+            pokeballRenderObj = MapProp_GetRenderObj(pokeballMapProp);
+            MapPropOneShotAnimationManager_SetAnimationRenderObj(fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_POKEBALL_TAG, i, pokeballRenderObj);
+        }
 
         Sound_PlayEffect(SEQ_SE_DP_BOWA_sseq);
-
-        animation->pokeballLoadedPropIDs[animation->currentPokeballIndex] = MapPropManager_LoadOne(fieldSystem->mapPropManager, fieldSystem->areaDataManager, pokecenter_healing_machine_mini_pokeball_nsbmd, &pokeballPosition, &pokeballRotation, fieldSystem->mapPropAnimMan);
-
-        pokeballMapProp = MapPropManager_GetLoadedPropSafely(fieldSystem->mapPropManager, animation->pokeballLoadedPropIDs[animation->currentPokeballIndex]);
-        pokeballRenderObj = MapProp_GetRenderObj(pokeballMapProp);
-        MapPropOneShotAnimationManager_SetAnimationRenderObj(fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_POKEBALL_TAG, animation->currentPokeballIndex, pokeballRenderObj);
         (animation->state)++;
         break;
     }
     case HEALING_MACHINE_ANIMATION_STATE_WAIT_FOR_POKEBALL:
-        if (animation->pokeballTicks < HEALING_MACHINE_ANIMATION_POKEBALL_MAX_TICKS) {
+        if (animation->pokeballTicks < POKECENTER_HEALING_POKEBALLS_SHOWN_TICKS) {
             animation->pokeballTicks++;
             break;
-        } else {
-            animation->pokeballTicks = 0;
         }
 
-        animation->currentPokeballIndex++;
-
-        if (animation->currentPokeballIndex < animation->pokeballCount) {
-            (animation->state) = HEALING_MACHINE_ANIMATION_STATE_ADD_POKEBALL;
-        } else {
-            (animation->state)++;
-        }
-
+        animation->pokeballTicks = 0;
+        (animation->state)++;
         break;
     case HEALING_MACHINE_ANIMATION_STATE_PLAY_FINAL_ANIMATION:
         MapPropOneShotAnimationManager_PlayAnimation(fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_POKEBALL_TAG, 0);
@@ -141,7 +141,10 @@ static BOOL FieldTask_PlayHealingAnimation_Pokecenter(FieldTask *param0)
         (animation->state)++;
         break;
     case HEALING_MACHINE_ANIMATION_STATE_WAIT_FOR_FINAL_ANIMATION:
-        if ((MapPropOneShotAnimationManager_IsAnimationLoopFinished(fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_POKEBALL_TAG)) && (MapPropOneShotAnimationManager_IsAnimationLoopFinished(fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_SCREEN_TAG)) && (Sound_IsBGMPausedByFanfare() == FALSE)) {
+        if ((MapPropOneShotAnimationManager_IsAnimationLoopFinished(fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_POKEBALL_TAG)) && (MapPropOneShotAnimationManager_IsAnimationLoopFinished(fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_SCREEN_TAG))) {
+            // The healing jingle is not waited for here; it keeps playing while
+            // the nurse talks, and the nurse script waits for it (WaitFanfare)
+            // before releasing the player so the map music resumes properly.
             u8 pokeballIndex;
 
             MapPropOneShotAnimationManager_UnloadAnimation(fieldSystem->mapPropAnimMan, fieldSystem->mapPropOneShotAnimMan, HEALING_MACHINE_ANIMATION_SCREEN_TAG);
