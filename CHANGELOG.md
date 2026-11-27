@@ -13,13 +13,7 @@ are listed here.
 
 ### Quality of Life
 
-- The game now boots directly past the opening cutscene and the title screen
-  ("Press Start"). On boot, the save-integrity check runs and then the main menu
-  opens:
-  - With no save file, the game goes straight into the new-game intro
-    (Professor Rowan).
-  - With an existing save file, the Continue / New Game menu is shown.
-  - Save-corruption warnings are still displayed as before.
+- The game now boots directly past the opening cutscene and the title screen.
   - The clear-save-data shortcut (hold **B + Up + Select**) now works when held at
   boot, because the title screen that used to read it is no longer shown.
   - Soft reset (**L + R + Start + Select**) follows the same boot path and also
@@ -35,6 +29,7 @@ are listed here.
 - The Pokédex has National Dex features from the start. Postgame content still unlocks when Prof. Oak upgrades your Pokédex.
 - The catching tutorial on Route 202 is now optional, and Dawn/Lucas gives you 10 Poké Balls instead of 5.
 - Reading the PC in Dawn/Lucas's room in Sandgem Town gives you 999 Rare Candies, and checking the trash can gives you 999 Master Balls.
+- Fishing can no longer fail, but can still be cancelled.
 
 
 ### Living Dex Compatability
