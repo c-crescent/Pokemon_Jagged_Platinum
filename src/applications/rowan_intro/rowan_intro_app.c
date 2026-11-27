@@ -2042,7 +2042,7 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         break;
     case RI_STATE_FIRST_FADE_BLACK_END:
         if (IsScreenFadeDone() == TRUE) {
-            if (RowanIntro_Delay(manager, 40) == TRUE) {
+            if (RowanIntro_Delay(manager, 10) == TRUE) {
                 manager->state = RI_STATE_DIALOGUE_WELCOME;
             }
         }
@@ -2079,7 +2079,11 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         break;
     case RI_STATE_DIALOGUE_ROWAN_INTRO:
         if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_MyNameRowan, TRUE) == TRUE) {
-            manager->state = RI_STATE_MOVE_ROWAN_RIGHT_FOR_INFO;
+            // Skip the info menu and the Poke Ball demonstration and go
+            // straight to choosing the player character. The demonstration
+            // normally leaves BG2 at priority 1, which the avatar fade-in relies on.
+            RowanIntro_SetBunearyLayerPriority(manager);
+            manager->state = RI_STATE_GENDR_FADE_OUT_ROWAN;
         }
         break;
     case RI_STATE_MOVE_ROWAN_RIGHT_FOR_INFO:
@@ -2598,7 +2602,7 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         break;
     case RI_STATE_GENDR_DIALOGUE:
         if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_GenderDialogue, TRUE) == TRUE) {
-            manager->playerGender = GENDER_MALE;
+            manager->playerGender = GENDER_FEMALE; // girl (left) is selected by default
             manager->state = RI_STATE_GENDR_CHOICE;
         }
         break;
@@ -2935,7 +2939,7 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         }
         break;
     case RI_STATE_DELAY_BEFORE_END_0:
-        if (RowanIntro_Delay(manager, 30) == TRUE) {
+        if (RowanIntro_Delay(manager, 10) == TRUE) {
             manager->state = RI_STATE_DIALOGUE_END;
         }
         break;
@@ -2954,7 +2958,7 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         }
         break;
     case RI_STATE_DELAY_BEFORE_END_1:
-        if (RowanIntro_Delay(manager, 30) == TRUE) {
+        if (RowanIntro_Delay(manager, 10) == TRUE) {
             manager->state = RI_STATE_LOAD_MINI_AVATAR;
         }
         break;
@@ -2978,7 +2982,7 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         }
         break;
     case RI_STATE_DELAY_BEFORE_END_2:
-        if (RowanIntro_Delay(manager, 30) == TRUE) {
+        if (RowanIntro_Delay(manager, 10) == TRUE) {
             manager->state = RI_STATE_AVATAR_SHRINK_ANIMATION;
         }
         break;
@@ -2988,10 +2992,8 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         }
         break;
     case RI_STATE_END:
-        manager->appMan = ApplicationManager_New(
-            &sTvApplicationTemplate,
-            NULL,
-            manager->heapID);
+        // The TV scene that used to follow is skipped; the game starts in the
+        // player's room right away.
         manager->state = RI_STATE_EXIT;
         break;
     case RI_STATE_EXIT:

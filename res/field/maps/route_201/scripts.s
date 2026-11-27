@@ -143,9 +143,9 @@ Route201_GoIntoTallGrass:
     ApplyMovement LOCALID_PROF_ROWAN, Route201_Movement_ProfRowanWalkBack
     WaitMovement
     Message Route201_Text_YouLovePokemonDoYou
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_YES, Route201_WeLovePokemon
-    GoToIfEq VAR_RESULT, MENU_NO, Route201_WeDontLovePokemon
+    // No Yes/No menu: the answer is always yes.
+    WaitABPress
+    GoTo Route201_WeLovePokemon
     End
 
 Route201_WeDontLovePokemon:
@@ -182,9 +182,9 @@ Route201_TheAnswerWillNeverChangeRight:
     WaitMovement
     BufferPlayerName 1
     Message Route201_Text_RightPlayer
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_YES, Route201_WeStillLovePokemon
-    GoToIfEq VAR_RESULT, MENU_NO, Route201_ThatJokesGettingOld
+    // No Yes/No menu: the answer is always yes.
+    WaitABPress
+    GoTo Route201_WeStillLovePokemon
     End
 
 Route201_ThatJokesGettingOld:
@@ -411,9 +411,13 @@ Route201_EndChooseStarterSequenceAndWarpHome:
     End
 
 Route201_DontBeThatWay:
+    // Declining skips the battle and continues as if the player had won.
+    // No battle takes place, so no experience or prize money is awarded.
+    LockObject LOCALID_RIVAL
     BufferRivalName 0
-    Message Route201_Text_DontBeThatWay
-    GoTo Route201_AskUpForABattle
+    BufferPlayerName 1
+    Message Route201_Text_BattleSomeOtherTimeLetsGoHome
+    GoTo Route201_EndChooseStarterSequenceAndWarpHome
     End
 
     .balign 4, 0

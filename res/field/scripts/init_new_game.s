@@ -21,7 +21,20 @@ InitNewGame:
     SetFlag FLAG_HIDE_LAKE_ACUITY_JUPITER
     SetFlag FLAG_HIDE_TWINLEAF_TOWN_RIVAL
     SetFlag FLAG_HIDE_TWINLEAF_TOWN_PLAYER_HOUSE_1F_RIVAL_MOM
-    SetVar VAR_TWINLEAF_TOWN_GUITARIST_TRIGGER_STATE, 1
+    // Skip the opening rival errands so the player can head straight to
+    // Route 201, where the starter Pokemon scene begins:
+    // - rival bursting into the player's room
+    SetVar VAR_PLAYER_HOUSE_RIVAL_STATE, 1
+    // - Mom saying the rival already left, and her warning at the front door
+    SetFlag FLAG_TALKED_TO_MOM
+    SetVar VAR_PLAYER_HOUSE_STATE, 2
+    // - rival bumping into the player outside his house
+    SetVar VAR_TWINLEAF_TOWN_RIVAL_TRIGGER_STATE, 1
+    // - guitarist blocking the exit, and the rival in his room
+    SetVar VAR_TWINLEAF_TOWN_GUITARIST_TRIGGER_STATE, 2
+    SetVar VAR_RIVAL_HOUSE_STATE, 1
+    SetFlag FLAG_RIVAL_LEFT_HOME
+    SetFlag FLAG_HIDE_TWINLEAF_TOWN_RIVAL_HOUSE_2F_RIVAL
     SetFlag FLAG_HIDE_SANDGEM_TOWN_RIVAL
     SetFlag FLAG_HIDE_SANDGEM_TOWN_PROF_ROWAN
     SetFlag FLAG_HIDE_SANDGEM_TOWN_LAB_PROF_OAK

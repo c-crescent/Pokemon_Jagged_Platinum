@@ -31,3 +31,4 @@ are listed here.
 - HM Moves can be deleted normally.
 - TMs are now reuseable.
 - Running is now the default once you have the Running Shoes. Hold **B** to walk instead.
+- The new-game introduction is much shorter. You can now skip the first battle with the rival.

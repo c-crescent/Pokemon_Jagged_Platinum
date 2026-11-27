@@ -106,7 +106,7 @@ BOOL RowanIntroTv_Main(ApplicationManager *appMan, enum RowanIntroTvAppState *st
             GX_LoadBGPltt((const void *)paletteAddress, 0, 16 * 0x20);
         }
 
-        tv->delayUpdateCounter = 2 * 30;
+        tv->delayUpdateCounter = 10;
         *state = RIT_APP_STATE_WAIT_AND_START_BGM;
         break;
     case RIT_APP_STATE_WAIT_AND_START_BGM:
@@ -116,7 +116,7 @@ BOOL RowanIntroTv_Main(ApplicationManager *appMan, enum RowanIntroTvAppState *st
             Sound_SetFieldBGM(SEQ_TV_HOUSOU_sseq);
             Sound_SetSceneAndPlayBGM(SOUND_SCENE_FIELD, SEQ_TV_HOUSOU_sseq, 1);
 
-            tv->delayUpdateCounter = 3 * 30;
+            tv->delayUpdateCounter = 30;
             *state = RIT_APP_STATE_WAIT_AND_START_FADE_IN;
         }
         break;
@@ -457,7 +457,7 @@ static BOOL RowanIntroTv_Run(RowanIntroTv *tv, int msgEntryID, int unused0, int 
         String_Free(tmpString);
         Window_CopyToVRAM(&tv->window);
         Bg_ToggleLayer(BG_LAYER_MAIN_2, TRUE);
-        tv->delayUpdateCounter = 240;
+        tv->delayUpdateCounter = 30;
         tv->state = RIT_STATE_WAIT_BEFORE_INPUT;
         break;
     case RIT_STATE_WAIT_BEFORE_INPUT:

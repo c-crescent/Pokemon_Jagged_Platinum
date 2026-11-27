@@ -465,6 +465,9 @@ static BOOL FieldTask_LoadNewGameSpawn(FieldTask *task)
         FieldMapChange_InitTerrainCollisionManager(fieldSystem);
         FieldMapChange_UpdateGameData(fieldSystem, 0);
         FieldMapChange_CreateObjects(fieldSystem);
+        // The intro TV scene, which used to start the music, is skipped, so
+        // start the map's own music here.
+        FieldBGM_PlayForMapHeader(fieldSystem, fieldSystem->location->mapHeaderID);
         (*state)++;
         break;
     case 1:

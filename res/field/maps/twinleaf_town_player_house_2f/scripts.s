@@ -16,7 +16,9 @@
     ScriptEntryEnd
 
 TwinleafTownPlayerHouse2F_OnTransition:
-    GoToIfEq VAR_PLAYER_HOUSE_SPECIAL_PROGRAM_STATE, 0, TwinleafTownPlayerHouse2F_SetVolumeForTV
+    // The intro TV scene and the "special program" ending are skipped, so the
+    // player has control as soon as the game starts.
+    SetVar VAR_PLAYER_HOUSE_SPECIAL_PROGRAM_STATE, 1
     End
 
 TwinleafTownPlayerHouse2F_SetVolumeForTV:
