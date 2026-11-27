@@ -101,7 +101,12 @@
     },
     "evolutions": [
         [
-            "EVO_TRADE_WITH_HELD_ITEM",
+            "EVO_LEVEL_WITH_HELD_ITEM_DAY",
+            "ITEM_DUBIOUS_DISC",
+            "SPECIES_PORYGON_Z"
+        ],
+        [
+            "EVO_LEVEL_WITH_HELD_ITEM_NIGHT",
             "ITEM_DUBIOUS_DISC",
             "SPECIES_PORYGON_Z"
         ]

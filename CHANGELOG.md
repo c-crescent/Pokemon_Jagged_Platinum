@@ -36,3 +36,27 @@ are listed here.
 
 - After entering the Hall of Fame, the player can encounter an infinite number of clones of the Pokémon in the lead slot in Sandgem Town Lab.
 - All Land / Surfing / Rod encounter slots normalised to scale down linearly to a minimum of 5%.
+
+#### Evolutions
+
+Simplified all evolution lines and relaced all trade evolutions.
+
+- Most baby Pokemon (Azurill, Bonsly, Budew, Happiny, Chingling, Cleffa, Igglybuff, Mime Jr., Munchlax, Pichu, Togepi) now evolve at 10.
+- Nosepass, Piloswine, Sneasel, Gligar, and Magneton now evolve at 36.
+- Tangela and Yanma now evolve at 33.
+- Golbat now evolves at 30.
+- Aipom now evolves at 28.
+- Buneary, Riolu, and Munchlax now evolve at 20.
+- Chansey now evolves at 42.
+- All trade evolutions with held items (Politoed, Slowking, Steelix, Rhyperior, Kindra, Scizor, Electivire, Magmortar, Porygon 2, Porgyon-Z, Dusknoir, Huntail, Gorebyss) now evolve when leveling up with their specific item held.
+- Feebas now evolves at 20.
+- Graveler now evolves at 36.
+- Lickitung now evolves at 38.
+- Machoke now evolves at 40.
+- Kadabra now evolves at 42.
+- Haunter now evolves at 44.
+- Eevee
+  - evolves to Leafeon with Leaf Stone
+  - evolves to Glaceon if leveled up holding a Never Melt Ice
+  - evolves to Umbreon with Dusk Stone
+  - evolves to Espeon with Dawn Stone
