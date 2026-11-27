@@ -30,6 +30,7 @@ are listed here.
 - The catching tutorial on Route 202 is now optional, and Dawn/Lucas gives you 10 Poké Balls instead of 5.
 - Reading the PC in Dawn/Lucas's room in Sandgem Town gives you 999 Rare Candies, and checking the trash can gives you 999 Master Balls.
 - Fishing can no longer fail, but can still be cancelled.
+- In L=A Button Mode, L turboes A and R turboes B.
 
 
 ### Living Dex Compatability
