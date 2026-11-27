@@ -60,6 +60,12 @@ static Application sApplication;
 static PMBackLightSwitch sSavedBacklightState;
 BOOL gIgnoreCartridgeForWake;
 extern const ApplicationManagerTemplate gOpeningCutsceneAppTemplate;
+// Save-integrity check app; enqueues the main menu when done (normally reached from the title screen).
+extern const ApplicationManagerTemplate Unk_020F8AB4;
+// Clear-save-data app (normally reached by holding B + Up + Select on the title screen).
+extern const ApplicationManagerTemplate Unk_020F8A48;
+
+#define CLEAR_SAVE_COMBO (PAD_BUTTON_B | PAD_KEY_UP | PAD_BUTTON_SELECT)
 
 void NitroMain(void)
 {
@@ -94,7 +100,15 @@ void NitroMain(void)
         switch (OS_GetResetParameter()) {
         case RESET_CLEAN:
             sApplication.args.error = FALSE;
-            EnqueueApplication(FS_OVERLAY_ID(game_opening), &gOpeningCutsceneAppTemplate);
+
+            // Skip the opening cutscene and title screen. Go straight to the
+            // save check -> main menu, which starts a new game when no save
+            // exists and shows the Continue menu otherwise.
+            if ((PAD_Read() & CLEAR_SAVE_COMBO) == CLEAR_SAVE_COMBO) {
+                EnqueueApplication(FS_OVERLAY_ID_NONE, &Unk_020F8A48);
+            } else {
+                EnqueueApplication(FS_OVERLAY_ID_NONE, &Unk_020F8AB4);
+            }
             break;
 
         case RESET_ERROR:
