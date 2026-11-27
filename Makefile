@@ -93,7 +93,7 @@ LSFGEN := tools/scripts/lsfgen.py
 LSFGEN_OUT := platinum.us/main.lsf src/meson.build
 
 # Modders can delete the `check` dependency here after their first build.
-all: release check
+all: release
 
 .NOTPARALLEL: release
 release: setup_release rom

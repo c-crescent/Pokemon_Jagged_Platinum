@@ -272,7 +272,7 @@ enum RenderResult RenderText(TextPrinter *printer)
     return RENDER_FINISH;
 }
 
-// Jagged Platinum: TRUE while the printer is emitting characters, as opposed to
+// TRUE while the printer is emitting characters, as opposed to
 // waiting for input, scrolling, clearing or running a scripted pause.
 BOOL TextPrinter_IsPrintingChars(TextPrinter *printer)
 {

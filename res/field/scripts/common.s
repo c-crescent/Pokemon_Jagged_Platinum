@@ -437,7 +437,7 @@ CommonScript_SaveComplete:
     BufferPlayerName 0
     Message CommonStrings_Text_PlayerSavedTheGame
     PlaySE SEQ_SE_DP_SAVE_sseq
-    // Platinum: don't wait for the save jingle to finish; it keeps
+    // Don't wait for the save jingle to finish; it keeps
     // playing while the message closes.
     WaitABPressTime 30
     CloseSaveInfo

@@ -17,7 +17,7 @@
 
 #include "res/fonts/pl_font.naix"
 
-// Jagged Platinum: text printer steps per frame (3 = text renders 3x faster).
+// Text printer steps per frame (3 = text renders 3x faster).
 #define TEXT_PRINTER_TICKS_PER_FRAME 3
 
 static enum RenderResult TextPrinter_Render(TextPrinter *printer);
@@ -241,7 +241,7 @@ static void SysTask_RunTextPrinter(SysTask *task, void *data)
         return;
     }
 
-    // Jagged Platinum: run the printer up to TEXT_PRINTER_TICKS_PER_FRAME times
+    // Run the printer up to TEXT_PRINTER_TICKS_PER_FRAME times
     // per frame so character output (and the per-character delay countdown) is
     // that many times faster at every text speed. The loop stops as soon as the
     // printer leaves the character-printing state, so waiting for input,

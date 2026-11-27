@@ -23,6 +23,7 @@ static BOOL SaveDataState_Load(SaveData *saveData);
 static int SaveData_LoadCheck(SaveData *saveData);
 static void SaveDataExtra_LoadCheck(SaveData *saveData, int *frontierResult, int *videoResult);
 static void SaveDataState_Init(SaveData *saveData, SaveDataState *state, int blockID);
+static int SaveDataState_FindDirtyRun(SaveData *saveData, SaveDataState *state, u32 *runStart, u32 *runSize);
 static int SaveDataState_Main(SaveData *saveData, SaveDataState *state);
 static void SaveDataState_End(SaveData *saveData, SaveDataState *state, int saveResult);
 static void SaveDataState_Cancel(SaveData *saveData, SaveDataState *state);
@@ -599,16 +600,81 @@ static BOOL SaveDataState_Load(SaveData *saveData)
     return TRUE;
 }
 
-static s32 SaveDataState_InitBlock(SaveData *saveData, int blockID, u8 sectorID)
+
+//
+// Each save block is stored twice on the cartridge (primary and backup sector),
+// and every save overwrites the older of the two copies. Writing to flash is
+// slow (roughly 10 ms per 256-byte page), while reading is fast. Instead of
+// rewriting the whole block body, compare it with what is already in the
+// target copy one flash page at a time and only write the pages that differ.
+// The flash contents after the save are identical to a full write, written
+// pages are still verified, and the footers are still written last, so the
+// crash safety of the original save scheme is unchanged.
+#define SAVE_FLASH_PAGE_SIZE        256
+#define SAVE_DIFF_MAX_PAGES_PER_STEP 32
+
+enum DirtyRunResult {
+    DIRTY_RUN_FOUND = 0,
+    DIRTY_RUN_PENDING, // scan step limit reached, nothing to write yet
+    DIRTY_RUN_DONE, // reached the end of the block body
+};
+
+static int SaveDataState_FindDirtyRun(SaveData *saveData, SaveDataState *state, u32 *runStart, u32 *runSize)
 {
-    const SaveBlockInfo *blockInfo = &saveData->blockInfo[blockID];
+    const SaveBlockInfo *blockInfo = &saveData->blockInfo[state->currentBlock];
+    u32 flashBase = SaveData_SaveOffset(!saveData->blockOffsets[state->currentBlock], blockInfo);
+    const u8 *ramBase = saveData->body.data + blockInfo->offset;
+    u32 bodySize = blockInfo->size - sizeof(SaveBlockFooter);
+    u32 pos = state->bodyScanPos;
+    u32 start = 0;
+    BOOL inRun = FALSE;
+    int pagesScanned = 0;
+    u8 flashPage[SAVE_FLASH_PAGE_SIZE];
 
-    SaveBlockFooter_Set(saveData, (u32)saveData->body.data, blockID);
+    s32 lockID = OS_GetLockID();
+    GF_ASSERT(lockID != OS_LOCK_ID_ERROR);
+    CARD_LockBackup(lockID);
 
-    u32 saveOffset = SaveData_SaveOffset(sectorID, blockInfo);
-    u8 *bodyOffset = saveData->body.data + blockInfo->offset;
+    while (pos < bodySize) {
+        // Chunks follow the cartridge's flash page boundaries.
+        u32 chunkEnd = (((flashBase + pos) & ~(SAVE_FLASH_PAGE_SIZE - 1)) + SAVE_FLASH_PAGE_SIZE) - flashBase;
 
-    return SaveData_CardSave_Init(saveOffset, bodyOffset, blockInfo->size - sizeof(SaveBlockFooter));
+        if (chunkEnd > bodySize) {
+            chunkEnd = bodySize;
+        }
+
+        u32 len = chunkEnd - pos;
+        BOOL dirty = !CARD_ReadFlash(flashBase + pos, flashPage, len)
+            || memcmp(flashPage, ramBase + pos, len) != 0;
+
+        if (dirty) {
+            if (!inRun) {
+                inRun = TRUE;
+                start = pos;
+            }
+        } else if (inRun) {
+            break;
+        }
+
+        pos = chunkEnd;
+
+        if (++pagesScanned >= SAVE_DIFF_MAX_PAGES_PER_STEP) {
+            break;
+        }
+    }
+
+    CARD_UnlockBackup(lockID);
+    OS_ReleaseLockID(lockID);
+
+    state->bodyScanPos = pos;
+
+    if (inRun) {
+        *runStart = start;
+        *runSize = pos - start;
+        return DIRTY_RUN_FOUND;
+    }
+
+    return pos >= bodySize ? DIRTY_RUN_DONE : DIRTY_RUN_PENDING;
 }
 
 static s32 SaveDataState_InitFooter(SaveData *saveData, int blockID, u8 sectorID)
@@ -641,6 +707,7 @@ static void SaveDataState_Init(SaveData *saveData, SaveDataState *state, int blo
     state->mainSequence = 0;
     state->fullSaveMode = FALSE;
     state->locked = FALSE;
+    state->bodyScanPos = 0;
 
     if (blockID == SAVE_BLOCK_ID_MAX) {
         if (saveData->fullSaveRequired) {
@@ -670,10 +737,33 @@ static int SaveDataState_Main(SaveData *saveData, SaveDataState *state)
     BOOL saveResult;
 
     switch (state->mainSequence) {
-    case 0:
-        state->lockID = SaveDataState_InitBlock(saveData, state->currentBlock, !saveData->blockOffsets[state->currentBlock]);
-        state->locked = TRUE;
-        state->mainSequence++;
+    case 0: {
+        // Only write the parts of the block body that changed.
+        const SaveBlockInfo *blockInfo = &saveData->blockInfo[state->currentBlock];
+        u32 runStart, runSize;
+
+        if (state->bodyScanPos == 0) {
+            SaveBlockFooter_Set(saveData, (u32)saveData->body.data, state->currentBlock);
+        }
+
+        switch (SaveDataState_FindDirtyRun(saveData, state, &runStart, &runSize)) {
+        case DIRTY_RUN_FOUND:
+            state->lockID = SaveData_CardSave_Init(SaveData_SaveOffset(!saveData->blockOffsets[state->currentBlock], blockInfo) + runStart,
+                saveData->body.data + blockInfo->offset + runStart,
+                runSize);
+            state->locked = TRUE;
+            state->mainSequence = 1;
+            break;
+        case DIRTY_RUN_PENDING:
+            break;
+        case DIRTY_RUN_DONE:
+            state->bodyScanPos = 0;
+            state->mainSequence = 2;
+            break;
+        }
+
+        return SAVE_RESULT_PROCEED;
+    }
     case 1:
         if (SaveData_CardSave_Main(state->lockID, state->locked, &saveResult) == FALSE) {
             break;
@@ -685,7 +775,9 @@ static int SaveDataState_Main(SaveData *saveData, SaveDataState *state)
             return SAVE_RESULT_CORRUPT;
         }
 
-        state->mainSequence++;
+        // Look for the next changed run in this block.
+        state->mainSequence = 0;
+        break;
     case 2:
         state->lockID = SaveDataState_InitFooter_Secondary(saveData, state->currentBlock, !saveData->blockOffsets[state->currentBlock]);
         state->locked = TRUE;

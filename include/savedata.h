@@ -44,6 +44,7 @@ typedef struct SaveDataState {
     u32 globalCounterBackup;
     u32 blockCounterBackup[SAVE_BLOCK_ID_MAX];
     volatile BOOL locked;
+    u32 bodyScanPos; // diff-save cursor within the current block's body
 } SaveDataState;
 
 typedef struct SaveData {
