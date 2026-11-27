@@ -46,6 +46,7 @@
 #include "flags.h"
 #include "heap.h"
 #include "item.h"
+#include "level_cap.h"
 #include "message.h"
 #include "move_table.h"
 #include "overlay_manager.h"
@@ -9763,6 +9764,9 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
 
                 msg.id = BattleStrings_Text_PokemonGainedABoostedExpPoints; // "{0} gained a boosted {1} Exp. Points!"
             }
+
+            // Stop at the level cap. Pokemon at or above it gain no EXP.
+            totalExp = LevelCap_ClampExpGain(mon, totalExp);
 
             u32 newExp = Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL);
             data->tmpData[GET_EXP_NEW_EXP] = newExp - Pokemon_GetCurrentLevelBaseExp(mon);

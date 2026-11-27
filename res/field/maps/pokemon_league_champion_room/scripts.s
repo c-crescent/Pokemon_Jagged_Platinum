@@ -25,6 +25,8 @@ PokemonLeagueChampionRoom_OnFrame_EnterRoom:
     GoToIfEq VAR_RESULT, FALSE, PokemonLeagueChampionRoom_BlackOut
     Message PokemonLeagueChampionRoom_Text_CynthiaDefeat
     SetFlag FLAG_DEFEATED_CYNTHIA
+    CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueChampionRoom_SetTrainerFlagCynthia
+    CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueChampionRoom_SetTrainerFlagRematchCynthia
     CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueChampionRoom_CreateJournalEventDefeatedCynthia
     CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueChampionRoom_CreateJournalEventDefeatedRematchCynthia
     Message PokemonLeagueChampionRoom_Text_ComeWithMe
@@ -65,6 +67,14 @@ PokemonLeagueChampionRoom_StartCynthiaBattle:
 
 PokemonLeagueChampionRoom_StartCynthiaRematchBattle:
     StartTrainerBattle TRAINER_CHAMPION_CYNTHIA_REMATCH
+    Return
+
+PokemonLeagueChampionRoom_SetTrainerFlagCynthia:
+    SetTrainerFlag TRAINER_CHAMPION_CYNTHIA
+    Return
+
+PokemonLeagueChampionRoom_SetTrainerFlagRematchCynthia:
+    SetTrainerFlag TRAINER_CHAMPION_CYNTHIA_REMATCH
     Return
 
 PokemonLeagueChampionRoom_CreateJournalEventDefeatedCynthia:

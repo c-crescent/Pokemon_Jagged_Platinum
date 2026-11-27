@@ -13,6 +13,7 @@
 
 #include "heap.h"
 #include "item.h"
+#include "level_cap.h"
 #include "move_table.h"
 #include "party.h"
 #include "pokemon.h"
@@ -169,7 +170,7 @@ u8 Pokemon_CheckItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, enum HeapID 
     }
 
     if (Item_Get(item, ITEM_PARAM_LEVEL_UP)) {
-        if (Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) < MAX_POKEMON_LEVEL) {
+        if (Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) < LevelCap_GetCurrent()) {
             Heap_Free(item);
             return TRUE;
         }
@@ -289,7 +290,7 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
     vApplyLevel = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
 
     if (Item_Get(item, ITEM_PARAM_LEVEL_UP)) {
-        if (vApplyLevel < MAX_POKEMON_LEVEL) {
+        if (vApplyLevel < LevelCap_GetCurrent()) {
             Pokemon_IncreaseValue(mon, MON_DATA_EXPERIENCE, Pokemon_GetExpToNextLevel(mon));
             Pokemon_CalcLevelAndStats(mon);
 

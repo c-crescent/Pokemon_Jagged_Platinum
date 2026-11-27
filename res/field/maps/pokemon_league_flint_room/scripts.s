@@ -21,6 +21,8 @@ PokemonLeagueFlintRoom_Flint:
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, PokemonLeagueFlintRoom_BlackOut
     SetFlag FLAG_DEFEATED_FLINT
+    CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueFlintRoom_SetTrainerFlagFlint
+    CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueFlintRoom_SetTrainerFlagRematchFlint
     PlaySE SEQ_SE_DP_KI_GASYAN_sseq
     RemoveObject LOCALID_EXIT_DOOR
     CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueFlintRoom_CreateJournalEventDefeatedFlint
@@ -38,6 +40,14 @@ PokemonLeagueFlintRoom_StartFlintBattle:
 
 PokemonLeagueFlintRoom_StartFlintRematchBattle:
     StartTrainerBattle TRAINER_ELITE_FOUR_FLINT_REMATCH
+    Return
+
+PokemonLeagueFlintRoom_SetTrainerFlagFlint:
+    SetTrainerFlag TRAINER_ELITE_FOUR_FLINT
+    Return
+
+PokemonLeagueFlintRoom_SetTrainerFlagRematchFlint:
+    SetTrainerFlag TRAINER_ELITE_FOUR_FLINT_REMATCH
     Return
 
 PokemonLeagueFlintRoom_CreateJournalEventDefeatedFlint:

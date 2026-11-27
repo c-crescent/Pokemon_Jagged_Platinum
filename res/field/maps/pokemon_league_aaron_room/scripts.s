@@ -20,6 +20,8 @@ PokemonLeagueAaronRoom_Aaron:
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, PokemonLeagueAaronRoom_BlackOut
     SetFlag FLAG_DEFEATED_AARON
+    CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueAaronRoom_SetTrainerFlagAaron
+    CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueAaronRoom_SetTrainerFlagRematchAaron
     PlaySE SEQ_SE_DP_KI_GASYAN_sseq
     RemoveObject LOCALID_EXIT_DOOR
     CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueAaronRoom_CreateJournalEventDefeatedAaron
@@ -36,6 +38,14 @@ PokemonLeagueAaronRoom_StartAaronBattle:
 
 PokemonLeagueAaronRoom_StartAaronRematchBattle:
     StartTrainerBattle TRAINER_ELITE_FOUR_AARON_REMATCH
+    Return
+
+PokemonLeagueAaronRoom_SetTrainerFlagAaron:
+    SetTrainerFlag TRAINER_ELITE_FOUR_AARON
+    Return
+
+PokemonLeagueAaronRoom_SetTrainerFlagRematchAaron:
+    SetTrainerFlag TRAINER_ELITE_FOUR_AARON_REMATCH
     Return
 
 PokemonLeagueAaronRoom_CreateJournalEventDefeatedAaron:

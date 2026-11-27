@@ -20,6 +20,8 @@ PokemonLeagueBerthaRoom_Bertha:
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, PokemonLeagueBerthaRoom_BlackOut
     SetFlag FLAG_DEFEATED_BERTHA
+    CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueBerthaRoom_SetTrainerFlagBertha
+    CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueBerthaRoom_SetTrainerFlagRematchBertha
     PlaySE SEQ_SE_DP_KI_GASYAN_sseq
     RemoveObject LOCALID_EXIT_DOOR
     CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueBerthaRoom_CreateJournalEventDefeatedBertha
@@ -36,6 +38,14 @@ PokemonLeagueBerthaRoom_StartBerthaBattle:
 
 PokemonLeagueBerthaRoom_StartBerthaRematchBattle:
     StartTrainerBattle TRAINER_ELITE_FOUR_BERTHA_REMATCH
+    Return
+
+PokemonLeagueBerthaRoom_SetTrainerFlagBertha:
+    SetTrainerFlag TRAINER_ELITE_FOUR_BERTHA
+    Return
+
+PokemonLeagueBerthaRoom_SetTrainerFlagRematchBertha:
+    SetTrainerFlag TRAINER_ELITE_FOUR_BERTHA_REMATCH
     Return
 
 PokemonLeagueBerthaRoom_CreateJournalEventDefeatedBertha:

@@ -331,6 +331,7 @@ Static main
 	Object src/unk_02095E98.c
 	Object src/unk_020961E8.c
 	Object src/item_use_pokemon.c
+	Object src/level_cap.c
 	Object src/berry_tag_data.c
 	Object src/berry_data.c
 	Object src/easy_chat_args.c

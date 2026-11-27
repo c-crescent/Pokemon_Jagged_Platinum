@@ -20,6 +20,8 @@ PokemonLeagueLucianRoom_Lucian:
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, PokemonLeagueLucianRoom_BlackOut
     SetFlag FLAG_DEFEATED_LUCIAN
+    CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueLucianRoom_SetTrainerFlagLucian
+    CallIfSet FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueLucianRoom_SetTrainerFlagRematchLucian
     PlaySE SEQ_SE_DP_KI_GASYAN_sseq
     RemoveObject LOCALID_EXIT_DOOR
     CallIfUnset FLAG_ARRESTED_CHARON_STARK_MOUNTAIN, PokemonLeagueLucianRoom_CreateJournalEventDefeatedLucian
@@ -36,6 +38,14 @@ PokemonLeagueLucianRoom_StartLucianBattle:
 
 PokemonLeagueLucianRoom_StartLucianRematchBattle:
     StartTrainerBattle TRAINER_ELITE_FOUR_LUCIAN_REMATCH
+    Return
+
+PokemonLeagueLucianRoom_SetTrainerFlagLucian:
+    SetTrainerFlag TRAINER_ELITE_FOUR_LUCIAN
+    Return
+
+PokemonLeagueLucianRoom_SetTrainerFlagRematchLucian:
+    SetTrainerFlag TRAINER_ELITE_FOUR_LUCIAN_REMATCH
     Return
 
 PokemonLeagueLucianRoom_CreateJournalEventDefeatedLucian:
