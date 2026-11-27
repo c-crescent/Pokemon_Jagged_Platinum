@@ -99,14 +99,28 @@ Route202_DawnIllDemonstrateHowToCatch:
     BufferCounterpartName 0
     BufferPlayerName 1
     Message Route202_Text_DawnIllDemonstrateHowToCatch
-    GoTo Route202_DoCatchingTutorial
+    GoTo Route202_AskCatchingTutorial
 
 Route202_LucasIllDemonstrateHowToCatch:
     CallCommonScript CommonScript_SetCounterpartBGM
     BufferCounterpartName 0
     BufferPlayerName 1
     Message Route202_Text_LucasIllDemonstrateHowToCatch
-    GoTo Route202_DoCatchingTutorial
+    GoTo Route202_AskCatchingTutorial
+
+Route202_AskCatchingTutorial:
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_YES, Route202_DoCatchingTutorial
+    // Tutorial declined: hand over the Poke Balls right away.
+    BufferPlayerName 0
+    GetPlayerGender VAR_RESULT
+    GoToIfEq VAR_RESULT, GENDER_MALE, Route202_DawnSkipTutorialGivePokeBalls
+    Message Route202_Text_LucasSkipTutorialGivePokeBalls
+    GoTo Route202_GivePokeballs
+
+Route202_DawnSkipTutorialGivePokeBalls:
+    Message Route202_Text_DawnSkipTutorialGivePokeBalls
+    GoTo Route202_GivePokeballs
 
 Route202_DoCatchingTutorial:
     CloseMessage
@@ -133,7 +147,7 @@ Route202_LucasIllGiveYouFivePokeBalls:
 
 Route202_GivePokeballs:
     SetVar VAR_0x8004, ITEM_POKE_BALL
-    SetVar VAR_0x8005, 5
+    SetVar VAR_0x8005, 10
     CallCommonScript CommonScript_AddItemQuantity
     GetPlayerGender VAR_RESULT
     GoToIfEq VAR_RESULT, GENDER_MALE, Route202_DawnLeave
