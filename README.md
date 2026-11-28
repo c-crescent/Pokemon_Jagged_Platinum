@@ -39,6 +39,22 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Rare Candies can now be used in multiples at once (respecting level caps).
 - Repels now have a reuse prompt.
 
+## Balance
+
+### Moves
+
+- Dragon Rush:
+    - BP: 60(-40)
+    - Acc: 100(+25)
+    - PP: 25(+15)
+    - Eff%: 30(+10)
+    - Now an early-mid game physical Dragon equivalent of Bite.
+
+- Spark
+  - BP: 55(-10)
+  - PP: 25(+5)
+  - Nerfed to be distinct from Thunder Fang. Physical Electric types now get Volt Tackle to compensate in late game.
+
 ## Living Dex Compatability
 
 - After entering the Hall of Fame, the player can encounter an infinite number of clones of the Pokémon in the lead slot in Sandgem Town Lab.

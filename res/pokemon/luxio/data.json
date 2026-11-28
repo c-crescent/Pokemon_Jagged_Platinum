@@ -45,6 +45,7 @@
             [ 33, "MOVE_THUNDER_FANG" ],
             [ 38, "MOVE_CRUNCH" ],
             [ 43, "MOVE_SCARY_FACE" ],
+            [ 45, "MOVE_VOLT_TACKLE" ],
             [ 48, "MOVE_DISCHARGE" ]
         ],
         "by_tm": [

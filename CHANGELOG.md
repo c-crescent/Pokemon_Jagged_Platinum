@@ -26,14 +26,8 @@ are listed here.
 - Evolutions should now learns the level-up moves their pre-evolutions learn unless it exceeds the 20 move limit.
 
 #### Moves
-All changed moves might have learnsets updates to accommodate.
-
-- Dragon Rush:
-    - BP: 60(-40)
-    - Acc: 100(+25)
-    - PP: 25(+15)
-    - Eff%: 30(+10)
-    - Now an early-mid game physical Dragon equivalent of Bite.
+- All changed moves might have learnsets updates to accommodate.
+- Implemented changes for: Dragon Rush, Spark. See README for more details.
 
 ### Removed
 

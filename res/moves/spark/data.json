@@ -9,9 +9,9 @@
     ],
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_ELECTRIC",
-    "power": 65,
+    "power": 55,
     "accuracy": 100,
-    "pp": 20,
+    "pp": 25,
     "effect": {
         "type": "BATTLE_EFFECT_PARALYZE_HIT",
         "chance": 30

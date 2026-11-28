@@ -50,6 +50,7 @@
             [ 41, "MOVE_ROAR" ],
             [ 48, "MOVE_DISCHARGE" ],
             [ 53, "MOVE_CHARGE" ],
+            [ 55, "MOVE_VOLT_TACKLE" ],
             [ 60, "MOVE_THUNDER" ]
         ],
         "by_tm": [

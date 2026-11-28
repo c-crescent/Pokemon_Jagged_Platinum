@@ -45,6 +45,7 @@
             [ 28, "MOVE_SWAGGER" ],
             [ 35, "MOVE_THUNDER_FANG" ],
             [ 42, "MOVE_CRUNCH" ],
+            [ 45, "MOVE_VOLT_TACKLE" ],
             [ 49, "MOVE_SCARY_FACE" ],
             [ 56, "MOVE_DISCHARGE" ]
         ],
