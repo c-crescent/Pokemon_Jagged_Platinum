@@ -36,6 +36,7 @@
         "by_level": [
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_GROWL" ],
+            [ 1, "MOVE_POUND" ],
             [ 4, "MOVE_GROWL" ],
             [ 8, "MOVE_BUBBLE" ],
             [ 11, "MOVE_WATER_SPORT" ],

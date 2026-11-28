@@ -35,19 +35,19 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_POUND" ],
-            [ 6, "MOVE_YAWN" ],
-            [ 9, "MOVE_POISON_GAS" ],
-            [ 14, "MOVE_SLUDGE" ],
-            [ 17, "MOVE_AMNESIA" ],
-            [ 23, "MOVE_ENCORE" ],
-            [ 28, "MOVE_TOXIC" ],
-            [ 34, "MOVE_STOCKPILE" ],
-            [ 34, "MOVE_SPIT_UP" ],
-            [ 34, "MOVE_SWALLOW" ],
-            [ 39, "MOVE_SLUDGE_BOMB" ],
-            [ 44, "MOVE_GASTRO_ACID" ],
-            [ 49, "MOVE_WRING_OUT" ],
-            [ 54, "MOVE_GUNK_SHOT" ]
+            [ 5, "MOVE_YAWN" ],
+            [ 8, "MOVE_POISON_GAS" ],
+            [ 13, "MOVE_SLUDGE" ],
+            [ 15, "MOVE_AMNESIA" ],
+            [ 21, "MOVE_ENCORE" ],
+            [ 25, "MOVE_TOXIC" ],
+            [ 31, "MOVE_STOCKPILE" ],
+            [ 31, "MOVE_SPIT_UP" ],
+            [ 31, "MOVE_SWALLOW" ],
+            [ 35, "MOVE_SLUDGE_BOMB" ],
+            [ 40, "MOVE_GASTRO_ACID" ],
+            [ 45, "MOVE_WRING_OUT" ],
+            [ 49, "MOVE_GUNK_SHOT" ]
         ],
         "by_tm": [
             "TM03",

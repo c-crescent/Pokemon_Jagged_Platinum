@@ -38,7 +38,20 @@
             [ 1, "MOVE_WHIRLWIND" ],
             [ 1, "MOVE_NASTY_PLOT" ],
             [ 1, "MOVE_RAZOR_LEAF" ],
-            [ 49, "MOVE_LEAF_STORM" ]
+            [ 1, "MOVE_POUND" ],
+            [ 1, "MOVE_BIDE" ],
+            [ 3, "MOVE_HARDEN" ],
+            [ 7, "MOVE_GROWTH" ],
+            [ 13, "MOVE_NATURE_POWER" ],
+            [ 19, "MOVE_FAKE_OUT" ],
+            [ 21, "MOVE_SYNTHESIS" ],
+            [ 25, "MOVE_TORMENT" ],
+            [ 31, "MOVE_SUNNY_DAY" ],
+            [ 37, "MOVE_RAZOR_WIND" ],
+            [ 43, "MOVE_SWAGGER" ],
+            [ 43, "MOVE_EXPLOSION" ],
+            [ 49, "MOVE_LEAF_STORM" ],
+            [ 49, "MOVE_EXTRASENSORY" ]
         ],
         "by_tm": [
             "TM06",

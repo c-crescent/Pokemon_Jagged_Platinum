@@ -36,16 +36,16 @@
         "by_level": [
             [ 1, "MOVE_GROWL" ],
             [ 1, "MOVE_TACKLE" ],
-            [ 5, "MOVE_EMBER" ],
-            [ 11, "MOVE_MAGNITUDE" ],
-            [ 15, "MOVE_FOCUS_ENERGY" ],
-            [ 21, "MOVE_TAKE_DOWN" ],
-            [ 25, "MOVE_AMNESIA" ],
-            [ 31, "MOVE_LAVA_PLUME" ],
-            [ 35, "MOVE_EARTH_POWER" ],
-            [ 41, "MOVE_EARTHQUAKE" ],
-            [ 45, "MOVE_FLAMETHROWER" ],
-            [ 51, "MOVE_DOUBLE_EDGE" ]
+            [ 4, "MOVE_EMBER" ],
+            [ 10, "MOVE_MAGNITUDE" ],
+            [ 13, "MOVE_FOCUS_ENERGY" ],
+            [ 19, "MOVE_TAKE_DOWN" ],
+            [ 22, "MOVE_AMNESIA" ],
+            [ 28, "MOVE_LAVA_PLUME" ],
+            [ 31, "MOVE_EARTH_POWER" ],
+            [ 37, "MOVE_EARTHQUAKE" ],
+            [ 40, "MOVE_FLAMETHROWER" ],
+            [ 46, "MOVE_DOUBLE_EDGE" ]
         ],
         "by_tm": [
             "TM06",

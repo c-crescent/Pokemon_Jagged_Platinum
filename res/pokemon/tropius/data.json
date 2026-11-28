@@ -41,13 +41,13 @@
             [ 17, "MOVE_STOMP" ],
             [ 21, "MOVE_SWEET_SCENT" ],
             [ 27, "MOVE_WHIRLWIND" ],
-            [ 31, "MOVE_MAGICAL_LEAF" ],
-            [ 37, "MOVE_BODY_SLAM" ],
-            [ 41, "MOVE_SYNTHESIS" ],
-            [ 47, "MOVE_AIR_SLASH" ],
-            [ 51, "MOVE_SOLAR_BEAM" ],
-            [ 57, "MOVE_NATURAL_GIFT" ],
-            [ 61, "MOVE_LEAF_STORM" ]
+            [ 30, "MOVE_MAGICAL_LEAF" ],
+            [ 36, "MOVE_BODY_SLAM" ],
+            [ 40, "MOVE_SYNTHESIS" ],
+            [ 46, "MOVE_AIR_SLASH" ],
+            [ 50, "MOVE_SOLAR_BEAM" ],
+            [ 56, "MOVE_NATURAL_GIFT" ],
+            [ 60, "MOVE_LEAF_STORM" ]
         ],
         "by_tm": [
             "TM05",

@@ -36,10 +36,10 @@
         "by_level": [
             [ 1, "MOVE_HEADBUTT" ],
             [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_SIGNAL_BEAM" ],
             [ 1, "MOVE_ICY_WIND" ],
             [ 3, "MOVE_GROWL" ],
             [ 7, "MOVE_SIGNAL_BEAM" ],
+            [ 7, "MOVE_WATER_SPORT" ],
             [ 11, "MOVE_ICY_WIND" ],
             [ 13, "MOVE_ENCORE" ],
             [ 17, "MOVE_ICE_SHARD" ],

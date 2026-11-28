@@ -35,8 +35,12 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_FURY_ATTACK" ],
+            [ 1, "MOVE_POISON_STING" ],
+            [ 1, "MOVE_STRING_SHOT" ],
+            [ 7, "MOVE_HARDEN" ],
             [ 10, "MOVE_FURY_ATTACK" ],
             [ 13, "MOVE_FOCUS_ENERGY" ],
+            [ 15, "MOVE_BUG_BITE" ],
             [ 16, "MOVE_TWINEEDLE" ],
             [ 19, "MOVE_RAGE" ],
             [ 22, "MOVE_PURSUIT" ],

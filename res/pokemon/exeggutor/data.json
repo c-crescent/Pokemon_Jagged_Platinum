@@ -39,10 +39,21 @@
             [ 1, "MOVE_HYPNOSIS" ],
             [ 1, "MOVE_CONFUSION" ],
             [ 1, "MOVE_STOMP" ],
+            [ 1, "MOVE_UPROAR" ],
+            [ 7, "MOVE_REFLECT" ],
+            [ 11, "MOVE_LEECH_SEED" ],
             [ 17, "MOVE_STOMP" ],
+            [ 17, "MOVE_BULLET_SEED" ],
+            [ 19, "MOVE_STUN_SPORE" ],
+            [ 21, "MOVE_POISON_POWDER" ],
+            [ 23, "MOVE_SLEEP_POWDER" ],
             [ 27, "MOVE_EGG_BOMB" ],
+            [ 33, "MOVE_WORRY_SEED" ],
             [ 37, "MOVE_WOOD_HAMMER" ],
-            [ 47, "MOVE_LEAF_STORM" ]
+            [ 37, "MOVE_NATURAL_GIFT" ],
+            [ 43, "MOVE_SOLAR_BEAM" ],
+            [ 47, "MOVE_LEAF_STORM" ],
+            [ 47, "MOVE_PSYCHIC" ]
         ],
         "by_tm": [
             "TM06",

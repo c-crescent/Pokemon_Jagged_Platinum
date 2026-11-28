@@ -39,8 +39,17 @@
             [ 1, "MOVE_SWEET_SCENT" ],
             [ 1, "MOVE_STUN_SPORE" ],
             [ 1, "MOVE_SUNNY_DAY" ],
-            [ 23, "MOVE_MAGICAL_LEAF" ],
-            [ 53, "MOVE_LEAF_STORM" ]
+            [ 1, "MOVE_ABSORB" ],
+            [ 8, "MOVE_ACID" ],
+            [ 12, "MOVE_POISON_POWDER" ],
+            [ 16, "MOVE_SLEEP_POWDER" ],
+            [ 21, "MOVE_MAGICAL_LEAF" ],
+            [ 27, "MOVE_LUCKY_CHANT" ],
+            [ 32, "MOVE_NATURAL_GIFT" ],
+            [ 38, "MOVE_MOONLIGHT" ],
+            [ 43, "MOVE_GIGA_DRAIN" ],
+            [ 49, "MOVE_LEAF_STORM" ],
+            [ 49, "MOVE_PETAL_DANCE" ]
         ],
         "by_tm": [
             "TM06",

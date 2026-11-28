@@ -36,17 +36,17 @@
         "by_level": [
             [ 1, "MOVE_ASTONISH" ],
             [ 1, "MOVE_CONSTRICT" ],
-            [ 8, "MOVE_ACID" ],
-            [ 15, "MOVE_INGRAIN" ],
-            [ 22, "MOVE_CONFUSE_RAY" ],
-            [ 29, "MOVE_AMNESIA" ],
-            [ 36, "MOVE_GASTRO_ACID" ],
-            [ 43, "MOVE_ANCIENT_POWER" ],
-            [ 50, "MOVE_ENERGY_BALL" ],
-            [ 57, "MOVE_STOCKPILE" ],
-            [ 57, "MOVE_SPIT_UP" ],
-            [ 57, "MOVE_SWALLOW" ],
-            [ 64, "MOVE_WRING_OUT" ]
+            [ 6, "MOVE_ACID" ],
+            [ 12, "MOVE_INGRAIN" ],
+            [ 17, "MOVE_CONFUSE_RAY" ],
+            [ 23, "MOVE_AMNESIA" ],
+            [ 28, "MOVE_GASTRO_ACID" ],
+            [ 34, "MOVE_ANCIENT_POWER" ],
+            [ 39, "MOVE_ENERGY_BALL" ],
+            [ 45, "MOVE_STOCKPILE" ],
+            [ 45, "MOVE_SPIT_UP" ],
+            [ 45, "MOVE_SWALLOW" ],
+            [ 51, "MOVE_WRING_OUT" ]
         ],
         "by_tm": [
             "TM06",

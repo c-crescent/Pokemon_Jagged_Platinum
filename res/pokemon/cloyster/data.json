@@ -39,8 +39,17 @@
             [ 1, "MOVE_SUPERSONIC" ],
             [ 1, "MOVE_AURORA_BEAM" ],
             [ 1, "MOVE_PROTECT" ],
+            [ 1, "MOVE_TACKLE" ],
+            [ 13, "MOVE_ICICLE_SPEAR" ],
+            [ 20, "MOVE_LEER" ],
+            [ 25, "MOVE_CLAMP" ],
             [ 28, "MOVE_SPIKES" ],
-            [ 40, "MOVE_SPIKE_CANNON" ]
+            [ 28, "MOVE_ICE_SHARD" ],
+            [ 37, "MOVE_WHIRLPOOL" ],
+            [ 40, "MOVE_SPIKE_CANNON" ],
+            [ 40, "MOVE_IRON_DEFENSE" ],
+            [ 44, "MOVE_BRINE" ],
+            [ 49, "MOVE_ICE_BEAM" ]
         ],
         "by_tm": [
             "TM03",

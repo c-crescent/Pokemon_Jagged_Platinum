@@ -37,14 +37,14 @@
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_GROWL" ],
             [ 1, "MOVE_EMBER" ],
-            [ 7, "MOVE_EMBER" ],
-            [ 10, "MOVE_SMOKE_SCREEN" ],
-            [ 17, "MOVE_DRAGON_RAGE" ],
-            [ 21, "MOVE_SCARY_FACE" ],
-            [ 28, "MOVE_FIRE_FANG" ],
-            [ 32, "MOVE_SLASH" ],
-            [ 39, "MOVE_FLAMETHROWER" ],
-            [ 43, "MOVE_FIRE_SPIN" ]
+            [ 6, "MOVE_EMBER" ],
+            [ 9, "MOVE_SMOKE_SCREEN" ],
+            [ 15, "MOVE_DRAGON_RAGE" ],
+            [ 19, "MOVE_SCARY_FACE" ],
+            [ 25, "MOVE_FIRE_FANG" ],
+            [ 29, "MOVE_SLASH" ],
+            [ 35, "MOVE_FLAMETHROWER" ],
+            [ 39, "MOVE_FIRE_SPIN" ]
         ],
         "by_tm": [
             "TM01",

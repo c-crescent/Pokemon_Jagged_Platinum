@@ -47,6 +47,7 @@
             [ 32, "MOVE_CAPTIVATE" ],
             [ 37, "MOVE_SLASH" ],
             [ 38, "MOVE_SWAGGER" ],
+            [ 41, "MOVE_SUCKER_PUNCH" ],
             [ 45, "MOVE_BODY_SLAM" ],
             [ 53, "MOVE_ATTRACT" ]
         ],

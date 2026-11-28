@@ -35,7 +35,6 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_ABSORB" ],
-            [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_STUN_SPORE" ],
             [ 1, "MOVE_LEECH_SEED" ],
             [ 5, "MOVE_TACKLE" ],
@@ -45,11 +44,16 @@
             [ 21, "MOVE_HEADBUTT" ],
             [ 23, "MOVE_MACH_PUNCH" ],
             [ 25, "MOVE_COUNTER" ],
+            [ 25, "MOVE_POISON_POWDER" ],
             [ 29, "MOVE_FORCE_PALM" ],
+            [ 29, "MOVE_WORRY_SEED" ],
             [ 33, "MOVE_SKY_UPPERCUT" ],
+            [ 33, "MOVE_GROWTH" ],
             [ 37, "MOVE_MIND_READER" ],
+            [ 37, "MOVE_GIGA_DRAIN" ],
             [ 41, "MOVE_SEED_BOMB" ],
-            [ 45, "MOVE_DYNAMIC_PUNCH" ]
+            [ 45, "MOVE_DYNAMIC_PUNCH" ],
+            [ 45, "MOVE_SPORE" ]
         ],
         "by_tm": [
             "TM01",

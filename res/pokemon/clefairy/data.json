@@ -35,12 +35,15 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_POUND" ],
-            [ 1, "MOVE_GROWL" ],
+            [ 1, "MOVE_CHARM" ],
             [ 4, "MOVE_ENCORE" ],
             [ 7, "MOVE_SING" ],
             [ 10, "MOVE_DOUBLE_SLAP" ],
+            [ 10, "MOVE_SWEET_KISS" ],
             [ 13, "MOVE_DEFENSE_CURL" ],
+            [ 13, "MOVE_COPYCAT" ],
             [ 16, "MOVE_FOLLOW_ME" ],
+            [ 16, "MOVE_MAGICAL_LEAF" ],
             [ 19, "MOVE_MINIMIZE" ],
             [ 22, "MOVE_WAKE_UP_SLAP" ],
             [ 25, "MOVE_COSMIC_POWER" ],

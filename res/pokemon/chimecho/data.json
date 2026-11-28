@@ -40,6 +40,7 @@
             [ 14, "MOVE_CONFUSION" ],
             [ 17, "MOVE_UPROAR" ],
             [ 22, "MOVE_TAKE_DOWN" ],
+            [ 22, "MOVE_LAST_RESORT" ],
             [ 25, "MOVE_YAWN" ],
             [ 30, "MOVE_PSYWAVE" ],
             [ 33, "MOVE_DOUBLE_EDGE" ],

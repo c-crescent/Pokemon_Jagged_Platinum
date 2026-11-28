@@ -35,8 +35,13 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_ABSORB" ],
+            [ 1, "MOVE_TACKLE" ],
+            [ 1, "MOVE_STRING_SHOT" ],
+            [ 5, "MOVE_POISON_STING" ],
+            [ 7, "MOVE_HARDEN" ],
             [ 10, "MOVE_ABSORB" ],
             [ 13, "MOVE_GUST" ],
+            [ 15, "MOVE_BUG_BITE" ],
             [ 17, "MOVE_STUN_SPORE" ],
             [ 20, "MOVE_MORNING_SUN" ],
             [ 24, "MOVE_MEGA_DRAIN" ],

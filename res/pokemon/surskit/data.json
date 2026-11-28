@@ -39,10 +39,10 @@
             [ 13, "MOVE_SWEET_SCENT" ],
             [ 19, "MOVE_WATER_SPORT" ],
             [ 25, "MOVE_BUBBLE_BEAM" ],
-            [ 31, "MOVE_AGILITY" ],
-            [ 37, "MOVE_MIST" ],
-            [ 37, "MOVE_HAZE" ],
-            [ 43, "MOVE_BATON_PASS" ]
+            [ 30, "MOVE_AGILITY" ],
+            [ 36, "MOVE_MIST" ],
+            [ 36, "MOVE_HAZE" ],
+            [ 42, "MOVE_BATON_PASS" ]
         ],
         "by_tm": [
             "TM03",

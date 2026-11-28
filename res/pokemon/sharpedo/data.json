@@ -49,6 +49,7 @@
             [ 28, "MOVE_CRUNCH" ],
             [ 30, "MOVE_SLASH" ],
             [ 34, "MOVE_AQUA_JET" ],
+            [ 38, "MOVE_TAKE_DOWN" ],
             [ 40, "MOVE_TAUNT" ],
             [ 45, "MOVE_AGILITY" ],
             [ 50, "MOVE_SKULL_BASH" ],

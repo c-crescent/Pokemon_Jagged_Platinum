@@ -35,6 +35,9 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_WHIRLPOOL" ],
+            [ 1, "MOVE_CLAMP" ],
+            [ 1, "MOVE_WATER_GUN" ],
+            [ 1, "MOVE_IRON_DEFENSE" ],
             [ 6, "MOVE_CONFUSION" ],
             [ 10, "MOVE_AGILITY" ],
             [ 15, "MOVE_WATER_PULSE" ],

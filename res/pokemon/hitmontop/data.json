@@ -36,6 +36,10 @@
         "by_level": [
             [ 1, "MOVE_REVENGE" ],
             [ 1, "MOVE_ROLLING_KICK" ],
+            [ 1, "MOVE_TACKLE" ],
+            [ 1, "MOVE_HELPING_HAND" ],
+            [ 1, "MOVE_FAKE_OUT" ],
+            [ 1, "MOVE_FORESIGHT" ],
             [ 6, "MOVE_FOCUS_ENERGY" ],
             [ 10, "MOVE_PURSUIT" ],
             [ 15, "MOVE_QUICK_ATTACK" ],

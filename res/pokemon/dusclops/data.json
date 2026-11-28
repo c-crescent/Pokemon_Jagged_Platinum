@@ -49,11 +49,11 @@
             [ 22, "MOVE_SHADOW_SNEAK" ],
             [ 25, "MOVE_PURSUIT" ],
             [ 30, "MOVE_CURSE" ],
-            [ 33, "MOVE_WILL_O_WISP" ],
-            [ 37, "MOVE_SHADOW_PUNCH" ],
-            [ 43, "MOVE_MEAN_LOOK" ],
-            [ 51, "MOVE_PAYBACK" ],
-            [ 61, "MOVE_FUTURE_SIGHT" ]
+            [ 32, "MOVE_WILL_O_WISP" ],
+            [ 36, "MOVE_SHADOW_PUNCH" ],
+            [ 42, "MOVE_MEAN_LOOK" ],
+            [ 50, "MOVE_PAYBACK" ],
+            [ 60, "MOVE_FUTURE_SIGHT" ]
         ],
         "by_tm": [
             "TM01",

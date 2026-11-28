@@ -36,16 +36,16 @@
         "by_level": [
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_GROWL" ],
-            [ 6, "MOVE_MUD_SLAP" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_BIDE" ],
-            [ 19, "MOVE_FORESIGHT" ],
-            [ 24, "MOVE_MUD_SPORT" ],
-            [ 28, "MOVE_TAKE_DOWN" ],
-            [ 33, "MOVE_WHIRLPOOL" ],
-            [ 37, "MOVE_PROTECT" ],
-            [ 42, "MOVE_HYDRO_PUMP" ],
-            [ 46, "MOVE_ENDEAVOR" ]
+            [ 5, "MOVE_MUD_SLAP" ],
+            [ 9, "MOVE_WATER_GUN" ],
+            [ 13, "MOVE_BIDE" ],
+            [ 17, "MOVE_FORESIGHT" ],
+            [ 21, "MOVE_MUD_SPORT" ],
+            [ 24, "MOVE_TAKE_DOWN" ],
+            [ 29, "MOVE_WHIRLPOOL" ],
+            [ 32, "MOVE_PROTECT" ],
+            [ 37, "MOVE_HYDRO_PUMP" ],
+            [ 40, "MOVE_ENDEAVOR" ]
         ],
         "by_tm": [
             "TM03",

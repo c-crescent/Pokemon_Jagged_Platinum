@@ -44,9 +44,9 @@
             [ 13, "MOVE_WING_ATTACK" ],
             [ 19, "MOVE_DOUBLE_TEAM" ],
             [ 28, "MOVE_ENDEAVOR" ],
-            [ 38, "MOVE_AERIAL_ACE" ],
-            [ 49, "MOVE_AGILITY" ],
-            [ 61, "MOVE_AIR_SLASH" ]
+            [ 37, "MOVE_AERIAL_ACE" ],
+            [ 48, "MOVE_AGILITY" ],
+            [ 60, "MOVE_AIR_SLASH" ]
         ],
         "by_tm": [
             "TM06",

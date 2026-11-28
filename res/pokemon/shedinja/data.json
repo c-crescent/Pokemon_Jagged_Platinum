@@ -41,9 +41,13 @@
             [ 14, "MOVE_FURY_SWIPES" ],
             [ 19, "MOVE_MIND_READER" ],
             [ 25, "MOVE_SPITE" ],
+            [ 25, "MOVE_FALSE_SWIPE" ],
             [ 31, "MOVE_CONFUSE_RAY" ],
+            [ 31, "MOVE_MUD_SLAP" ],
             [ 38, "MOVE_SHADOW_SNEAK" ],
+            [ 38, "MOVE_METAL_CLAW" ],
             [ 45, "MOVE_GRUDGE" ],
+            [ 45, "MOVE_DIG" ],
             [ 52, "MOVE_HEAL_BLOCK" ],
             [ 59, "MOVE_SHADOW_BALL" ]
         ],

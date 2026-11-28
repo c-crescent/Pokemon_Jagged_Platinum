@@ -36,17 +36,17 @@
         "by_level": [
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_HARDEN" ],
-            [ 8, "MOVE_WATER_GUN" ],
-            [ 15, "MOVE_ROCK_TOMB" ],
-            [ 22, "MOVE_YAWN" ],
-            [ 29, "MOVE_TAKE_DOWN" ],
-            [ 36, "MOVE_MUD_SPORT" ],
-            [ 43, "MOVE_ANCIENT_POWER" ],
-            [ 50, "MOVE_DOUBLE_EDGE" ],
-            [ 57, "MOVE_DIVE" ],
-            [ 64, "MOVE_REST" ],
-            [ 71, "MOVE_HYDRO_PUMP" ],
-            [ 78, "MOVE_HEAD_SMASH" ]
+            [ 6, "MOVE_WATER_GUN" ],
+            [ 12, "MOVE_ROCK_TOMB" ],
+            [ 17, "MOVE_YAWN" ],
+            [ 22, "MOVE_TAKE_DOWN" ],
+            [ 28, "MOVE_MUD_SPORT" ],
+            [ 33, "MOVE_ANCIENT_POWER" ],
+            [ 38, "MOVE_DOUBLE_EDGE" ],
+            [ 44, "MOVE_DIVE" ],
+            [ 49, "MOVE_REST" ],
+            [ 55, "MOVE_HYDRO_PUMP" ],
+            [ 60, "MOVE_HEAD_SMASH" ]
         ],
         "by_tm": [
             "TM03",
