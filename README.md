@@ -130,9 +130,11 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Acc: 100(+15)
 
 - Fury Swipes
-  - BP: 25(+7)
-  - Acc: 100(+20)
+  - BP: 15(-3)
+  - Acc: 90(+10)
   - PP: 20(+5)
+  - Now hits 3 times with increasing damage similar to Triple Kick.
+  - Distinct from Fury Atttack, an early-mid game Normal move, caps at 90.
 
 - Ice Fang
   - BP: 70(+5)
@@ -220,6 +222,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 - Thunder Fang
   - BP: 70(+5)
+
+- Triple Kick
+  - BP: 20(+10)
+  - Now does a viable amount of damage, caps at 120.
  
 - Twineedle
   - BP: 45(+25)

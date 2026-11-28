@@ -9,11 +9,11 @@
     ],
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_NORMAL",
-    "power": 25,
-    "accuracy": 100,
+    "power": 15,
+    "accuracy": 90,
     "pp": 20,
     "effect": {
-        "type": "BATTLE_EFFECT_MULTI_HIT",
+        "type": "BATTLE_EFFECT_HIT_THREE_TIMES",
         "chance": 0
     },
     "range": "RANGE_SINGLE_TARGET",
