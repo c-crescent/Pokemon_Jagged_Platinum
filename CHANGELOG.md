@@ -21,6 +21,7 @@ are listed here.
 - The game now runs 2x faster. Most delays in battle are now removed.
 - Both sides of a battle now appears simultaneously, reducing the delay before the player can take an action.
 - Progression HMs no longer require a Pokemon knowing the move, just the respective badge & HM / TM in your bag.
+- Nidorina and Nidoqueen can now breed normally.
 
 ### Removed
 
