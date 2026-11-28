@@ -47,7 +47,8 @@
             [ 46, "MOVE_AIR_SLASH" ],
             [ 50, "MOVE_SOLAR_BEAM" ],
             [ 56, "MOVE_NATURAL_GIFT" ],
-            [ 60, "MOVE_LEAF_STORM" ]
+            [ 60, "MOVE_LEAF_STORM" ],
+            [ 60, "MOVE_AEROBLAST" ]
         ],
         "by_tm": [
             "TM05",

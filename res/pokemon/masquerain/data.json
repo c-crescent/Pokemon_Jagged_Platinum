@@ -38,7 +38,6 @@
             [ 1, "MOVE_BUBBLE" ],
             [ 1, "MOVE_QUICK_ATTACK" ],
             [ 1, "MOVE_SWEET_SCENT" ],
-            [ 1, "MOVE_WATER_SPORT" ],
             [ 7, "MOVE_QUICK_ATTACK" ],
             [ 13, "MOVE_SWEET_SCENT" ],
             [ 19, "MOVE_WATER_SPORT" ],
@@ -53,7 +52,8 @@
             [ 42, "MOVE_BATON_PASS" ],
             [ 46, "MOVE_AIR_SLASH" ],
             [ 53, "MOVE_WHIRLWIND" ],
-            [ 60, "MOVE_BUG_BUZZ" ]
+            [ 55, "MOVE_BUG_BUZZ" ],
+            [ 60, "MOVE_AEROBLAST" ]
         ],
         "by_tm": [
             "TM03",

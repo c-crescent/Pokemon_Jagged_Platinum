@@ -37,7 +37,6 @@
             [ 1, "MOVE_NIGHT_SLASH" ],
             [ 1, "MOVE_BUG_BITE" ],
             [ 1, "MOVE_FORESIGHT" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
             [ 1, "MOVE_DOUBLE_TEAM" ],
             [ 6, "MOVE_QUICK_ATTACK" ],
             [ 11, "MOVE_DOUBLE_TEAM" ],
@@ -53,7 +52,8 @@
             [ 43, "MOVE_WING_ATTACK" ],
             [ 49, "MOVE_U_TURN" ],
             [ 54, "MOVE_AIR_SLASH" ],
-            [ 57, "MOVE_BUG_BUZZ" ]
+            [ 57, "MOVE_BUG_BUZZ" ],
+            [ 60, "MOVE_AEROBLAST" ]
         ],
         "by_tm": [
             "TM06",

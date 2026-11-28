@@ -45,7 +45,8 @@
             [ 34, "MOVE_PURSUIT" ],
             [ 37, "MOVE_AGILITY" ],
             [ 42, "MOVE_AERIAL_ACE" ],
-            [ 47, "MOVE_AIR_SLASH" ]
+            [ 47, "MOVE_AIR_SLASH" ],
+            [ 60, "MOVE_AEROBLAST" ]
         ],
         "by_tm": [
             "TM03",

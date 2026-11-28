@@ -50,6 +50,14 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Aqua Tail
   - BP: 100(+10)
   - Now a viable alternative to Waterfall.
+    
+- Air Slash
+  - BP: 80(+5)
+  * Now more inline with other mid-late game moves.
+ 
+- Chatter
+  - BP: 200(+140)
+  - Chatot-specific buff.
 
 - Crab Hammer
   - BP: 120(+30)

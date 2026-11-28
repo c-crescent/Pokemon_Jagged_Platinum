@@ -46,7 +46,8 @@
             [ 38, "MOVE_SILVER_WIND" ],
             [ 41, "MOVE_AIR_SLASH" ],
             [ 44, "MOVE_PSYCHIC" ],
-            [ 47, "MOVE_BUG_BUZZ" ]
+            [ 47, "MOVE_BUG_BUZZ" ],
+            [ 60, "MOVE_AEROBLAST" ]
         ],
         "by_tm": [
             "TM06",

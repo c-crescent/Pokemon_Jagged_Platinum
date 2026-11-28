@@ -50,7 +50,8 @@
             [ 42, "MOVE_EXTRASENSORY" ],
             [ 47, "MOVE_PSYCHO_SHIFT" ],
             [ 52, "MOVE_ROOST" ],
-            [ 57, "MOVE_DREAM_EATER" ]
+            [ 57, "MOVE_DREAM_EATER" ],
+            [ 60, "MOVE_AEROBLAST" ]
         ],
         "by_tm": [
             "TM06",
