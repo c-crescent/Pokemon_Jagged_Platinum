@@ -8,10 +8,10 @@
         "succession."
     ],
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
-    "power": 20,
+    "type": "TYPE_WATER",
+    "power": 25,
     "accuracy": 100,
-    "pp": 15,
+    "pp": 20,
     "effect": {
         "type": "BATTLE_EFFECT_MULTI_HIT",
         "chance": 0

@@ -6,10 +6,10 @@
         "strike two to five\n",
         "times in a row.\n"
     ],
-    "class": "CLASS_PHYSICAL",
+    "class": "CLASS_SPECIAL",
     "type": "TYPE_NORMAL",
-    "power": 15,
-    "accuracy": 85,
+    "power": 30,
+    "accuracy": 100,
     "pp": 20,
     "effect": {
         "type": "BATTLE_EFFECT_MULTI_HIT",

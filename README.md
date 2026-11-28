@@ -58,6 +58,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 80(+5)
   * Now more inline with other mid-late game moves.
  
+- Arm Thrust
+  - BP: 25(+10)
+  - Normalised all 2-5 multihit moves to be viable.
+
 - Assurance
   - Class: Special
   - Now an early-mid game Special Dark move.
@@ -69,9 +73,28 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   * Now has a 30% flinch chance and no other special effects.
   * A clone of Icicle Crash since a stronger physical Ice move was needed.
  
+- Barrage
+  - BP: 30(+15)
+  - Acc: 100(+15)
+  - Class: Special
+  - Now a viable normal coverage move for being an exclusive move.
+
+- Bone Rush
+  - Acc: 100(+20)
+  - PP: 20(+10)
+
+- Bullet Seed
+  - BP: 25(+15)
+  - PP: 20(-10)
+
 - Chatter
   - BP: 200(+140)
   - Chatot-specific buff.
+
+- Comet Punch
+  - BP: 25(+7)
+  - Acc: 100(+15)
+  - PP: 20(+5)
 
 - Crab Hammer
   - BP: 120(+30)
@@ -80,6 +103,12 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Defog
   - Now also clears hazards from the user's side.
   - Another viable hazard control move.
+
+- Double Slap
+  - BP: 30(+15)
+  - Acc: 100(+15)
+  - PP: 30(+20)
+  - Now a Double Kick clone.
 
 - Dragon Rush
   - BP: 60(-40)
@@ -96,9 +125,22 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 70(+5)
   - Universal buffs to Fang moves.
 
+- Fury Attack
+  - BP: 25(+10)
+  - Acc: 100(+15)
+
+- Fury Swipes
+  - BP: 25(+7)
+  - Acc: 100(+20)
+  - PP: 20(+5)
+
 - Ice Fang
   - BP: 70(+5)
  
+- Icicle Spear
+  - BP: 25(+15)
+  - PP: 20(-10)
+
 - Knock Off
   - BP: 65(+40)
   - PP: 10(-10)
@@ -119,6 +161,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 35(+15)
   - Now a viable early-game move.
 
+- Pin Missile
+  - BP: 25(+11)
+  - Acc: 100(+15)
+
 - Poison Fang
   - BP: 70(+20)
   - Acc: 95(-5)
@@ -137,6 +183,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 50(+30)
   - Now also raises the user's speed by 1 stage.
   - Better hazard control and viable as a setup move.
+
+- Rock Blast
+  - Acc: 100(+20)
+  - PP: 20(+10)
 
 - Sludge
   - BP: 90(+25)
@@ -161,6 +211,12 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 55(-10)
   - PP: 25(+5)
   - Nerfed to be distinct from Thunder Fang. Physical Electric types now get Volt Tackle to compensate in late game.
+
+- Spike Cannon
+  - BP: 25(+5)
+  - PP: 20(+5)
+  - Type: Water
+  - Now a viable STAB for Cloyster.
 
 - Thunder Fang
   - BP: 70(+5)
