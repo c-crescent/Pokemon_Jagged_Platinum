@@ -50,10 +50,24 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
     - Eff%: 30(+10)
     - Now an early-mid game physical Dragon equivalent of Bite.
 
+- Fire Fang
+  - BP: 70(+5)
+
+- Ice Fang
+  - BP: 70(+5)
+
+- Poison Fang
+  - BP: 70(+20)
+  - Acc: 95(-5)
+  - Eff%: 10(-20)
+
 - Spark
   - BP: 55(-10)
   - PP: 25(+5)
   - Nerfed to be distinct from Thunder Fang. Physical Electric types now get Volt Tackle to compensate in late game.
+
+- Thunder Fang
+  - BP: 70(+5)
 
 ## Living Dex Compatability
 
