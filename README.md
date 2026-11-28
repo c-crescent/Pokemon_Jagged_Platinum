@@ -112,7 +112,12 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 - Psycho Cut
   - BP: 75(+5)
-  - Now a standard mid-late game move.  
+  - Now a standard mid-late game move.
+
+- Rapid Spin
+  - BP: 50(+30)
+  - Now also raises the user's speed by 1 stage.
+  - Better hazard control and viable as a setup move.
 
 - Sludge
   - BP: 90(+25)
