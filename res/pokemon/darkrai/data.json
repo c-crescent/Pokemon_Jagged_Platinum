@@ -37,6 +37,7 @@
             [ 1, "MOVE_OMINOUS_WIND" ],
             [ 1, "MOVE_DISABLE" ],
             [ 11, "MOVE_QUICK_ATTACK" ],
+            [ 16, "MOVE_ASSURANCE" ],
             [ 20, "MOVE_HYPNOSIS" ],
             [ 29, "MOVE_FAINT_ATTACK" ],
             [ 38, "MOVE_NIGHTMARE" ],

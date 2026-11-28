@@ -43,6 +43,7 @@
             [ 8, "MOVE_GROWTH" ],
             [ 11, "MOVE_LEECH_SEED" ],
             [ 14, "MOVE_SAND_ATTACK" ],
+            [ 16, "MOVE_ASSURANCE" ],
             [ 18, "MOVE_PIN_MISSILE" ],
             [ 21, "MOVE_INGRAIN" ],
             [ 25, "MOVE_FAINT_ATTACK" ],

@@ -55,6 +55,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 80(+5)
   * Now more inline with other mid-late game moves.
  
+- Assurance
+  - Class: Special
+  - Now an early-mid game Special Dark move.
+ 
 - Chatter
   - BP: 200(+140)
   - Chatot-specific buff.
@@ -80,6 +84,12 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 - Ice Fang
   - BP: 70(+5)
+ 
+- Knock Off
+  - BP: 65(+40)
+  - PP: 10(-10)
+  - Effect: Now also does 50% more damage when the target has an item.
+  - Now is similar to modern Knock Off.
     
 * Mud Bomb
   * BP: 80(+15)

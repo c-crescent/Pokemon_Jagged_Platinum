@@ -43,6 +43,7 @@
             [ 1, "MOVE_KNOCK_OFF" ],
             [ 6, "MOVE_KNOCK_OFF" ],
             [ 12, "MOVE_PIN_MISSILE" ],
+            [ 16, "MOVE_ASSURANCE" ],
             [ 17, "MOVE_ACUPRESSURE" ],
             [ 23, "MOVE_SCARY_FACE" ],
             [ 28, "MOVE_TOXIC_SPIKES" ],

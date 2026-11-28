@@ -41,6 +41,7 @@
             [ 6, "MOVE_HARDEN" ],
             [ 9, "MOVE_VICE_GRIP" ],
             [ 12, "MOVE_LEER" ],
+            [ 16, "MOVE_ASSURANCE" ],
             [ 18, "MOVE_BUBBLE_BEAM" ],
             [ 21, "MOVE_PROTECT" ],
             [ 24, "MOVE_KNOCK_OFF" ],

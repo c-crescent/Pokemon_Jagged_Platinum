@@ -7,7 +7,7 @@
         "turn, this attack’s\n",
         "power is doubled."
     ],
-    "class": "CLASS_PHYSICAL",
+    "class": "CLASS_SPECIAL",
     "type": "TYPE_DARK",
     "power": 50,
     "accuracy": 100,
