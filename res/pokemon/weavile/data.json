@@ -46,13 +46,13 @@
             [ 21, "MOVE_FURY_SWIPES" ],
             [ 24, "MOVE_NASTY_PLOT" ],
             [ 24, "MOVE_AGILITY" ],
-            [ 28, "MOVE_ICY_WIND" ],
+            [ 28, "MOVE_ICE_PUNCH" ],
             [ 35, "MOVE_NIGHT_SLASH" ],
             [ 35, "MOVE_SLASH" ],
             [ 38, "MOVE_FLING" ],
             [ 38, "MOVE_BEAT_UP" ],
-            [ 42, "MOVE_METAL_CLAW" ],
-            [ 49, "MOVE_DARK_PULSE" ],
+            [ 42, "MOVE_AVALANCHE" ],
+            [ 45, "MOVE_DARK_PULSE" ],
             [ 49, "MOVE_ICE_SHARD" ]
         ],
         "by_tm": [

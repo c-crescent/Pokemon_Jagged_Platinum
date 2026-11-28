@@ -49,6 +49,7 @@
             [ 40, "MOVE_SPIKE_CANNON" ],
             [ 40, "MOVE_IRON_DEFENSE" ],
             [ 44, "MOVE_BRINE" ],
+            [ 46, "MOVE_AVALANCHE" ],
             [ 49, "MOVE_ICE_BEAM" ]
         ],
         "by_tm": [

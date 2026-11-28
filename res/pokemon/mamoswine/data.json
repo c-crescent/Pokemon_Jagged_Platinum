@@ -37,7 +37,6 @@
             [ 1, "MOVE_ANCIENT_POWER" ],
             [ 1, "MOVE_PECK" ],
             [ 1, "MOVE_ODOR_SLEUTH" ],
-            [ 1, "MOVE_MUD_SPORT" ],
             [ 1, "MOVE_TACKLE" ],
             [ 7, "MOVE_POWDER_SNOW" ],
             [ 12, "MOVE_MUD_SLAP" ],
@@ -51,6 +50,7 @@
             [ 30, "MOVE_DOUBLE_HIT" ],
             [ 37, "MOVE_EARTHQUAKE" ],
             [ 44, "MOVE_MIST" ],
+            [ 46, "MOVE_AVALANCHE" ],
             [ 52, "MOVE_BLIZZARD" ],
             [ 60, "MOVE_SCARY_FACE" ],
             [ 60, "MOVE_AMNESIA" ]

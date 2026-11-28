@@ -47,6 +47,7 @@
             [ 26, "MOVE_ICE_SHARD" ],
             [ 31, "MOVE_INGRAIN" ],
             [ 36, "MOVE_WOOD_HAMMER" ],
+            [ 46, "MOVE_AVALANCHE" ],
             [ 47, "MOVE_BLIZZARD" ],
             [ 58, "MOVE_SHEER_COLD" ]
         ],

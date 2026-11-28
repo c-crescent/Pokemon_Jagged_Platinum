@@ -61,6 +61,13 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Assurance
   - Class: Special
   - Now an early-mid game Special Dark move.
+
+- Avalanche
+  * BP: 85(+25)
+  * Acc: 90(-10)
+  * Priority: 0(+4)
+  * Now has a 30% flinch chance and no other special effects.
+  * A clone of Icicle Crash since a stronger physical Ice move was needed.
  
 - Chatter
   - BP: 200(+140)
