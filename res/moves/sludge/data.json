@@ -8,7 +8,7 @@
     ],
     "class": "CLASS_SPECIAL",
     "type": "TYPE_POISON",
-    "power": 65,
+    "power": 90,
     "accuracy": 100,
     "pp": 20,
     "effect": {
