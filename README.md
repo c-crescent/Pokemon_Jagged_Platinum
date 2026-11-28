@@ -66,6 +66,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Class: Special
   - Now an early-mid game Special Dark move.
 
+- Astonish
+  - BP: 35(+5)
+  - Improve physical ghost moves.
+
 - Avalanche
   * BP: 85(+25)
   * Acc: 90(-10)
@@ -104,6 +108,11 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Now also clears hazards from the user's side.
   - Another viable hazard control move.
 
+- Dizzy Punch
+  - BP: 75(+5)
+  - Eff%: 50(+30)
+  - Normalise mid-tier Punch moves. Now maybe worth using.
+
 - Double Slap
   - BP: 30(+15)
   - Acc: 100(+15)
@@ -116,6 +125,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - PP: 25(+15)
   - Eff%: 30(+10)
   - Now an early-mid game physical Dragon equivalent of Bite.
+
+- Drain Punch
+  - BP: 75(+15)
+  - Normalise mid-tier Punch moves.
 
 - Earth Power
   - BP: 100(+10)
@@ -154,6 +167,11 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Class: Special
   - Now an early game special Bug move.
     
+- Mega Punch
+  - BP: 75(-5)
+  - Acc: 100(+15)
+  - Normalise mid-tier Punch moves.
+
 * Mud Bomb
   * BP: 80(+15)
   * Acc: 95(+10)
@@ -202,6 +220,14 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Acc: 90(+10)
   - Slightly improve physical Rock moves accuracy.
 
+- Shadow Claw
+  - BP: 85(+5)
+  - Improve physical ghost moves.
+
+- Shadow Punch
+  - BP: 75(+15)
+  - Improve physical ghost moves. Normalise mid-tier Punch moves.
+
 - Sludge
   - BP: 90(+25)
   - Now a viable late game move
@@ -235,6 +261,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Stone Edge
   - Acc: 85(+5)
   - Slightly improve physical Rock moves accuracy.
+
+- Sucker Punch
+  - BP: 75(-5)
+  - Normalise mid-tier Punch moves.
 
 - Thunder Fang
   - BP: 70(+5)
