@@ -172,6 +172,9 @@ enum PartyMenuString {
     PARTY_MENU_STR_MOVE1,
     PARTY_MENU_STR_MOVE2,
     PARTY_MENU_STR_MOVE3,
+    PARTY_MENU_STR_MOVE4, // Extra slots for Fly, Defog and Flash on the first Pokemon
+    PARTY_MENU_STR_MOVE5,
+    PARTY_MENU_STR_MOVE6,
 
     NUM_PARTY_MENU_STRS,
 };

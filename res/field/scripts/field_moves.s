@@ -24,9 +24,9 @@ FieldMoves_CutTree:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
-    FindPartySlotWithMove VAR_RESULT, MOVE_CUT
-    GoToIfEq VAR_RESULT, MAX_PARTY_SIZE, FieldMoves_CantUseCut
     CheckBadgeAcquired BADGE_ID_FOREST, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseCut
+    CheckItem ITEM_HM01, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseCut
     Message FieldMoves_Text_WouldYouLikeToUseCut
     ShowYesNoMenu VAR_RESULT
@@ -45,12 +45,8 @@ FieldMoves_CantUseCut:
     End
 
 FieldMoves_UseCutFromField:
-    FindPartySlotWithMove VAR_RESULT, MOVE_CUT
-    SetVar VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_RESULT
     Message FieldMoves_Text_PokemonUsedCut
     CloseMessage
-    PlayHMCutIn VAR_0x8004
     StartDestroyObstacleAnimation 0, VAR_0x8005
     WaitTime 7, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -64,10 +60,8 @@ FieldMoves_WaitForCutAnimFromField:
 
 FieldMoves_UseCutFromMenu:
     LockAll
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedCut
     CloseMessage
-    PlayHMCutIn VAR_0x8000
     StartDestroyObstacleAnimation 0, VAR_0x8005
     WaitTime 7, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -128,10 +122,9 @@ FieldMoves_Rock:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
     FacePlayer
-    FindPartySlotWithMove VAR_RESULT, MOVE_ROCK_SMASH
-    SetVar VAR_0x8004, VAR_RESULT
-    GoToIfEq VAR_RESULT, MAX_PARTY_SIZE, FieldMoves_CantUseRockSmash
     CheckBadgeAcquired BADGE_ID_COAL, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseRockSmash
+    CheckItem ITEM_HM06, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseRockSmash
     Message FieldMoves_Text_WouldYouLikeToUseRockSmash
     ShowYesNoMenu VAR_RESULT
@@ -148,10 +141,8 @@ FieldMoves_CantUseRockSmash:
     End
 
 FieldMoves_UseRockSmashFromField:
-    BufferPartyMonNickname 0, VAR_0x8004
     Message FieldMoves_Text_PokemonUsedRockSmash
     CloseMessage
-    PlayHMCutIn VAR_0x8004
     StartDestroyObstacleAnimation 1, VAR_0x8005
     WaitTime 10, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -165,10 +156,8 @@ FieldMoves_WaitForRockSmashAnimFromField:
 
 FieldMoves_UseRockSmashFromMenu:
     LockAll
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedRockSmash
     CloseMessage
-    PlayHMCutIn VAR_0x8000
     StartDestroyObstacleAnimation 1, VAR_0x8005
     WaitTime 10, VAR_RESULT
     RemoveObject VAR_LAST_TALKED
@@ -186,9 +175,9 @@ FieldMoves_Boulder:
     FacePlayer
     DoStrengthFunc FIELD_MOVE_FUNC_CHECK_ACTIVE, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, FieldMoves_StrenghtAlreadyActive
-    FindPartySlotWithMove VAR_RESULT, MOVE_STRENGTH
-    GoToIfEq VAR_RESULT, MAX_PARTY_SIZE, FieldMoves_CantUseStrength
     CheckBadgeAcquired BADGE_ID_MINE, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseStrength
+    CheckItem ITEM_HM04, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseStrength
     Message FieldMoves_Text_WouldYouLikeToUseStrength
     ShowYesNoMenu VAR_RESULT
@@ -206,11 +195,7 @@ FieldMoves_CantUseStrength:
 
 FieldMoves_UseStrengthFromField:
     DoStrengthFunc FIELD_MOVE_FUNC_SET_ACTIVE
-    FindPartySlotWithMove VAR_RESULT, MOVE_STRENGTH
-    SetVar VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_RESULT
     Message FieldMoves_Text_PokemonUsedStrength
-    PlayHMCutIn VAR_0x8004
     CloseMessage
     Message FieldMoves_Text_PokemonStrengthMadePossibleToMove
     WaitButton
@@ -232,10 +217,8 @@ FieldMoves_UseStrengthFromMenu:
     DoStrengthFunc FIELD_MOVE_FUNC_CHECK_ACTIVE, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, FieldMoves_StrenghtAlreadyActive
     DoStrengthFunc FIELD_MOVE_FUNC_SET_ACTIVE
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedStrength
     CloseMessage
-    PlayHMCutIn VAR_0x8000
     Message FieldMoves_Text_PokemonStrengthMadePossibleToMove
     WaitButton
     CloseMessage
@@ -246,9 +229,9 @@ FieldMoves_UseStrengthFromMenu:
 FieldMoves_RockyWall:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
-    FindPartySlotWithMove VAR_RESULT, MOVE_ROCK_CLIMB
-    GoToIfEq VAR_RESULT, MAX_PARTY_SIZE, FieldMoves_CantUseRockClimb
     CheckBadgeAcquired BADGE_ID_ICICLE, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseRockClimb
+    CheckItem ITEM_HM08, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseRockClimb
     CheckHasPartner VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, FieldMoves_NoRockClimbingWithPartner
@@ -274,9 +257,8 @@ FieldMoves_NoRockClimbingWithPartner:
     End
 
 FieldMoves_UseRockClimbFromField:
-    FindPartySlotWithMove VAR_RESULT, MOVE_ROCK_CLIMB
-    SetVar VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_RESULT
+    // The party slot was only used for the cut-in, which no longer plays.
+    SetVar VAR_0x8004, 0
     Message FieldMoves_Text_PokemonUsedRockClimb
     CloseMessage
     UseRockClimb VAR_0x8004
@@ -287,7 +269,6 @@ FieldMoves_UseRockClimbFromField:
 
 FieldMoves_UseRockClimbFromMenu:
     LockAll
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedRockClimb
     CloseMessage
     UseRockClimb VAR_0x8000
@@ -315,9 +296,8 @@ FieldMoves_CantUseSurf:
     GoTo FieldMoves_End2
 
 FieldMoves_UseSurfFromField:
-    FindPartySlotWithMove VAR_RESULT, MOVE_SURF
-    SetVar VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_RESULT
+    // The party slot was only used for the cut-in, which no longer plays.
+    SetVar VAR_0x8004, 0
     Message FieldMoves_Text_PokemonUsedSurf
     CloseMessage
     UseSurf VAR_0x8004
@@ -328,7 +308,6 @@ FieldMoves_UseSurfFromField:
 
 FieldMoves_UseSurfFromMenu:
     LockAll
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedSurf
     CloseMessage
     ReleaseObject LOCALID_PLAYER
@@ -378,10 +357,8 @@ FieldMoves_SetFlagUsedDefog_Unused:
 
 FieldMoves_UseDefogFromMenu:
     LockAll
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedDefog
     CloseMessage
-    PlayHMCutIn VAR_0x8000
     DoDefogFunc FIELD_MOVE_FUNC_SET_ACTIVE
     PlaySE SEQ_SE_DP_FBRADE_sseq
     ScrCmd_0C4
@@ -393,10 +370,8 @@ FieldMoves_UseDefogFromMenu:
 
 FieldMoves_UseFlashFromMenu:
     LockAll
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedFlash
     CloseMessage
-    PlayHMCutIn VAR_0x8000
     DoFlashFunc FIELD_MOVE_FUNC_SET_ACTIVE
     ScrCmd_0C3
     WaitTime 42, VAR_RESULT
@@ -417,9 +392,9 @@ FieldMoves_End3:
 FieldMoves_Waterfall:
     PlaySE SE_CONFIRM_sseq_3
     LockAll
-    FindPartySlotWithMove VAR_RESULT, MOVE_WATERFALL
-    GoToIfEq VAR_RESULT, MAX_PARTY_SIZE, FieldMoves_CantUseWaterfall
     CheckBadgeAcquired BADGE_ID_BEACON, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseWaterfall
+    CheckItem ITEM_HM07, 1, VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, FieldMoves_CantUseWaterfall
     Message FieldMoves_Text_WouldYouLikeToUseWaterfall
     ShowYesNoMenu VAR_RESULT
@@ -436,9 +411,8 @@ FieldMoves_CantUseWaterfall:
     End
 
 FieldMoves_UseWaterfallFromField:
-    FindPartySlotWithMove VAR_RESULT, MOVE_WATERFALL
-    SetVar VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_RESULT
+    // The party slot was only used for the cut-in, which no longer plays.
+    SetVar VAR_0x8004, 0
     Message FieldMoves_Text_PokemonUsedWaterfall
     CloseMessage
     UseWaterfall VAR_0x8004
@@ -449,7 +423,6 @@ FieldMoves_UseWaterfallFromField:
 
 FieldMoves_UseWaterfallFromMenu:
     LockAll
-    BufferPartyMonNickname 0, VAR_0x8000
     Message FieldMoves_Text_PokemonUsedWaterfall
     CloseMessage
     ReleaseObject LOCALID_PLAYER

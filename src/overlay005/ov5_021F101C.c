@@ -22,7 +22,6 @@ typedef struct {
 
 BOOL ov5_021F101C(FieldTask *param0)
 {
-    FieldSystem *fieldSystem = FieldTask_GetFieldSystem(param0);
     UnkStruct_020711C8 *v1 = FieldTask_GetEnv(param0);
     int *v2 = FieldTask_GetState(param0);
     UnkStruct_ov5_021F101C *v3 = v1->unk_04;
@@ -40,11 +39,9 @@ BOOL ov5_021F101C(FieldTask *param0)
     }
         (*v2)++;
         break;
-    case 2: {
-        int v5 = PlayerAvatar_GetGender(fieldSystem->playerAvatar);
-        v3->unk_00 = HMCutIn_StartTask(fieldSystem, 0, v1->unk_00, v5);
-    }
-        (*v2)++;
+    case 2:
+        // Skip the HM cut-in and go straight to flying off.
+        *v2 = 4;
         break;
     case 3:
         if (HMCutIn_IsFinished(v3->unk_00)) {

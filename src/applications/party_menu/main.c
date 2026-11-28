@@ -61,6 +61,7 @@
 #include "touch_pad.h"
 #include "touch_screen.h"
 #include "tv_segment.h"
+#include "unk_02054884.h"
 #include "unk_0206B9D8.h"
 #include "unk_0208C098.h"
 #include "vram_transfer.h"
@@ -682,7 +683,7 @@ static BOOL PartyMenu_Exit(ApplicationManager *appMan, int *state)
     String_Free(v0->tmpString);
     String_Free(v0->tmpFormat);
 
-    for (v1 = 0; v1 < 20; v1++) {
+    for (v1 = 0; v1 < NUM_PARTY_MENU_STRS; v1++) {
         String_Free(v0->menuStrings[v1]);
     }
 
@@ -1752,7 +1753,7 @@ static void sub_0207FFC8(PartyMenuApplication *application)
     u8 v1;
 
     Window_EraseMessageBox(&application->windows[32], 1);
-    v0 = Heap_Alloc(HEAP_ID_PARTY_MENU, 8);
+    v0 = Heap_Alloc(HEAP_ID_PARTY_MENU, 12); // Room for up to 7 field moves
 
     switch (application->partyMenu->mode) {
     case PARTY_MENU_MODE_FIELD:
@@ -1788,6 +1789,24 @@ static void sub_0207FFC8(PartyMenuApplication *application)
     Sprite_SetExplicitPalette2(application->sprites[PARTY_MENU_SPRITE_CURSOR_NORMAL], 1);
 }
 
+// Field moves offered without a Pokemon knowing them, if the matching HM/TM is in the Bag.
+static const u16 sFreeFieldMoves[][2] = {
+    { MOVE_FLY, ITEM_HM02 },
+    { MOVE_DEFOG, ITEM_HM05 },
+    { MOVE_FLASH, ITEM_TM70 },
+};
+
+static u8 GetFirstNonEggSlot(PartyMenuApplication *application)
+{
+    for (u8 i = 0; i < Party_GetCurrentCount(application->partyMenu->party); i++) {
+        if (application->partyMembers[i].isEgg == FALSE) {
+            return i;
+        }
+    }
+
+    return PARTY_SLOT_NONE;
+}
+
 static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8 *menuEntriesBuffer)
 {
     Pokemon *mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
@@ -1813,6 +1832,22 @@ static u8 GetContextMenuEntriesForPartyMon(PartyMenuApplication *application, u8
                     count++;
                     PartyMenu_SetKnownFieldMove(application, move, fieldMoveIndex);
                     fieldMoveIndex++;
+                }
+            }
+
+            // Fly, Defog and Flash are offered on the first Pokemon that isn't an Egg
+            // when no Pokemon in the party knows them and the HM/TM is in the Bag.
+            if (application->currPartySlot == GetFirstNonEggSlot(application)) {
+                for (i = 0; i < NELEMS(sFreeFieldMoves); i++) {
+                    move = sFreeFieldMoves[i][0];
+
+                    if (Party_HasMonWithMove(application->partyMenu->party, move) == PARTY_SLOT_NONE
+                        && Bag_CanRemoveItem(application->partyMenu->bag, sFreeFieldMoves[i][1], 1, HEAP_ID_PARTY_MENU)) {
+                        menuEntriesBuffer[count] = GetFieldMoveIndex(move);
+                        count++;
+                        PartyMenu_SetKnownFieldMove(application, move, fieldMoveIndex);
+                        fieldMoveIndex++;
+                    }
                 }
             }
 

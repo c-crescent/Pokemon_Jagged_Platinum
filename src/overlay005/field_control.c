@@ -6,9 +6,12 @@
 #include "constants/field/dynamic_map_features.h"
 #include "constants/field/script_ranges.h"
 #include "constants/field_poison.h"
+#include "constants/heap.h"
 #include "constants/map_object.h"
 #include "constants/player_avatar.h"
+#include "generated/badges.h"
 #include "generated/game_records.h"
+#include "generated/items.h"
 #include "generated/trainer_score_events.h"
 
 #include "struct_decls/map_object.h"
@@ -30,6 +33,7 @@
 #include "overlay009/ov9_02249960.h"
 #include "underground/manager.h"
 
+#include "bag.h"
 #include "catching_show.h"
 #include "comm_manager.h"
 #include "comm_player_manager.h"
@@ -213,7 +217,9 @@ BOOL FieldInput_Process(const FieldInput *input, FieldSystem *fieldSystem)
             playerEvent |= PLAYER_EVENT_USED_STRENGTH;
         }
 
-        if (Party_HasMonWithMove(SaveData_GetParty(fieldSystem->saveData), MOVE_WATERFALL) != PARTY_SLOT_NONE) {
+        // Going down a waterfall needs the Beacon Badge, not a Pokemon that knows Waterfall.
+        // HM07 is checked only when actually moving onto a waterfall, since it reads item data.
+        if (TrainerInfo_HasBadge(SaveData_GetTrainerInfo(fieldSystem->saveData), BADGE_ID_BEACON)) {
             playerEvent |= PLAYER_EVENT_USED_WATERFALL;
         }
 
@@ -689,10 +695,11 @@ u16 Field_TileBehaviorToScript(FieldSystem *fieldSystem, u8 behavior)
         TrainerInfo *info = SaveData_GetTrainerInfo(fieldSystem->saveData);
         u32 distortionBehavior = PlayerAvatar_GetDistortionCurrTileBehaviour(fieldSystem->playerAvatar);
 
-        if (PlayerAvatar_CanUseSurf(fieldSystem->playerAvatar, distortionBehavior, behavior) && TrainerInfo_HasBadge(info, 3)) {
-            if (Party_HasMonWithMove(SaveData_GetParty(fieldSystem->saveData), MOVE_SURF) != PARTY_SLOT_NONE) {
-                return SCRIPT_ID(FIELD_MOVES, 4);
-            }
+        // Surf needs the Fen Badge and HM03, not a Pokemon that knows Surf.
+        if (PlayerAvatar_CanUseSurf(fieldSystem->playerAvatar, distortionBehavior, behavior)
+            && TrainerInfo_HasBadge(info, BADGE_ID_FEN)
+            && Bag_CanRemoveItem(SaveData_GetBag(fieldSystem->saveData), ITEM_HM03, 1, HEAP_ID_FIELD2)) {
+            return SCRIPT_ID(FIELD_MOVES, 4);
         }
     }
 

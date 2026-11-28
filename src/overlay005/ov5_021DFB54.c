@@ -4,9 +4,11 @@
 #include <string.h>
 
 #include "constants/field/dynamic_map_features.h"
+#include "constants/heap.h"
 #include "constants/map_object.h"
 #include "constants/player_avatar.h"
 #include "generated/game_records.h"
+#include "generated/items.h"
 #include "generated/movement_actions.h"
 
 #include "struct_decls/map_object.h"
@@ -26,6 +28,7 @@
 #include "overlay006/wild_encounters.h"
 #include "overlay009/ov9_02249960.h"
 
+#include "bag.h"
 #include "billboard.h"
 #include "encounter.h"
 #include "field_battle_data_transfer.h"
@@ -853,6 +856,11 @@ static int ov5_021E04A8(FieldSystem *fieldSystem, PlayerAvatar *playerAvatar, in
         if (TileBehavior_IsWaterfall(v0) == 0) {
             return 0;
         }
+    }
+
+    // Going down a waterfall needs HM07 in the Bag (the Beacon Badge is checked by the caller).
+    if (Bag_CanRemoveItem(SaveData_GetBag(fieldSystem->saveData), ITEM_HM07, 1, HEAP_ID_FIELD2) == FALSE) {
+        return 0;
     }
 
     ov5_021E097C(fieldSystem, param2);
@@ -1708,7 +1716,7 @@ void FieldSystem_EndVsSeekerTask(SysTask *param0)
 
 static void MonRideTask_Init(FieldSystem *fieldSystem, Pokemon *partyMon, MonRideTask *monRideTask)
 {
-    monRideTask->playCutIn = TRUE;
+    monRideTask->playCutIn = FALSE; // No HM cut-in for Surf, Waterfall or Rock Climb
     monRideTask->partyMon = partyMon;
     monRideTask->playerGender = PlayerAvatar_GetGender(fieldSystem->playerAvatar);
 }
