@@ -3643,7 +3643,7 @@ static BOOL AI_HasAbsorbAbilityInParty(BattleSystem *battleSys, BattleContext *b
     u8 aiSlot1, aiSlot2;
     u8 moveType;
     u8 ability;
-    u8 checkAbility;
+    u8 checkAbility, checkAbility2;
     int start, end;
     Pokemon *mon;
 
@@ -3663,18 +3663,22 @@ static BOOL AI_HasAbsorbAbilityInParty(BattleSystem *battleSys, BattleContext *b
     }
 
     moveType = MOVE_DATA(battleCtx->moveHit[battler]).type;
+    // Storm Drain and Lightning Rod also absorb Water and Electric moves.
     if (moveType == TYPE_FIRE) {
         checkAbility = ABILITY_FLASH_FIRE;
+        checkAbility2 = ABILITY_FLASH_FIRE;
     } else if (moveType == TYPE_WATER) {
         checkAbility = ABILITY_WATER_ABSORB;
+        checkAbility2 = ABILITY_STORM_DRAIN;
     } else if (moveType == TYPE_ELECTRIC) {
         checkAbility = ABILITY_VOLT_ABSORB;
+        checkAbility2 = ABILITY_LIGHTNING_ROD;
     } else {
         return ABILITY_NONE;
     }
 
     // If our ability absorbs the type of the last move that hit us, do not switch.
-    if (Battler_Ability(battleCtx, battler) == checkAbility) {
+    if (Battler_Ability(battleCtx, battler) == checkAbility || Battler_Ability(battleCtx, battler) == checkAbility2) {
         return FALSE;
     }
 
@@ -3703,7 +3707,7 @@ static BOOL AI_HasAbsorbAbilityInParty(BattleSystem *battleSys, BattleContext *b
             ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
 
             // Switch to a matching Pokemon 50% of the time.
-            if (checkAbility == ability && (BattleSystem_RandNext(battleSys) & 1)) {
+            if ((checkAbility == ability || checkAbility2 == ability) && (BattleSystem_RandNext(battleSys) & 1)) {
                 battleCtx->aiSwitchedPartySlot[battler] = i;
                 return TRUE;
             }

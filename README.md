@@ -40,8 +40,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Repels now have a reuse prompt.
 
 ## Balance
+### Abilities
+- Storm Drain and Lightning Rod now make the user immune to Water and Electric respectively, and raises the user's Special Attack by 1 stage when hit, like later gens.
 ### Mechanics
-* Full paralysis chance is now 1 in 8 instead of 1 in 4.
+* Full paralysis chance is now 1 in 8 instead of 1 in 4, and now affects Magic Guard Pokemon
 ### Moves
 
 - Acid
