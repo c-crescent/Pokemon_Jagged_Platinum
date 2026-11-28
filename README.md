@@ -190,6 +190,18 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Acc: 100(+20)
   - PP: 20(+10)
 
+- Rock Slide
+  - Acc: 95(+5)
+  - Slightly improve physical Rock moves accuracy.
+
+- Rock Throw
+  - Acc: 95(+5)
+  - Slightly improve physical Rock moves accuracy.
+
+- Rock Tomb
+  - Acc: 90(+10)
+  - Slightly improve physical Rock moves accuracy.
+
 - Sludge
   - BP: 90(+25)
   - Now a viable late game move
@@ -219,6 +231,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - PP: 20(+5)
   - Type: Water
   - Now a viable STAB for Cloyster.
+
+- Stone Edge
+  - Acc: 85(+5)
+  - Slightly improve physical Rock moves accuracy.
 
 - Thunder Fang
   - BP: 70(+5)
