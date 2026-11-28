@@ -43,19 +43,19 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 ### Moves
 
-- Acid:
+- Acid
   - BP: 60(+20)
   - Now a viable mid game move.
 
-- Aqua Tail:
+- Aqua Tail
   - BP: 100(+10)
   - Now a viable alternative to Waterfall.
 
-- Crab Hammer:
+- Crab Hammer
   - BP: 120(+30)
   - Now a viable signature move.
 
-- Dragon Rush:
+- Dragon Rush
     - BP: 60(-40)
     - Acc: 100(+25)
     - PP: 25(+15)
@@ -75,6 +75,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Eff%: 10(-20)
   - Now similar to elemental Fang moves.
 
+- Psycho Cut
+  - BP: 75(+5)
+  - Now a standard mid-late game move.  
+
 - Sludge
   - BP: 90(+25)
   - Now a viable late game move
@@ -84,6 +88,11 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Acc: 90(-10)
   - PP: 5(-5)
   - Now a viable ultra-tier move.
+
+- Smelling Salt
+  - BP: 45(-15)
+  - Type: Psychic (was Normal)
+  - Now an early game physical Psychic move.
 
 - Smog:
   - BP: 45(+25)
@@ -96,6 +105,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 - Thunder Fang
   - BP: 70(+5)
+
+- Zen Headbutt
+  - BP: 100(+20)
+  - Now an ultra-tier move.
 
 ## Living Dex Compatability
 

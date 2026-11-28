@@ -8,8 +8,8 @@
         "paralysis, however."
     ],
     "class": "CLASS_PHYSICAL",
-    "type": "TYPE_NORMAL",
-    "power": 60,
+    "type": "TYPE_PSYCHIC",
+    "power": 45,
     "accuracy": 100,
     "pp": 10,
     "effect": {
