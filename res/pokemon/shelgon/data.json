@@ -42,6 +42,7 @@
             [ 10, "MOVE_LEER" ],
             [ 16, "MOVE_HEADBUTT" ],
             [ 20, "MOVE_FOCUS_ENERGY" ],
+            [ 23, "MOVE_DRAGON_RUSH" ],
             [ 25, "MOVE_EMBER" ],
             [ 30, "MOVE_PROTECT" ],
             [ 32, "MOVE_DRAGON_BREATH" ],

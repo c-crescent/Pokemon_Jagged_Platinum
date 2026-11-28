@@ -23,6 +23,7 @@ are listed here.
 - Progression HMs no longer require a Pokemon knowing the move, just the respective badge & HM / TM in your bag.
 
 #### Moves
+All changed moves might have learnsets updates to accommodate.
 
 - Dragon Rush:
     - BP: 60(-40)

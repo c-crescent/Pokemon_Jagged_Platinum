@@ -43,8 +43,9 @@
             [ 19, "MOVE_SAND_TOMB" ],
             [ 28, "MOVE_SLASH" ],
             [ 33, "MOVE_DRAGON_CLAW" ],
+            [ 34, "MOVE_DRAGON_RUSH" ],
             [ 40, "MOVE_DIG" ],
-            [ 49, "MOVE_DRAGON_RUSH" ]
+            [ 49, "MOVE_OUTRAGE" ]
         ],
         "by_tm": [
             "TM02",
