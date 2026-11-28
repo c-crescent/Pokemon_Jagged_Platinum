@@ -174,6 +174,13 @@ BOOL PokemonAnimManager_HasAnimCompleted(PokemonAnimManager *monAnimMan, u8 inde
     return monAnimMan->anims[index].completed;
 }
 
+// Unlike HasAnimCompleted, this is FALSE for a slot that never played an animation.
+BOOL PokemonAnimManager_IsAnimRunning(PokemonAnimManager *monAnimMan, u8 index)
+{
+    GF_ASSERT(index < monAnimMan->animCount);
+    return monAnimMan->anims[index].task != NULL;
+}
+
 void PokemonAnimManager_DeleteAnim(PokemonAnimManager *monAnimMan, u8 index)
 {
     if (monAnimMan->anims[index].task != NULL) {

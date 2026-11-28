@@ -37,6 +37,7 @@
 #include "particle_system.h"
 #include "pltt_transfer.h"
 #include "pokemon.h"
+#include "pokemon_anim.h"
 #include "pokemon_sprite.h"
 #include "sound.h"
 #include "sound_playback.h"
@@ -3939,6 +3940,11 @@ BattleMonOBJData *BattleMonOBJData_New(BattleSystem *battleSys, enum HeapID heap
                     int isHidden = PokemonSprite_GetAttribute(pokemonSprite, MON_SPRITE_HIDE);
 
                     if (isHidden == 1) {
+                        ManagedSprite_SetDrawFlag(managedSprite, 0);
+                    } else if (PokemonAnimManager_IsAnimRunning(BattleSystem_GetPokemonAnimManager(battleSys), battler)
+                        || PokemonSprite_IsAnimActive(pokemonSprite) != FALSE) {
+                        // Entry animations can now still be playing here. A static copy would
+                        // show as a second sprite, so leave this Pokemon to its own sprite.
                         ManagedSprite_SetDrawFlag(managedSprite, 0);
                     }
                 }

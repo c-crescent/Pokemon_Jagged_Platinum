@@ -8,9 +8,14 @@ _000:
     SetPokemonEncounter BTLSCR_ENEMY
     SetTrainerEncounter BTLSCR_PLAYER
     PlayEncounterAnimation 
-    WaitTime 122
-    HealthBoxSlideInDelay BTLSCR_ENEMY
+    // Send out the player's Pokemon as soon as both sides have slid in, while the
+    // wild Pokemon's entry animation, health box and "appeared" message play.
     Wait 
+    SpriteToOAM BTLSCR_ENEMY
+    Wait 
+    ThrowPokeball BTLSCR_PLAYER, BTLSCR_THROW_POKE_BALL
+    PokemonSlideIn BTLSCR_PLAYER
+    HealthBoxSlideInDelay BTLSCR_ENEMY
     CompareVarToValue OPCODE_FLAG_SET, BTLVAR_BATTLE_SYS_STATUS, BATTLE_STATUS_DISTORTION, _073
     CompareVarToValue OPCODE_FLAG_SET, BTLVAR_BATTLE_SYS_STATUS, BATTLE_STATUS_LEGENDARY, _067
     CompareVarToValue OPCODE_FLAG_SET, BTLVAR_BATTLE_SYS_STATUS, BATTLE_STATUS_FIRST_BATTLE, _055
@@ -46,7 +51,7 @@ _079:
 
 _084:
     Wait 
-    WaitButtonABTime 30
+    HealthBoxSlideInDelay BTLSCR_PLAYER
     CompareVarToValue OPCODE_FLAG_SET, BTLVAR_BATTLE_TYPE, BATTLE_TYPE_2vs2, _098
     // Go! {0}!
     PrintMessage BattleStrings_Text_GoPokemon, TAG_NICKNAME, BTLSCR_PLAYER
@@ -56,12 +61,6 @@ _098:
     PrintFirstSendOutMessage BTLSCR_PLAYER
 
 _100:
-    SpriteToOAM BTLSCR_ENEMY
-    Wait 
-    ThrowPokeball BTLSCR_PLAYER, BTLSCR_THROW_POKE_BALL
-    PokemonSlideIn BTLSCR_PLAYER
-    WaitTime 96
-    HealthBoxSlideInDelay BTLSCR_PLAYER
     Wait 
     OAMToSprite BTLSCR_ENEMY
     Wait 
@@ -78,19 +77,21 @@ _118:
     PrintEncounterMessage BTLSCR_ENEMY
     Wait 
     WaitButtonABTime 30
+    // Both sides send out at the same time. The two messages still print one after the
+    // other, since they share the message box.
     PrintFirstSendOutMessage BTLSCR_ENEMY
-    HideBattleStartPartyGauge BTLSCR_ENEMY
-    ThrowPokeball BTLSCR_ENEMY, BTLSCR_THROW_POKE_BALL
-    PokemonSlideIn BTLSCR_ENEMY
-    WaitTime 112
-    HealthBoxSlideInDelay BTLSCR_ENEMY
     Wait 
     PrintFirstSendOutMessage BTLSCR_PLAYER
+    HideBattleStartPartyGauge BTLSCR_ENEMY
     HideBattleStartPartyGauge BTLSCR_PLAYER
+    ThrowPokeball BTLSCR_ENEMY, BTLSCR_THROW_POKE_BALL
+    PokemonSlideIn BTLSCR_ENEMY
     ThrowPokeball BTLSCR_PLAYER, BTLSCR_THROW_POKE_BALL
     PokemonSlideIn BTLSCR_PLAYER
     WaitTime 96
     HealthBoxSlideInDelay BTLSCR_PLAYER
+    WaitTime 16
+    HealthBoxSlideInDelay BTLSCR_ENEMY
     Wait 
     FreePartyGaugeGraphics 
     GoTo _258

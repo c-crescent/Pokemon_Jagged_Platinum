@@ -19,6 +19,7 @@ are listed here.
 - Button Mode is now L=A by default.
 - Text Speed is now Fast by default.
 - The game now runs 2x faster. Most delays in battle are now removed.
+- Both sides of a battle now appears simultaneously, reducing the delay before the player can take an action.
 
 ### Removed
 
