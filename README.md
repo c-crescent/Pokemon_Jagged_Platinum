@@ -40,7 +40,8 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Repels now have a reuse prompt.
 
 ## Balance
-
+### Mechanics
+* Full paralysis chance is now 1 in 8 instead of 1 in 4.
 ### Moves
 
 - Acid
@@ -154,7 +155,7 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 100(+20)
   - Now an ultra-tier move.
 
-## Living Dex Compatability
+## Living Dex
 
 - After entering the Hall of Fame, the player can encounter an infinite number of clones of the Pokémon in the lead slot in Sandgem Town Lab.
 - All Land / Surfing / Rod encounter slots normalised to scale down linearly to a minimum of 5%.

@@ -614,7 +614,7 @@ Basic_CheckCannotParalyze:
     IfMoveEffectivenessEquals TYPE_MULTI_IMMUNE, ScoreMinus10
     LoadBattlerAbility AI_BATTLER_DEFENDER
     IfLoadedEqualTo ABILITY_LIMBER, ScoreMinus10
-    IfLoadedEqualTo ABILITY_MAGIC_GUARD, ScoreMinus10
+    // Magic Guard no longer prevents full paralysis, so paralysing it is worthwhile.
     LoadBattlerAbility AI_BATTLER_ATTACKER
     IfLoadedEqualTo ABILITY_MOLD_BREAKER, Basic_CheckCannotParalyze_ImmuneToStatus
     IfMoveEqualTo MOVE_THUNDER_WAVE, Basic_CheckCannotParalyze_ThunderWave

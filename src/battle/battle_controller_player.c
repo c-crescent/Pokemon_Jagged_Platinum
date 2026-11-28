@@ -2650,9 +2650,10 @@ static BOOL BattleControllerPlayer_CheckStatusDisruption(BattleSystem *battleSys
             break;
 
         case CHECK_STATUS_STATE_PARALYSIS:
-            if ((ATTACKING_MON.status & MON_CONDITION_PARALYSIS)
-                && Battler_Ability(battleCtx, battleCtx->attacker) != ABILITY_MAGIC_GUARD) {
-                if (BattleSystem_RandNext(battleSys) % 4 == 0) {
+            // Magic Guard no longer prevents full paralysis.
+            if (ATTACKING_MON.status & MON_CONDITION_PARALYSIS) {
+                // 1 in 8 chance to be fully paralyzed (was 1 in 4).
+                if (BattleSystem_RandNext(battleSys) % 8 == 0) {
                     battleCtx->moveFailFlags[battleCtx->attacker].paralyzed = TRUE;
 
                     LOAD_SUBSEQ(subscript_fully_paralyzed);
