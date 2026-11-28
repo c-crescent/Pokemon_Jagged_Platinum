@@ -9,12 +9,12 @@
     ],
     "class": "CLASS_PHYSICAL",
     "type": "TYPE_DRAGON",
-    "power": 100,
-    "accuracy": 75,
-    "pp": 10,
+    "power": 60,
+    "accuracy": 100,
+    "pp": 25,
     "effect": {
         "type": "BATTLE_EFFECT_FLINCH_HIT",
-        "chance": 20
+        "chance": 30
     },
     "range": "RANGE_SINGLE_TARGET",
     "priority": 0,

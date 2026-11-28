@@ -22,6 +22,15 @@ are listed here.
 - Both sides of a battle now appears simultaneously, reducing the delay before the player can take an action.
 - Progression HMs no longer require a Pokemon knowing the move, just the respective badge & HM / TM in your bag.
 
+#### Moves
+
+- Dragon Rush:
+    - BP: 60(-40)
+    - Acc: 100(+25)
+    - PP: 25(+15)
+    - Eff%: 30(+10)
+    - Now an early-mid game physical Dragon equivalent of Bite.
+
 ### Removed
 
 ## [0.1.0]
