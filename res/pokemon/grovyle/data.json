@@ -43,10 +43,13 @@
             [ 14, "MOVE_FURY_CUTTER" ],
             [ 15, "MOVE_PURSUIT" ],
             [ 21, "MOVE_SCREECH" ],
+            [ 23, "MOVE_MEGA_DRAIN" ],
             [ 26, "MOVE_LEAF_BLADE" ],
             [ 31, "MOVE_AGILITY" ],
             [ 37, "MOVE_SLAM" ],
+            [ 41, "MOVE_GIGA_DRAIN" ],
             [ 42, "MOVE_DETECT" ],
+            [ 46, "MOVE_ENERGY_BALL" ],
             [ 47, "MOVE_FALSE_SWIPE" ],
             [ 53, "MOVE_LEAF_STORM" ]
         ],

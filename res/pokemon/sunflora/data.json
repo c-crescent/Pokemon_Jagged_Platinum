@@ -42,12 +42,16 @@
             [ 13, "MOVE_GRASS_WHISTLE" ],
             [ 17, "MOVE_LEECH_SEED" ],
             [ 21, "MOVE_BULLET_SEED" ],
+            [ 21, "MOVE_ENDEAVOR" ],
             [ 25, "MOVE_WORRY_SEED" ],
             [ 29, "MOVE_RAZOR_LEAF" ],
             [ 33, "MOVE_PETAL_DANCE" ],
+            [ 33, "MOVE_SYNTHESIS" ],
             [ 37, "MOVE_SUNNY_DAY" ],
             [ 41, "MOVE_SOLAR_BEAM" ],
-            [ 43, "MOVE_LEAF_STORM" ]
+            [ 41, "MOVE_GIGA_DRAIN" ],
+            [ 43, "MOVE_LEAF_STORM" ],
+            [ 45, "MOVE_SEED_BOMB" ]
         ],
         "by_tm": [
             "TM06",

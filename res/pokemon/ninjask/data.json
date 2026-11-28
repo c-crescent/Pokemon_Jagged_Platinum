@@ -38,7 +38,6 @@
             [ 1, "MOVE_SCRATCH" ],
             [ 1, "MOVE_HARDEN" ],
             [ 1, "MOVE_LEECH_LIFE" ],
-            [ 1, "MOVE_SAND_ATTACK" ],
             [ 5, "MOVE_LEECH_LIFE" ],
             [ 9, "MOVE_SAND_ATTACK" ],
             [ 14, "MOVE_FURY_SWIPES" ],
@@ -47,9 +46,13 @@
             [ 20, "MOVE_FURY_CUTTER" ],
             [ 20, "MOVE_SCREECH" ],
             [ 25, "MOVE_SWORDS_DANCE" ],
+            [ 25, "MOVE_FALSE_SWIPE" ],
             [ 31, "MOVE_SLASH" ],
+            [ 31, "MOVE_MUD_SLAP" ],
             [ 38, "MOVE_AGILITY" ],
+            [ 38, "MOVE_METAL_CLAW" ],
             [ 45, "MOVE_BATON_PASS" ],
+            [ 45, "MOVE_DIG" ],
             [ 52, "MOVE_X_SCISSOR" ]
         ],
         "by_tm": [

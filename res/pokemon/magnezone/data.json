@@ -40,6 +40,7 @@
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_THUNDER_SHOCK" ],
             [ 1, "MOVE_SUPERSONIC" ],
+            [ 1, "MOVE_TRI_ATTACK" ],
             [ 6, "MOVE_THUNDER_SHOCK" ],
             [ 11, "MOVE_SUPERSONIC" ],
             [ 14, "MOVE_SONIC_BOOM" ],

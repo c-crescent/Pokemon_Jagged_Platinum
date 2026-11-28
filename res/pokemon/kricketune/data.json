@@ -38,6 +38,7 @@
             [ 1, "MOVE_BIDE" ],
             [ 10, "MOVE_FURY_CUTTER" ],
             [ 14, "MOVE_LEECH_LIFE" ],
+            [ 16, "MOVE_BUG_BITE" ],
             [ 18, "MOVE_SING" ],
             [ 22, "MOVE_FOCUS_ENERGY" ],
             [ 26, "MOVE_SLASH" ],

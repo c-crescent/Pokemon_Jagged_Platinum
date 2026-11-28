@@ -45,6 +45,7 @@
             [ 19, "MOVE_PURSUIT" ],
             [ 23, "MOVE_UPROAR" ],
             [ 28, "MOVE_ACUPRESSURE" ],
+            [ 32, "MOVE_DOUBLE_HIT" ],
             [ 34, "MOVE_TRI_ATTACK" ],
             [ 41, "MOVE_AGILITY" ],
             [ 47, "MOVE_DRILL_PECK" ],

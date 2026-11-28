@@ -23,6 +23,7 @@ are listed here.
 - Progression HMs no longer require a Pokemon knowing the move, just the respective badge & HM / TM in your bag.
 - Nidorina and Nidoqueen can now breed normally.
 - Learnsets are now fully normalised, non-Legendary / Mythical / Unown Pokemon now caps out their learnset at level 60.
+- Evolutions should now learns the level-up moves their pre-evolutions learn unless it exceeds the 20 move limit.
 
 ### Removed
 

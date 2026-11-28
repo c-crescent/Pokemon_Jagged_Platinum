@@ -40,6 +40,7 @@
             [ 7, "MOVE_CONFUSE_RAY" ],
             [ 9, "MOVE_FURY_CUTTER" ],
             [ 13, "MOVE_DEFEND_ORDER" ],
+            [ 13, "MOVE_BUG_BITE" ],
             [ 15, "MOVE_PURSUIT" ],
             [ 19, "MOVE_FURY_SWIPES" ],
             [ 21, "MOVE_POWER_GEM" ],

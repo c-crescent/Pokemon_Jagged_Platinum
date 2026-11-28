@@ -35,7 +35,10 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_HARDEN" ],
-            [ 7, "MOVE_HARDEN" ]
+            [ 1, "MOVE_TACKLE" ],
+            [ 1, "MOVE_STRING_SHOT" ],
+            [ 7, "MOVE_HARDEN" ],
+            [ 15, "MOVE_BUG_BITE" ]
         ],
         "by_tm": [  ],
         "by_tutor": [ "MOVE_IRON_DEFENSE" ]

@@ -42,6 +42,7 @@
             [ 1, "MOVE_FORESIGHT" ],
             [ 6, "MOVE_ENDURE" ],
             [ 13, "MOVE_RETURN" ],
+            [ 13, "MOVE_FRUSTRATION" ],
             [ 16, "MOVE_QUICK_ATTACK" ],
             [ 23, "MOVE_JUMP_KICK" ],
             [ 26, "MOVE_BATON_PASS" ],

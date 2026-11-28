@@ -43,10 +43,13 @@
             [ 13, "MOVE_BIDE" ],
             [ 14, "MOVE_MUD_SHOT" ],
             [ 17, "MOVE_FORESIGHT" ],
+            [ 21, "MOVE_MUD_SPORT" ],
             [ 22, "MOVE_MUD_BOMB" ],
             [ 27, "MOVE_TAKE_DOWN" ],
+            [ 29, "MOVE_WHIRLPOOL" ],
             [ 32, "MOVE_MUDDY_WATER" ],
             [ 37, "MOVE_PROTECT" ],
+            [ 37, "MOVE_HYDRO_PUMP" ],
             [ 40, "MOVE_EARTHQUAKE" ],
             [ 46, "MOVE_ENDEAVOR" ]
         ],

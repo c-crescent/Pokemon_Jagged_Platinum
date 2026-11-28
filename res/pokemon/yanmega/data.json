@@ -36,7 +36,6 @@
         "by_level": [
             [ 1, "MOVE_NIGHT_SLASH" ],
             [ 1, "MOVE_BUG_BITE" ],
-            [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_FORESIGHT" ],
             [ 1, "MOVE_QUICK_ATTACK" ],
             [ 1, "MOVE_DOUBLE_TEAM" ],
@@ -49,8 +48,9 @@
             [ 30, "MOVE_PURSUIT" ],
             [ 33, "MOVE_ANCIENT_POWER" ],
             [ 38, "MOVE_FEINT" ],
+            [ 38, "MOVE_HYPNOSIS" ],
             [ 43, "MOVE_SLASH" ],
-            [ 46, "MOVE_SCREECH" ],
+            [ 43, "MOVE_WING_ATTACK" ],
             [ 49, "MOVE_U_TURN" ],
             [ 54, "MOVE_AIR_SLASH" ],
             [ 57, "MOVE_BUG_BUZZ" ]

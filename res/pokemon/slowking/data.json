@@ -47,9 +47,12 @@
             [ 26, "MOVE_WATER_PULSE" ],
             [ 30, "MOVE_ZEN_HEADBUTT" ],
             [ 35, "MOVE_NASTY_PLOT" ],
+            [ 35, "MOVE_SLACK_OFF" ],
             [ 39, "MOVE_SWAGGER" ],
+            [ 39, "MOVE_AMNESIA" ],
             [ 43, "MOVE_PSYCHIC" ],
             [ 47, "MOVE_TRUMP_CARD" ],
+            [ 47, "MOVE_RAIN_DANCE" ],
             [ 51, "MOVE_PSYCH_UP" ]
         ],
         "by_tm": [

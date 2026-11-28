@@ -45,6 +45,7 @@
             [ 23, "MOVE_SLUDGE" ],
             [ 27, "MOVE_HAZE" ],
             [ 31, "MOVE_DOUBLE_HIT" ],
+            [ 31, "MOVE_GYRO_BALL" ],
             [ 38, "MOVE_EXPLOSION" ],
             [ 46, "MOVE_SLUDGE_BOMB" ],
             [ 52, "MOVE_DESTINY_BOND" ],

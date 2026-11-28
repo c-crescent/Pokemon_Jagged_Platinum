@@ -37,7 +37,19 @@
             [ 1, "MOVE_SING" ],
             [ 1, "MOVE_DISABLE" ],
             [ 1, "MOVE_DEFENSE_CURL" ],
-            [ 1, "MOVE_DOUBLE_SLAP" ]
+            [ 1, "MOVE_DOUBLE_SLAP" ],
+            [ 1, "MOVE_CHARM" ],
+            [ 9, "MOVE_POUND" ],
+            [ 13, "MOVE_SWEET_KISS" ],
+            [ 17, "MOVE_ROLLOUT" ],
+            [ 17, "MOVE_COPYCAT" ],
+            [ 25, "MOVE_REST" ],
+            [ 29, "MOVE_BODY_SLAM" ],
+            [ 33, "MOVE_GYRO_BALL" ],
+            [ 37, "MOVE_WAKE_UP_SLAP" ],
+            [ 41, "MOVE_MIMIC" ],
+            [ 45, "MOVE_HYPER_VOICE" ],
+            [ 49, "MOVE_DOUBLE_EDGE" ]
         ],
         "by_tm": [
             "TM01",

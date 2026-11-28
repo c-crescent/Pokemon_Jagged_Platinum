@@ -49,6 +49,7 @@
             [ 41, "MOVE_TAUNT" ],
             [ 45, "MOVE_EMBARGO" ],
             [ 50, "MOVE_TAKE_DOWN" ],
+            [ 51, "MOVE_CRUNCH" ],
             [ 55, "MOVE_THIEF" ],
             [ 60, "MOVE_SUCKER_PUNCH" ]
         ],

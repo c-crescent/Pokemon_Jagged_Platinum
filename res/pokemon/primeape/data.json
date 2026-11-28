@@ -39,6 +39,7 @@
             [ 1, "MOVE_LOW_KICK" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_FOCUS_ENERGY" ],
+            [ 1, "MOVE_COVET" ],
             [ 9, "MOVE_FURY_SWIPES" ],
             [ 13, "MOVE_KARATE_CHOP" ],
             [ 17, "MOVE_SEISMIC_TOSS" ],

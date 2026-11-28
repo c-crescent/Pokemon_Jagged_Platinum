@@ -43,9 +43,11 @@
             [ 13, "MOVE_FAINT_ATTACK" ],
             [ 20, "MOVE_SWEET_SCENT" ],
             [ 26, "MOVE_SLASH" ],
+            [ 32, "MOVE_CHARM" ],
             [ 34, "MOVE_SCARY_FACE" ],
             [ 42, "MOVE_REST" ],
             [ 44, "MOVE_SNORE" ],
+            [ 51, "MOVE_FLING" ],
             [ 52, "MOVE_THRASH" ],
             [ 60, "MOVE_HAMMER_ARM" ]
         ],

@@ -39,6 +39,7 @@
             [ 1, "MOVE_FLAIL" ],
             [ 1, "MOVE_LOW_KICK" ],
             [ 1, "MOVE_ROCK_THROW" ],
+            [ 1, "MOVE_FAKE_TEARS" ],
             [ 6, "MOVE_FLAIL" ],
             [ 9, "MOVE_LOW_KICK" ],
             [ 14, "MOVE_ROCK_THROW" ],

@@ -44,10 +44,13 @@
             [ 15, "MOVE_DOUBLE_KICK" ],
             [ 15, "MOVE_PECK" ],
             [ 19, "MOVE_SAND_ATTACK" ],
+            [ 23, "MOVE_FIRE_SPIN" ],
             [ 25, "MOVE_BULK_UP" ],
             [ 29, "MOVE_QUICK_ATTACK" ],
             [ 33, "MOVE_BLAZE_KICK" ],
             [ 38, "MOVE_SLASH" ],
+            [ 39, "MOVE_MIRROR_MOVE" ],
+            [ 39, "MOVE_FLAMETHROWER" ],
             [ 45, "MOVE_BRAVE_BIRD" ],
             [ 54, "MOVE_SKY_UPPERCUT" ],
             [ 60, "MOVE_FLARE_BLITZ" ]
