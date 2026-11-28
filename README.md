@@ -66,6 +66,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 - Crab Hammer
   - BP: 120(+30)
   - Now a viable signature move.
+    
+- Defog
+  - Now also clears hazards from the user's side.
+  - Another viable hazard control move.
 
 - Dragon Rush
   - BP: 60(-40)
