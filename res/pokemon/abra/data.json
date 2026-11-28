@@ -34,7 +34,8 @@
     "icon_palette": 2,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TELEPORT" ]
+            [ 1, "MOVE_TELEPORT" ],
+            [ 8, "MOVE_SMELLING_SALT" ]
         ],
         "by_tm": [
             "TM01",

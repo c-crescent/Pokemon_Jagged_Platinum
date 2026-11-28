@@ -41,6 +41,7 @@
             [ 1, "MOVE_GROWL" ],
             [ 1, "MOVE_CONFUSION" ],
             [ 5, "MOVE_ODOR_SLEUTH" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 10, "MOVE_STOMP" ],
             [ 14, "MOVE_AGILITY" ],
             [ 19, "MOVE_PSYBEAM" ],

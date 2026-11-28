@@ -38,6 +38,7 @@
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_HELPING_HAND" ],
             [ 6, "MOVE_SAND_ATTACK" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 12, "MOVE_CONFUSION" ],
             [ 12, "MOVE_GROWL" ],
             [ 17, "MOVE_QUICK_ATTACK" ],

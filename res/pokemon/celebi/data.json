@@ -38,6 +38,7 @@
             [ 1, "MOVE_CONFUSION" ],
             [ 1, "MOVE_RECOVER" ],
             [ 1, "MOVE_HEAL_BELL" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 10, "MOVE_SAFEGUARD" ],
             [ 19, "MOVE_MAGICAL_LEAF" ],
             [ 28, "MOVE_ANCIENT_POWER" ],

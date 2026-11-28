@@ -36,6 +36,7 @@
         "by_level": [
             [ 1, "MOVE_POUND" ],
             [ 1, "MOVE_TRANSFORM" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 10, "MOVE_MEGA_PUNCH" ],
             [ 20, "MOVE_METRONOME" ],
             [ 30, "MOVE_PSYCHIC" ],

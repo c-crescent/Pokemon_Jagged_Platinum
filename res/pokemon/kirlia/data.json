@@ -39,6 +39,7 @@
             [ 1, "MOVE_DOUBLE_TEAM" ],
             [ 1, "MOVE_TELEPORT" ],
             [ 6, "MOVE_CONFUSION" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 9, "MOVE_DOUBLE_TEAM" ],
             [ 11, "MOVE_TELEPORT" ],
             [ 16, "MOVE_LUCKY_CHANT" ],

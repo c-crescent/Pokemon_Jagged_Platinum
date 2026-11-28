@@ -38,7 +38,7 @@
             [ 1, "MOVE_NIGHT_SLASH" ],
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_GROWL" ],
-            [ 6, "MOVE_CONFUSION" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 9, "MOVE_DOUBLE_TEAM" ],
             [ 11, "MOVE_TELEPORT" ],
             [ 16, "MOVE_FURY_CUTTER" ],

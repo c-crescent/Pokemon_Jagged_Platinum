@@ -41,6 +41,7 @@
             [ 1, "MOVE_HYPNOSIS" ],
             [ 1, "MOVE_IMPRISON" ],
             [ 6, "MOVE_HYPNOSIS" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 11, "MOVE_IMPRISON" ],
             [ 13, "MOVE_CONFUSE_RAY" ],
             [ 17, "MOVE_EXTRASENSORY" ],

@@ -37,6 +37,7 @@
             [ 1, "MOVE_REST" ],
             [ 1, "MOVE_CONFUSION" ],
             [ 6, "MOVE_IMPRISON" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 16, "MOVE_ENDURE" ],
             [ 21, "MOVE_SWIFT" ],
             [ 31, "MOVE_YAWN" ],

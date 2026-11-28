@@ -38,6 +38,7 @@
             [ 1, "MOVE_TAKE_DOWN" ],
             [ 1, "MOVE_METAL_CLAW" ],
             [ 1, "MOVE_CONFUSION" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 17, "MOVE_METAL_CLAW" ],
             [ 17, "MOVE_CONFUSION" ],
             [ 20, "MOVE_SCARY_FACE" ],

@@ -38,6 +38,7 @@
             [ 1, "MOVE_HYPNOSIS" ],
             [ 6, "MOVE_DISABLE" ],
             [ 8, "MOVE_CONFUSION" ],
+            [ 9, "MOVE_SMELLING_SALT" ],
             [ 13, "MOVE_HEADBUTT" ],
             [ 16, "MOVE_POISON_GAS" ],
             [ 18, "MOVE_MEDITATE" ],

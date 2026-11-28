@@ -36,6 +36,7 @@
         "by_level": [
             [ 1, "MOVE_WRAP" ],
             [ 6, "MOVE_GROWL" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 9, "MOVE_ASTONISH" ],
             [ 14, "MOVE_CONFUSION" ],
             [ 17, "MOVE_UPROAR" ],

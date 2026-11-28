@@ -39,6 +39,7 @@
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_GROWL" ],
             [ 5, "MOVE_GROWL" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 10, "MOVE_WATER_GUN" ],
             [ 13, "MOVE_CONFUSION" ],
             [ 18, "MOVE_DISABLE" ],

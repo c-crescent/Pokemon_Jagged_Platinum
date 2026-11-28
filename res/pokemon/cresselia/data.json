@@ -36,6 +36,7 @@
         "by_level": [
             [ 1, "MOVE_CONFUSION" ],
             [ 1, "MOVE_DOUBLE_TEAM" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 11, "MOVE_SAFEGUARD" ],
             [ 20, "MOVE_MIST" ],
             [ 29, "MOVE_AURORA_BEAM" ],

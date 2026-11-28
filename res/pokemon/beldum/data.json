@@ -34,7 +34,8 @@
     "icon_palette": 0,
     "learnset": {
         "by_level": [
-            [ 1, "MOVE_TAKE_DOWN" ]
+            [ 1, "MOVE_TAKE_DOWN" ],
+            [ 8, "MOVE_SMELLING_SALT" ]
         ],
         "by_tm": [  ],
         "by_tutor": [

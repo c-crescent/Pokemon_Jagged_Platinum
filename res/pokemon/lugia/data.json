@@ -35,6 +35,7 @@
     "learnset": {
         "by_level": [
             [ 1, "MOVE_WHIRLWIND" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 9, "MOVE_SAFEGUARD" ],
             [ 15, "MOVE_GUST" ],
             [ 23, "MOVE_RECOVER" ],

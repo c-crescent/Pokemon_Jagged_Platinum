@@ -37,6 +37,7 @@
             [ 1, "MOVE_CONFUSION" ],
             [ 1, "MOVE_DISABLE" ],
             [ 8, "MOVE_BARRIER" ],
+            [ 9, "MOVE_SMELLING_SALT" ],
             [ 15, "MOVE_SWIFT" ],
             [ 22, "MOVE_FUTURE_SIGHT" ],
             [ 29, "MOVE_PSYCH_UP" ],

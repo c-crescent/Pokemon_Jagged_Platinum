@@ -42,6 +42,7 @@
             [ 3, "MOVE_RAPID_SPIN" ],
             [ 5, "MOVE_MUD_SLAP" ],
             [ 8, "MOVE_PSYBEAM" ],
+            [ 9, "MOVE_SMELLING_SALT" ],
             [ 10, "MOVE_ROCK_TOMB" ],
             [ 13, "MOVE_SELFDESTRUCT" ],
             [ 17, "MOVE_ANCIENT_POWER" ],

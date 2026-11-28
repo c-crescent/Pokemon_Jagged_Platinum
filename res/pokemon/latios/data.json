@@ -36,6 +36,7 @@
         "by_level": [
             [ 1, "MOVE_PSYWAVE" ],
             [ 5, "MOVE_HEAL_BLOCK" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 10, "MOVE_HELPING_HAND" ],
             [ 15, "MOVE_SAFEGUARD" ],
             [ 20, "MOVE_DRAGON_BREATH" ],

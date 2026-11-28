@@ -36,6 +36,7 @@
         "by_level": [
             [ 1, "MOVE_LEER" ],
             [ 1, "MOVE_WRAP" ],
+            [ 8, "MOVE_SMELLING_SALT" ],
             [ 9, "MOVE_NIGHT_SHADE" ],
             [ 17, "MOVE_TELEPORT" ],
             [ 25, "MOVE_KNOCK_OFF" ],
