@@ -56,18 +56,31 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Now a viable signature move.
 
 - Dragon Rush
-    - BP: 60(-40)
-    - Acc: 100(+25)
-    - PP: 25(+15)
-    - Eff%: 30(+10)
-    - Now an early-mid game physical Dragon equivalent of Bite.
+  - BP: 60(-40)
+  - Acc: 100(+25)
+  - PP: 25(+15)
+  - Eff%: 30(+10)
+  - Now an early-mid game physical Dragon equivalent of Bite.
 
+- Earth Power
+  - BP: 100(+10)
+  - Now special equivalent of Earthquake.
+  
 - Fire Fang
   - BP: 70(+5)
   - Universal buffs to Fang moves.
 
 - Ice Fang
   - BP: 70(+5)
+    
+* Mud Bomb
+  * BP: 80(+15)
+  * Acc: 95(+10)
+  * Now a viable late game move.
+    
+- Mud-Slap
+  - BP: 35(+15)
+  - Now a viable early-game move.
 
 - Poison Fang
   - BP: 70(+20)
