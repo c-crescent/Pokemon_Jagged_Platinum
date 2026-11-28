@@ -7,9 +7,9 @@
         "half the damage taken\n",
         "by the target."
     ],
-    "class": "CLASS_PHYSICAL",
+    "class": "CLASS_SPECIAL",
     "type": "TYPE_BUG",
-    "power": 20,
+    "power": 40,
     "accuracy": 100,
     "pp": 15,
     "effect": {

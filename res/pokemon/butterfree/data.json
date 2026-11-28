@@ -39,6 +39,7 @@
             [ 1, "MOVE_STRING_SHOT" ],
             [ 7, "MOVE_HARDEN" ],
             [ 10, "MOVE_CONFUSION" ],
+            [ 11, "MOVE_LEECH_LIFE" ],
             [ 12, "MOVE_POISON_POWDER" ],
             [ 12, "MOVE_STUN_SPORE" ],
             [ 12, "MOVE_SLEEP_POWDER" ],

@@ -97,6 +97,11 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - PP: 10(-10)
   - Effect: Now also does 50% more damage when the target has an item.
   - Now is similar to modern Knock Off.
+
+- Leech Life
+  - BP: 40(+20)
+  - Class: Special
+  - Now an early game special Bug move.
     
 * Mud Bomb
   * BP: 80(+15)
@@ -152,6 +157,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 - Thunder Fang
   - BP: 70(+5)
+ 
+- Twineedle
+  - BP: 45(+25)
+  - Now an actual move worth using.
 
 - Zen Headbutt
   - BP: 100(+20)
