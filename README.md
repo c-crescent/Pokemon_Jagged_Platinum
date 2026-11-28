@@ -43,6 +43,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 ### Moves
 
+- Aqua Tail:
+  - BP: 100(+10)
+  - Now a viable alternative to Waterfall.
+
 - Dragon Rush:
     - BP: 60(-40)
     - Acc: 100(+25)
@@ -52,6 +56,7 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
 
 - Fire Fang
   - BP: 70(+5)
+  - Universal buffs to Fang moves
 
 - Ice Fang
   - BP: 70(+5)
@@ -60,6 +65,7 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 70(+20)
   - Acc: 95(-5)
   - Eff%: 10(-20)
+  - Now similar to elemental Fang moves
 
 - Spark
   - BP: 55(-10)
