@@ -147,7 +147,10 @@ void NitroMain(void)
             SysTaskManager_ExecuteTasks(gSystem.mainTaskMgr);
             SysTaskManager_ExecuteTasks(gSystem.printTaskMgr);
 
-            if (!gSystem.frameCounter) {
+            // The game normally waits two VBlanks per frame (30 fps). Skipping this first wait
+            // runs it at 60 fps, which doubles the speed of everything that counts frames.
+            // Link and Wi-Fi play keep 30 fps so they stay in sync with the other game.
+            if (!gSystem.frameCounter && CommSys_IsInitialized()) {
                 OS_WaitIrq(TRUE, OS_IE_V_BLANK);
                 gSystem.vblankCounter++;
             }

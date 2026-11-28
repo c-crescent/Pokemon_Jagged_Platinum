@@ -67,6 +67,7 @@
 #include "pokemon_anim.h"
 #include "pokemon_sprite.h"
 #include "render_window.h"
+#include "screen_fade.h"
 #include "sound.h"
 #include "sound_playback.h"
 #include "sprite_system.h"
@@ -1849,17 +1850,15 @@ static void Task_SetEncounter(SysTask *task, void *data)
         }
         break;
     case 3:
-        if (PokemonAnimManager_HasAnimCompleted(BattleSystem_GetPokemonAnimManager(monEncounterData->battleSys), monEncounterData->battler) == TRUE
-            && PokemonSprite_IsAnimActive(monEncounterData->sprite) == FALSE) {
-            if (monEncounterData->isShiny) {
-                MoveAnimation moveAnim;
+        // Don't wait for the sprite animation; it keeps playing while the battle continues.
+        if (monEncounterData->isShiny) {
+            MoveAnimation moveAnim;
 
-                BattleController_SetMoveAnimation(monEncounterData->battleSys, NULL, &moveAnim, 1, 11, monEncounterData->battler, monEncounterData->battler, NULL);
-                BattleDisplay_PlayMoveAnimation(monEncounterData->battleSys, monEncounterData->battlerData, battleAnimSys, &moveAnim);
-                monEncounterData->state = 4;
-            } else {
-                monEncounterData->state = 0xFF;
-            }
+            BattleController_SetMoveAnimation(monEncounterData->battleSys, NULL, &moveAnim, 1, 11, monEncounterData->battler, monEncounterData->battler, NULL);
+            BattleDisplay_PlayMoveAnimation(monEncounterData->battleSys, monEncounterData->battlerData, battleAnimSys, &moveAnim);
+            monEncounterData->state = 4;
+        } else {
+            monEncounterData->state = 0xFF;
         }
         break;
     case 4:
@@ -1942,17 +1941,15 @@ static void Task_SetGiratinaEncounter(SysTask *task, void *data)
         }
         break;
     case 3:
-        if (PokemonAnimManager_HasAnimCompleted(BattleSystem_GetPokemonAnimManager(monEncounterData->battleSys), monEncounterData->battler) == TRUE
-            && PokemonSprite_IsAnimActive(monEncounterData->sprite) == FALSE) {
-            if (monEncounterData->isShiny) {
-                MoveAnimation moveAnim;
+        // Don't wait for the sprite animation; it keeps playing while the battle continues.
+        if (monEncounterData->isShiny) {
+            MoveAnimation moveAnim;
 
-                BattleController_SetMoveAnimation(monEncounterData->battleSys, NULL, &moveAnim, 1, 11, monEncounterData->battler, monEncounterData->battler, NULL);
-                BattleDisplay_PlayMoveAnimation(monEncounterData->battleSys, monEncounterData->battlerData, battleAnimSys, &moveAnim);
-                monEncounterData->state = 4;
-            } else {
-                monEncounterData->state = 0xFF;
-            }
+            BattleController_SetMoveAnimation(monEncounterData->battleSys, NULL, &moveAnim, 1, 11, monEncounterData->battler, monEncounterData->battler, NULL);
+            BattleDisplay_PlayMoveAnimation(monEncounterData->battleSys, monEncounterData->battlerData, battleAnimSys, &moveAnim);
+            monEncounterData->state = 4;
+        } else {
+            monEncounterData->state = 0xFF;
         }
         break;
     case 4:
@@ -2176,22 +2173,20 @@ static void Task_ShowEncounter(SysTask *task, void *data)
         }
         break;
     case 6:
-        if (PokemonAnimManager_HasAnimCompleted(BattleSystem_GetPokemonAnimManager(monShowData->battleSys), monShowData->battler) == TRUE
-            && PokemonSprite_IsAnimActive(monShowData->battlerData->monSprite) == FALSE) {
-            ov12_0223783C(monShowData->battlerData->ballRotation);
-            monShowData->battlerData->ballRotation = NULL;
-            ov12_02236428(monShowData->ballCapsuleSealEffect);
+        // Don't wait for the sprite animation; it keeps playing while the battle continues.
+        ov12_0223783C(monShowData->battlerData->ballRotation);
+        monShowData->battlerData->ballRotation = NULL;
+        ov12_02236428(monShowData->ballCapsuleSealEffect);
 
-            if (monShowData->isShiny) {
-                MoveAnimation moveAnim;
+        if (monShowData->isShiny) {
+            MoveAnimation moveAnim;
 
-                monShowData->battleAnimSys = BattleAnimSystem_New(HEAP_ID_BATTLE);
-                BattleController_SetMoveAnimation(monShowData->battleSys, NULL, &moveAnim, 1, 11, monShowData->battler, monShowData->battler, NULL);
-                BattleDisplay_PlayMoveAnimation(monShowData->battleSys, monShowData->battlerData, monShowData->battleAnimSys, &moveAnim);
-                monShowData->state = 7;
-            } else {
-                monShowData->state = 0xFF;
-            }
+            monShowData->battleAnimSys = BattleAnimSystem_New(HEAP_ID_BATTLE);
+            BattleController_SetMoveAnimation(monShowData->battleSys, NULL, &moveAnim, 1, 11, monShowData->battler, monShowData->battler, NULL);
+            BattleDisplay_PlayMoveAnimation(monShowData->battleSys, monShowData->battlerData, monShowData->battleAnimSys, &moveAnim);
+            monShowData->state = 7;
+        } else {
+            monShowData->state = 0xFF;
         }
         break;
     case 7:
@@ -2417,20 +2412,18 @@ static void Task_ShowPokemon(SysTask *task, void *data)
         }
         break;
     case 6:
-        if (PokemonAnimManager_HasAnimCompleted(BattleSystem_GetPokemonAnimManager(monShowData->battleSys), monShowData->battler) == TRUE
-            && PokemonSprite_IsAnimActive(monShowData->battlerData->monSprite) == FALSE) {
-            ov12_0223783C(monShowData->ballRotation);
-            ov12_02236428(monShowData->ballCapsuleSealEffect);
+        // Don't wait for the sprite animation; it keeps playing while the battle continues.
+        ov12_0223783C(monShowData->ballRotation);
+        ov12_02236428(monShowData->ballCapsuleSealEffect);
 
-            if (monShowData->isShiny) {
-                MoveAnimation moveAnim;
+        if (monShowData->isShiny) {
+            MoveAnimation moveAnim;
 
-                BattleController_SetMoveAnimation(monShowData->battleSys, NULL, &moveAnim, 1, 11, monShowData->battler, monShowData->battler, NULL);
-                BattleDisplay_PlayMoveAnimation(monShowData->battleSys, monShowData->battlerData, battleAnimSys, &moveAnim);
-                monShowData->state = 7;
-            } else {
-                monShowData->state = 8;
-            }
+            BattleController_SetMoveAnimation(monShowData->battleSys, NULL, &moveAnim, 1, 11, monShowData->battler, monShowData->battler, NULL);
+            BattleDisplay_PlayMoveAnimation(monShowData->battleSys, monShowData->battlerData, battleAnimSys, &moveAnim);
+            monShowData->state = 7;
+        } else {
+            monShowData->state = 8;
         }
         break;
     case 7:
@@ -5021,9 +5014,8 @@ static void Task_PlayFaintingSequence(SysTask *task, void *data)
         faintingSequenceData->state++;
     }
     case 5:
-        if (Sound_IsPokemonCryPlaying() == FALSE) {
-            faintingSequenceData->state++;
-        }
+        // Don't wait for the faint cry to finish; it keeps playing over the sink and the text.
+        faintingSequenceData->state++;
         break;
     case 6:
         if (faintingSequenceData->face == FACE_FRONT) {
@@ -5088,18 +5080,17 @@ static void Task_PlayFaintingSequence(SysTask *task, void *data)
 static void Task_FadeOut(SysTask *task, void *data)
 {
     FadeOutData *fadeOutData = data;
-    PaletteData *paletteData = BattleSystem_GetPaletteData(fadeOutData->battleSys);
-    PokemonSpriteManager *monSpriteMan = BattleSystem_GetPokemonSpriteManager(fadeOutData->battleSys);
 
     switch (fadeOutData->state) {
     case 0:
         sub_02015738(BattleSystem_GetPaletteAnimator(fadeOutData->battleSys), 1);
-        PaletteData_StartFade(paletteData, PLTTBUF_MAIN_BG_F | PLTTBUF_SUB_BG_F | PLTTBUF_MAIN_OBJ_F | PLTTBUF_SUB_OBJ_F, 0xFFFF, 1, 0, 16, 0);
-        PokemonSpriteManager_StartFadeAll(monSpriteMan, 0, 16, 0, 0);
-        Sound_FadeOutBGM(0, 16);
+        // A brightness fade covers both screens and the Pokemon sprites at once, so it can be
+        // quicker than the palette and sprite fades used before (16 frames, now 8).
+        StartScreenFade(FADE_BOTH_SCREENS, FADE_TYPE_BRIGHTNESS_OUT, FADE_TYPE_BRIGHTNESS_OUT, COLOR_BLACK, 8, 1, HEAP_ID_BATTLE);
+        Sound_FadeOutBGM(0, 8);
         fadeOutData->state++;
     case 1:
-        if (PaletteData_GetSelectedBuffersMask(paletteData) == 0) {
+        if (IsScreenFadeDone()) {
             fadeOutData->state++;
         }
         break;

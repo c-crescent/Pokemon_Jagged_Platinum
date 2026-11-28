@@ -18,6 +18,7 @@ are listed here.
 - Battle Style Option is now SET by default.
 - Button Mode is now L=A by default.
 - Text Speed is now Fast by default.
+- The game now runs 2x faster. Most delays in battle are now removed.
 
 ### Removed
 
