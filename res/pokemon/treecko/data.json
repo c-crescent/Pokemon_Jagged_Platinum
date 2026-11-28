@@ -36,16 +36,16 @@
         "by_level": [
             [ 1, "MOVE_POUND" ],
             [ 1, "MOVE_LEER" ],
-            [ 6, "MOVE_ABSORB" ],
-            [ 11, "MOVE_QUICK_ATTACK" ],
-            [ 16, "MOVE_PURSUIT" ],
-            [ 21, "MOVE_SCREECH" ],
-            [ 26, "MOVE_MEGA_DRAIN" ],
-            [ 31, "MOVE_AGILITY" ],
-            [ 36, "MOVE_SLAM" ],
-            [ 41, "MOVE_DETECT" ],
-            [ 46, "MOVE_GIGA_DRAIN" ],
-            [ 51, "MOVE_ENERGY_BALL" ]
+            [ 5, "MOVE_ABSORB" ],
+            [ 10, "MOVE_QUICK_ATTACK" ],
+            [ 14, "MOVE_PURSUIT" ],
+            [ 19, "MOVE_SCREECH" ],
+            [ 23, "MOVE_MEGA_DRAIN" ],
+            [ 28, "MOVE_AGILITY" ],
+            [ 32, "MOVE_SLAM" ],
+            [ 37, "MOVE_DETECT" ],
+            [ 41, "MOVE_GIGA_DRAIN" ],
+            [ 46, "MOVE_ENERGY_BALL" ]
         ],
         "by_tm": [
             "TM01",

@@ -44,11 +44,11 @@
             [ 19, "MOVE_WATER_SPORT" ],
             [ 22, "MOVE_GUST" ],
             [ 26, "MOVE_SCARY_FACE" ],
-            [ 33, "MOVE_STUN_SPORE" ],
-            [ 40, "MOVE_SILVER_WIND" ],
-            [ 47, "MOVE_AIR_SLASH" ],
-            [ 54, "MOVE_WHIRLWIND" ],
-            [ 61, "MOVE_BUG_BUZZ" ]
+            [ 32, "MOVE_STUN_SPORE" ],
+            [ 39, "MOVE_SILVER_WIND" ],
+            [ 46, "MOVE_AIR_SLASH" ],
+            [ 53, "MOVE_WHIRLWIND" ],
+            [ 60, "MOVE_BUG_BUZZ" ]
         ],
         "by_tm": [
             "TM03",

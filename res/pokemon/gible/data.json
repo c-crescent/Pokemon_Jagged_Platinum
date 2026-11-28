@@ -40,10 +40,11 @@
             [ 13, "MOVE_SANDSTORM" ],
             [ 15, "MOVE_TAKE_DOWN" ],
             [ 19, "MOVE_SAND_TOMB" ],
+            [ 22, "MOVE_DRAGON_RUSH" ],
             [ 25, "MOVE_SLASH" ],
             [ 27, "MOVE_DRAGON_CLAW" ],
             [ 31, "MOVE_DIG" ],
-            [ 37, "MOVE_DRAGON_RUSH" ]
+            [ 37, "MOVE_OUTRAGE" ]
         ],
         "by_tm": [
             "TM02",

@@ -36,17 +36,17 @@
         "by_level": [
             [ 1, "MOVE_YAWN" ],
             [ 1, "MOVE_SMOG" ],
-            [ 8, "MOVE_EMBER" ],
-            [ 11, "MOVE_ROCK_THROW" ],
-            [ 16, "MOVE_HARDEN" ],
-            [ 23, "MOVE_RECOVER" ],
-            [ 26, "MOVE_ANCIENT_POWER" ],
-            [ 31, "MOVE_AMNESIA" ],
-            [ 38, "MOVE_LAVA_PLUME" ],
-            [ 41, "MOVE_ROCK_SLIDE" ],
-            [ 46, "MOVE_BODY_SLAM" ],
-            [ 53, "MOVE_FLAMETHROWER" ],
-            [ 56, "MOVE_EARTH_POWER" ]
+            [ 7, "MOVE_EMBER" ],
+            [ 10, "MOVE_ROCK_THROW" ],
+            [ 15, "MOVE_HARDEN" ],
+            [ 21, "MOVE_RECOVER" ],
+            [ 24, "MOVE_ANCIENT_POWER" ],
+            [ 28, "MOVE_AMNESIA" ],
+            [ 35, "MOVE_LAVA_PLUME" ],
+            [ 37, "MOVE_ROCK_SLIDE" ],
+            [ 42, "MOVE_BODY_SLAM" ],
+            [ 48, "MOVE_FLAMETHROWER" ],
+            [ 51, "MOVE_EARTH_POWER" ]
         ],
         "by_tm": [
             "TM06",

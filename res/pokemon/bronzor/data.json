@@ -36,17 +36,17 @@
         "by_level": [
             [ 1, "MOVE_TACKLE" ],
             [ 1, "MOVE_CONFUSION" ],
-            [ 7, "MOVE_HYPNOSIS" ],
-            [ 12, "MOVE_IMPRISON" ],
-            [ 14, "MOVE_CONFUSE_RAY" ],
-            [ 19, "MOVE_EXTRASENSORY" ],
-            [ 26, "MOVE_IRON_DEFENSE" ],
-            [ 30, "MOVE_SAFEGUARD" ],
-            [ 35, "MOVE_GYRO_BALL" ],
-            [ 37, "MOVE_FUTURE_SIGHT" ],
-            [ 41, "MOVE_FAINT_ATTACK" ],
-            [ 49, "MOVE_PAYBACK" ],
-            [ 52, "MOVE_HEAL_BLOCK" ]
+            [ 6, "MOVE_HYPNOSIS" ],
+            [ 11, "MOVE_IMPRISON" ],
+            [ 13, "MOVE_CONFUSE_RAY" ],
+            [ 17, "MOVE_EXTRASENSORY" ],
+            [ 23, "MOVE_IRON_DEFENSE" ],
+            [ 27, "MOVE_SAFEGUARD" ],
+            [ 31, "MOVE_GYRO_BALL" ],
+            [ 33, "MOVE_FUTURE_SIGHT" ],
+            [ 37, "MOVE_FAINT_ATTACK" ],
+            [ 44, "MOVE_PAYBACK" ],
+            [ 47, "MOVE_HEAL_BLOCK" ]
         ],
         "by_tm": [
             "TM04",

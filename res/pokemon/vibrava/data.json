@@ -38,14 +38,15 @@
             [ 1, "MOVE_SAND_ATTACK" ],
             [ 1, "MOVE_FAINT_ATTACK" ],
             [ 1, "MOVE_SAND_TOMB" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 17, "MOVE_FAINT_ATTACK" ],
-            [ 25, "MOVE_SAND_TOMB" ],
-            [ 33, "MOVE_SUPERSONIC" ],
-            [ 35, "MOVE_DRAGON_BREATH" ],
-            [ 41, "MOVE_SCREECH" ],
-            [ 49, "MOVE_SANDSTORM" ],
-            [ 57, "MOVE_HYPER_BEAM" ]
+            [ 6, "MOVE_SAND_ATTACK" ],
+            [ 11, "MOVE_FAINT_ATTACK" ],
+            [ 17, "MOVE_SAND_TOMB" ],
+            [ 20, "MOVE_DRAGON_RUSH" ],
+            [ 22, "MOVE_SUPERSONIC" ],
+            [ 24, "MOVE_DRAGON_BREATH" ],
+            [ 28, "MOVE_SCREECH" ],
+            [ 33, "MOVE_SANDSTORM" ],
+            [ 38, "MOVE_HYPER_BEAM" ]
         ],
         "by_tm": [
             "TM06",

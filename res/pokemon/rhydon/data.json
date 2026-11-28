@@ -42,12 +42,12 @@
             [ 13, "MOVE_FURY_ATTACK" ],
             [ 21, "MOVE_SCARY_FACE" ],
             [ 25, "MOVE_ROCK_BLAST" ],
-            [ 33, "MOVE_TAKE_DOWN" ],
-            [ 37, "MOVE_HORN_DRILL" ],
-            [ 42, "MOVE_HAMMER_ARM" ],
-            [ 45, "MOVE_STONE_EDGE" ],
-            [ 49, "MOVE_EARTHQUAKE" ],
-            [ 57, "MOVE_MEGAHORN" ]
+            [ 32, "MOVE_TAKE_DOWN" ],
+            [ 36, "MOVE_HORN_DRILL" ],
+            [ 41, "MOVE_HAMMER_ARM" ],
+            [ 44, "MOVE_STONE_EDGE" ],
+            [ 48, "MOVE_EARTHQUAKE" ],
+            [ 56, "MOVE_MEGAHORN" ]
         ],
         "by_tm": [
             "TM01",

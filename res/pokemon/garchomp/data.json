@@ -47,8 +47,9 @@
             [ 28, "MOVE_SLASH" ],
             [ 33, "MOVE_DRAGON_CLAW" ],
             [ 40, "MOVE_DIG" ],
+            [ 40, "MOVE_DRAGON_RUSH" ],
             [ 48, "MOVE_CRUNCH" ],
-            [ 55, "MOVE_DRAGON_RUSH" ]
+            [ 55, "MOVE_OUTRAGE" ]
         ],
         "by_tm": [
             "TM02",

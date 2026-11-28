@@ -36,17 +36,17 @@
         "by_level": [
             [ 1, "MOVE_CONSTRICT" ],
             [ 1, "MOVE_WITHDRAW" ],
-            [ 7, "MOVE_BITE" ],
-            [ 10, "MOVE_WATER_GUN" ],
-            [ 16, "MOVE_ROLLOUT" ],
-            [ 19, "MOVE_LEER" ],
-            [ 25, "MOVE_MUD_SHOT" ],
-            [ 28, "MOVE_BRINE" ],
-            [ 34, "MOVE_PROTECT" ],
-            [ 37, "MOVE_ANCIENT_POWER" ],
-            [ 43, "MOVE_TICKLE" ],
-            [ 46, "MOVE_ROCK_BLAST" ],
-            [ 52, "MOVE_HYDRO_PUMP" ]
+            [ 6, "MOVE_BITE" ],
+            [ 9, "MOVE_WATER_GUN" ],
+            [ 14, "MOVE_ROLLOUT" ],
+            [ 17, "MOVE_LEER" ],
+            [ 22, "MOVE_MUD_SHOT" ],
+            [ 25, "MOVE_BRINE" ],
+            [ 30, "MOVE_PROTECT" ],
+            [ 33, "MOVE_ANCIENT_POWER" ],
+            [ 39, "MOVE_TICKLE" ],
+            [ 41, "MOVE_ROCK_BLAST" ],
+            [ 47, "MOVE_HYDRO_PUMP" ]
         ],
         "by_tm": [
             "TM03",
