@@ -27,7 +27,7 @@ are listed here.
 
 #### Moves
 - All changed moves might have learnsets updates to accommodate.
-- Implemented changes for: Dragon Rush, Spark, Poison Fang, Ice Fang, Fire Fang, Thunder Fang. See README for more details.
+- Implemented changes for: Dragon Rush, Spark, Poison Fang, Ice Fang, Fire Fang, Thunder Fang, Aqua Tail, Crabhammer. See README for more details.
 
 ### Removed
 

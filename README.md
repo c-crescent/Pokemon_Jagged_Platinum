@@ -47,6 +47,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - BP: 100(+10)
   - Now a viable alternative to Waterfall.
 
+- Crab Hammer:
+  - BP: 120(+30)
+  - Now a viable signature move.
+
 - Dragon Rush:
     - BP: 60(-40)
     - Acc: 100(+25)
