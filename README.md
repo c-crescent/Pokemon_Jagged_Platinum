@@ -95,6 +95,10 @@ A lot (about 80%) of the code in this project was written by Claude (Anthropic's
   - Acc: 95(-5)
   - Eff%: 10(-20)
   - Now similar to elemental Fang moves.
+    
+- Power Gem
+  - BP: 95(+25)
+  - Now a standard late game move.
 
 - Psycho Cut
   - BP: 75(+5)

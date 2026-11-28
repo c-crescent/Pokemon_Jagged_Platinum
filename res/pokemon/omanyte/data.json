@@ -46,6 +46,7 @@
             [ 33, "MOVE_ANCIENT_POWER" ],
             [ 39, "MOVE_TICKLE" ],
             [ 41, "MOVE_ROCK_BLAST" ],
+            [ 46, "MOVE_POWER_GEM" ],
             [ 47, "MOVE_HYDRO_PUMP" ]
         ],
         "by_tm": [

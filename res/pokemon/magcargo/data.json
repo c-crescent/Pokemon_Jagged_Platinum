@@ -46,6 +46,7 @@
             [ 28, "MOVE_AMNESIA" ],
             [ 36, "MOVE_LAVA_PLUME" ],
             [ 41, "MOVE_ROCK_SLIDE" ],
+            [ 46, "MOVE_POWER_GEM" ],
             [ 47, "MOVE_BODY_SLAM" ],
             [ 55, "MOVE_FLAMETHROWER" ],
             [ 60, "MOVE_EARTH_POWER" ]

@@ -41,6 +41,7 @@
             [ 19, "MOVE_THUNDER_WAVE" ],
             [ 24, "MOVE_ROCK_SLIDE" ],
             [ 28, "MOVE_SANDSTORM" ],
+            [ 31, "MOVE_ANCIENT_POWER" ],
             [ 33, "MOVE_REST" ],
             [ 37, "MOVE_POWER_GEM" ],
             [ 42, "MOVE_DISCHARGE" ],

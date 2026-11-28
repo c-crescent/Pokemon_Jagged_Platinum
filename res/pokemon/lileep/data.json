@@ -46,6 +46,7 @@
             [ 45, "MOVE_STOCKPILE" ],
             [ 45, "MOVE_SPIT_UP" ],
             [ 45, "MOVE_SWALLOW" ],
+            [ 46, "MOVE_POWER_GEM" ],
             [ 51, "MOVE_WRING_OUT" ]
         ],
         "by_tm": [

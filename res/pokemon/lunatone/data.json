@@ -43,9 +43,11 @@
             [ 20, "MOVE_ROCK_POLISH" ],
             [ 23, "MOVE_PSYWAVE" ],
             [ 31, "MOVE_EMBARGO" ],
+            [ 32, "MOVE_ANCIENT_POWER" ],
             [ 34, "MOVE_COSMIC_POWER" ],
             [ 42, "MOVE_HEAL_BLOCK" ],
             [ 45, "MOVE_PSYCHIC" ],
+            [ 46, "MOVE_POWER_GEM" ],
             [ 53, "MOVE_FUTURE_SIGHT" ],
             [ 56, "MOVE_EXPLOSION" ]
         ],
